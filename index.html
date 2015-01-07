@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<ul class="posts">
+    {% for post in site.posts %}
+        <li>
+            <h2>
+                <a href="{% if post.external %}{{ post.external }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}" {% if post.external %} target="_blank" {% endif %}>
+                    {{ post.title }}
+                </a>
+            </h2>
+            <time>{{ post.date | date: "%B %Y" }}</time>
+            {%if post.external %}<span class="external">external</span>{% endif %}
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,18 @@
+# Site settings
+
+title: Aleksandar Goševski
+email: gosevskibg@domain.com
+description: Personal thoughts about web design, development, tools, etc.
+permalink: /:title/
+baseurl: ""
+url: "http://www.goschevski.com"
+twitter_username: goschevski
+github_username:  goschevski
+markdown: kramdown
+sass:
+    style: :compressed
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - Guardfile
+    - readme.md

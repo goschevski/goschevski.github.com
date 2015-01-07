@@ -1,0 +1,26 @@
+.posts {
+    @extend %reset-list;
+    padding-top: 50px;
+
+    li {
+        margin-bottom: 2.5em;
+    }
+
+    a {
+        &:hover {
+            color: $link-color;
+            border: none;
+        }
+    }
+
+    .external {
+        margin-left: 10px;
+        color: $link-color;
+        vertical-align: middle;
+
+        &:before {
+            margin-right: 10px;
+            content: '\2022';
+        }
+    }
+}

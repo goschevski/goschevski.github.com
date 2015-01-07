@@ -1,0 +1,18 @@
+.header {
+    // background: #1c212b;
+    background: #202020;
+    color: white;
+    overflow: hidden;
+
+    @include breakpoint('tablet') {
+        min-width: 260px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    @include breakpoint(990px) {
+        min-width: 360px;
+    }
+}

@@ -1,0 +1,28 @@
+.post {
+    .post-meta {
+        margin-top: 0;
+    }
+
+    .post-content {
+        margin-top: 2em;
+    }
+
+    .post-footer {
+        @extend %clearfix;
+        margin: 3em 0;
+        font-size: 0.9em;
+
+        .back {
+            float: left;
+
+            &:before {
+                content: "\2190";
+                margin-right: 7px;
+            }
+        }
+
+        .tweet {
+            float: right;
+        }
+    }
+}

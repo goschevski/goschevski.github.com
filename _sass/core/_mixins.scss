@@ -1,0 +1,27 @@
+/*
+|------------------------------------------------------------
+| Mixins
+|------------------------------------------------------------
+*/
+
+/**
+ * Mixin for handling media queries (mobile first).
+ * It has predefined values for frequently used dimensions.
+ * If you pass custom number, it creates media query and set that number for min-width (mobile first).
+ *
+ * @param {String or Number} $value - You can use predefined (tablet, desktop, retina) or custom number (breakpoint).
+ * @return {Media Query} Media query block
+ */
+@mixin breakpoint ($value) {
+    @if $value == 'tablet' {
+        @media only screen and (min-width: 768px) { @content; }
+    }
+
+    @else if $value == 'desktop' {
+        @media only screen and (min-width: 1280px) { @content }
+    }
+
+    @else {
+        @media only screen and (min-width: $value) { @content; }
+    }
+}

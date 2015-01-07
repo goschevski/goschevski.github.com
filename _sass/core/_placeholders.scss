@@ -1,0 +1,18 @@
+/*
+|------------------------------------------------------------
+| Placeholder selectors
+|------------------------------------------------------------
+*/
+
+%clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+%reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+

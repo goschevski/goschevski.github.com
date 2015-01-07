@@ -1,0 +1,38 @@
+h1, h2, h3, h4, h5, h6 {
+    color: #303030;
+    font-weight: normal;
+
+    a {
+        color: #303030;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+    transition: 0.2s color;
+
+    &:hover {
+        border-bottom: 1px dotted rgba(#50abf1, 0.5);
+    }
+}
+
+h1, h2 {
+    margin-bottom: 0.2em;
+}
+
+h1 { font-size: rem(30px); }
+h2 { font-size: rem(26px); }
+h3 { font-size: rem(22px); }
+h4 { font-size: rem(18px); }
+
+time {
+    color: #9a9a9a;
+    vertical-align: middle;
+}
+
+.highlight {
+    padding: 10px;
+    line-height: 1.7;
+    font-size: rem(14px);
+}
