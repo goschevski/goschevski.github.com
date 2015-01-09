@@ -8,14 +8,14 @@
 
     a {
         &:hover {
-            color: $link-color;
+            color: $main-color;
             border: none;
         }
     }
 
     .external {
         margin-left: 10px;
-        color: $link-color;
+        color: $main-color;
         vertical-align: middle;
 
         &:before {

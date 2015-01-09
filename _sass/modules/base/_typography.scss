@@ -7,9 +7,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+h3, h4, h5, h6 {
+    color: $secondary-color;
+}
+
 a {
     text-decoration: none;
-    color: $link-color;
+    color: $main-color;
     transition: 0.2s color;
 
     &:hover {
@@ -35,4 +39,10 @@ time {
     padding: 10px;
     line-height: 1.7;
     font-size: rem(14px);
+}
+
+.gray {
+    display: block;
+    color: #ccc;
+    font-style: italic;
 }
