@@ -35,23 +35,30 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
 <p class="note">This might hurt your git history. For that reason it might be better to create 2 commits, the first for clearing whitespaces and the second with code changes.</p>
 
-### Syntastic Errors list
-[Syntastic](https://github.com/scrooloose/syntastic) is the best code checker/linter for Vim. It has support for many languages and it's highly customisable.
+### Extract variable (javascript)
 
-What I really like is the errors list. The thing with this is that it shows the list on every save, and sometimes you might want to ignore some errors. This function, and bindings, will show the list only when you want.
+I was inspired by WebStorm refactoring options, so I tried to create something similar in Vim. This function extracts variables in javascript.
 
+Select the word you want to extract as variable (with visual mode). Hit `<Leader>var` and Vim will prompt for variable name. When you enter the name, variable will be extracted in the row above.
+
+With my limited knowledge of vim script, this is best I can do.
 {% highlight vim %}
-function! ShowErrorsList()
-    let g:syntastic_auto_loc_list=1
-    :SyntasticCheck
-    let g:syntastic_auto_loc_list=0
+function! ExtractLocalVariable()
+    let name = input("Variable name: ")
+
+    if (visualmode() == "")
+        normal! viw
+    else
+        normal! gv
+    endif
+
+    exec "normal! c" . name
+    exec "normal! Ovar " . name . " = "
+    exec "normal! pa;"
 endfunction
 
-nnoremap <Leader>c :call ShowErrorsList()<CR>
-nnoremap <Leader>x :lclose<CR>
+vnoremap <Leader>var :call ExtractLocalVariable()<CR>
 {% endhighlight %}
-
-Function enables list, runs the check and disables it. You can open it using `<Leader>c`, and close it using `<Leader>x`.
 
 ### My vimrc
 Here is my [vimrc](https://github.com/goschevski/dotfiles/blob/master/homefiles/vimrc). Feel free to copy and modify anything from it. Check out the plugins I'm using and you might find something to fit.
