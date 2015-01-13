@@ -44,6 +44,11 @@ blockquote {
     color: #ccc;
 }
 
+p > code {
+    font-size: 0.9em;
+    color: #999;
+}
+
 .highlight {
     padding: 10px;
     line-height: 1.7;
