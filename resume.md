@@ -27,7 +27,7 @@ Terminal, Vim, Git, Sketch
 
 ### Experience
 Front-End Developer at [Vast.com](http://www.vast.com)
-<span class="gray">January, 2014 -</span>
+<span class="gray">January, 2014 - Present</span>
 
 Front-End Team Lead at [Pure Agency](http://www.pureagency.com)
 <span class="gray">December, 2011 - Jun, 2013</span>
@@ -36,7 +36,7 @@ Front-End Developer at [Branding Magazine](http://www.brandingmagazine.com)
 <span class="gray">August, 2011 - March, 2012</span>
 
 Freelancer
-<span class="gray">August, 2007 - </span>
+<span class="gray">August, 2007 - Present</span>
 
 ### Education
 Bachelor of Electrical Engineering and Computer Science
