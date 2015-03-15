@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{{ "/style.css" | prepend: site.baseurl }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
-    <meta property="og:url" content="{{ site.url }}{% if page.url %}{{ page.url }}{% else %}{{ site.url }}{% endif %}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type" content="{% if page.excerpt %}article{% else %}website{% endif %}" />
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <meta property="og:site_name" content="Aleksandar Goševski Personal Blog" />
