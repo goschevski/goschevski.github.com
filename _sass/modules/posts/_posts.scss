@@ -1,8 +1,7 @@
 .posts {
-    @extend %reset-list;
-    padding-top: 50px;
+    // padding-top: 50px;
 
-    li {
+    article {
         margin-bottom: 2.5em;
     }
 
