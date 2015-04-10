@@ -4,6 +4,7 @@ var base64 = require('gulp-base64-inline');
 var minifyCSS = require('gulp-minify-css');
 var minifyHTML = require('gulp-minify-html');
 var smoosher = require('gulp-smoosher');
+var sitemap = require('gulp-sitemap');
 var deploy = require('gulp-gh-pages');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
@@ -17,6 +18,13 @@ gulp.task('sass', function () {
         .pipe(autoprefixer('last 2 version', '> 1%'))
         .pipe(minifyCSS())
         .pipe(gulp.dest('css'));
+});
+
+// sitemap task
+gulp.task('sitemap', ['jekyll-build'], function () {
+    return gulp.src('_site/**/*.html')
+        .pipe(sitemap({ siteUrl: 'http://www.goschevski.com' }))
+        .pipe(gulp.dest('_site/'));
 });
 
 // jekyll build
@@ -40,7 +48,7 @@ gulp.task('browser-sync', ['jekyll-build'], function () {
 });
 
 // minify html and inline css
-gulp.task('minify', ['jekyll-build'], function () {
+gulp.task('minify', ['sitemap'], function () {
     return gulp.src('_site/**/*.html')
         .pipe(smoosher())
         .pipe(minifyHTML())
