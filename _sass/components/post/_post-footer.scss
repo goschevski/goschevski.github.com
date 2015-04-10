@@ -1,0 +1,16 @@
+.post .post-footer {
+    @include clearfix;
+    margin: 3em 0;
+    font-size: 0.9em;
+
+    .tweet { float: right; }
+
+    .back {
+        float: left;
+
+        &:before {
+            content: "\2190";
+            margin-right: 7px;
+        }
+    }
+}

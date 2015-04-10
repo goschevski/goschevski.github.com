@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<h2 class="visually-hidden">Articles</h2>
-<div class="posts">
+<section class="posts">
+    <h2 class="title">Articles</h2>
     {% for post in site.posts %}
         <article>
             <h3>
@@ -14,4 +14,4 @@ layout: default
             {%if post.external %}<span class="external">external</span>{% endif %}
         </article>
     {% endfor %}
-</div>
+</section>

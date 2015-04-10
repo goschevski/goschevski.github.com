@@ -6,6 +6,8 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" media="none" onload="if(media!='all')media='all'">
+	<!-- smoosh -->
     <link rel="stylesheet" href="{{ "../css/style.css" | prepend: site.baseurl }}">
+	<!-- endsmoosh -->
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>

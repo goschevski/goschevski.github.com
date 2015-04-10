@@ -1,0 +1,13 @@
+.header .wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    @include breakpoint('tablet') {
+        width: 80%;
+        position: absolute;
+        left: 10%;
+        bottom: 25px;
+        padding: 0;
+    }
+}

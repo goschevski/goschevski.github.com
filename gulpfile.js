@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var base64 = require('gulp-base64-inline');
 var minify = require('gulp-minify-html');
-var inline = require('gulp-inline-css');
+var smoosher = require('gulp-smoosher');
 var deploy = require('gulp-gh-pages');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
@@ -20,7 +20,7 @@ gulp.task('sass', function () {
 // jekyll build
 gulp.task('jekyll-build', ['sass'], function (done) {
     browserSync.notify('<span style="color: grey">Running:</span> $ jekyll build');
-    return cp.spawn('jekyll', ['build'], { stdio: 'inherit' }).on('close', done);
+    return cp.spawn('jekyll', ['build'], { stdio: 'ignore' }).on('close', done);
 });
 
 // jekyll rebuild & browser sync reload
@@ -40,7 +40,7 @@ gulp.task('browser-sync', ['jekyll-build'], function () {
 // minify html and inline css
 gulp.task('minify', ['jekyll-build'], function () {
     return gulp.src('_site/**/*.html')
-        .pipe(inline())
+        .pipe(smoosher())
         .pipe(minify())
         .pipe(gulp.dest('_site/'));
 });

@@ -1,12 +1,26 @@
-*, *:before, *:after {
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: black(0);
-}
-
 html, body {
+    box-sizing: border-box;
     font-family: $main-font;
     line-height: $line-height;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 img { max-width: 100%; }
-a { text-decoration: none; }
+
+time {
+    color: #9a9a9a;
+    vertical-align: middle;
+}
+
+a {
+    color: $main-color;
+    text-decoration: none;
+    transition: 0.2s color;
+
+    &:hover {
+        border-bottom: 1px dotted rgba($main-color, 0.5);
+    }
+}

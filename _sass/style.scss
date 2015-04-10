@@ -4,7 +4,8 @@
  */
 
 @import
-    "lib/normalize";
+    "lib/normalize",
+    "lib/solarized-dark";
 
 @import
     "core/variables",
@@ -13,4 +14,13 @@
 
 @import
     "layout/base",
-    "layout/container";
+    "layout/content";
+
+@import
+    "components/header/header",
+    "components/header/wrapper",
+    "components/header/brand",
+    "components/header/navigation",
+    "components/posts/posts",
+    "components/post/post",
+    "components/post/post-footer";
