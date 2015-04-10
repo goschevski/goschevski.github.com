@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:goschevski/fronty.git"
+  },
+  "author": "Aleksandar Goševski <gosevskibg@gmail.com>",
+  "dependencies": {
+    "browser-sync": "^2.5.3",
+    "critical": "^0.5.6",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-base64-inline": "^1.0.0",
+    "gulp-gh-pages": "^0.5.0",
+    "gulp-inline-css": "^2.0.0",
+    "gulp-minify-html": "^1.0.2",
+    "gulp-sass": "^1.3.3"
+  }
+}

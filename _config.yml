@@ -9,10 +9,4 @@ url: "http://www.goschevski.com"
 twitter_username: goschevski
 github_username:  goschevski
 markdown: kramdown
-sass:
-    style: :compressed
-exclude:
-    - Gemfile
-    - Gemfile.lock
-    - Guardfile
-    - readme.md
+exclude: ["node_modules", "gulpfile.js", "package.json"]
