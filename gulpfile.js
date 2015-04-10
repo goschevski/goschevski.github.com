@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var base64 = require('gulp-base64-inline');
-var minify = require('gulp-minify-html');
+var minifyCSS = require('gulp-minify-css');
+var minifyHTML = require('gulp-minify-html');
 var smoosher = require('gulp-smoosher');
 var deploy = require('gulp-gh-pages');
 var autoprefixer = require('gulp-autoprefixer');
@@ -10,10 +11,11 @@ var cp = require('child_process');
 
 // compile sass
 gulp.task('sass', function () {
-    return gulp.src('_sass/style.scss')
+    return gulp.src(['_sass/style.scss', '_sass/font.scss'])
         .pipe(sass())
         .pipe(base64('../img'))
         .pipe(autoprefixer('last 2 version', '> 1%'))
+        .pipe(minifyCSS())
         .pipe(gulp.dest('css'));
 });
 
@@ -41,7 +43,7 @@ gulp.task('browser-sync', ['jekyll-build'], function () {
 gulp.task('minify', ['jekyll-build'], function () {
     return gulp.src('_site/**/*.html')
         .pipe(smoosher())
-        .pipe(minify())
+        .pipe(minifyHTML())
         .pipe(gulp.dest('_site/'));
 });
 
