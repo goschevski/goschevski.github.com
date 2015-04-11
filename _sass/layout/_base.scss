@@ -24,3 +24,14 @@ a {
         border-bottom: 1px dotted rgba($main-color, 0.5);
     }
 }
+
+#skip-to-content {
+    @include hide;
+    z-index: 100;
+
+    &:focus {
+        top: 10px;
+        left: 10px;
+        color: white;
+    }
+}
