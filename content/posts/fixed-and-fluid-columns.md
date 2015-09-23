@@ -1,5 +1,6 @@
 ---
 template: post.html
+collection: posts
 title: "Fixed and Fluid Columns"
 date: 2014-05-02
 ---

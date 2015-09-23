@@ -6,14 +6,8 @@
         <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
             <h2 class="title">Navigation</h2>
             <ul>
-                <li><a href="https://twitter.com/goschevski" itemprop="url">Twitter</a></li>
                 <li><a href="https://github.com/goschevski" itemprop="url">Github</a></li>
-                {% for page in site.pages %}
-                    {% if page.title %}
-                        <li><a href="{{ page.url | prepend: site.baseurl }}" itemprop="url">{{ page.title }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}" itemprop="url">RSS</a></li>
+                <li><a href="/rss.xml" itemprop="url">RSS</a></li>
             </ul>
         </nav>
     </header>

@@ -11,7 +11,9 @@
   "author": "Aleksandar Goševski <gosevskibg@gmail.com>",
   "dependencies": {
     "cssnext": "^1.8.3",
+    "del": "^2.0.2",
     "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
     "gulp-david": "^0.2.3",
     "gulp-gh-pages": "^0.5.0",
     "gulp-imagemin": "^2.2.0",

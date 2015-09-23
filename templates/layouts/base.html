@@ -12,7 +12,17 @@
         <!-- endsmoosh -->
     </head>
     <body>
-        {% block content %}
+        {% block header %}
+            {% include 'partials/header.html' %}
+        {% endblock %}
+
+        <div class="Container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% block footer %}
+            {% include 'partials/footer.html' %}
         {% endblock %}
     </body>
 </html>

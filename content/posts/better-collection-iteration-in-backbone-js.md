@@ -1,5 +1,6 @@
 ---
 template: post.html
+collection: posts
 title: "Better Collection Iteration in Backbone.js"
 date: 2014-02-03
 ---

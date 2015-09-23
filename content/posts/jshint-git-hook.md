@@ -1,5 +1,6 @@
 ---
 template: post.html
+collection: posts
 title: "JSHint Git Hook"
 date: 2014-08-01
 ---

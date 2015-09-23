@@ -1,6 +1,7 @@
 // project
 var gulp = require('gulp');
 var david = require('gulp-david');
+var del = require('del');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 var notify = require('gulp-notify');
@@ -35,7 +36,6 @@ var pxtorem = require('postcss-pxtorem');
 // configure collections
 var collectionsSettings = {
     posts: {
-        pattern: '*.md',
         sortBy: 'date',
         reverse: true
     }
@@ -45,13 +45,17 @@ var collectionsSettings = {
 nunjucks.configure('./templates', { watch: false });
 
 gulp.task('generate', ['css'], function () {
-    return gulp.src('posts/**/*')
+    return gulp.src(['content/**/*'])
         .pipe(metalsmith({
             root: __dirname,
             frontmatter: true,
-            use: [collections(collectionsSettings), markdown(), permalinks(), templates({ engine: 'nunjucks' })]
+            use: [collections(collectionsSettings), markdown(), permalinks({ pattern: ':title', relative: false }), templates({ engine: 'nunjucks' })]
         }))
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('clean', function () {
+    return del(['dist']);
 });
 
 gulp.task('css', function () {
