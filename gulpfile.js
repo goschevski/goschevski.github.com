@@ -106,7 +106,7 @@ gulp.task('deploy', ['minify'], function () {
 
 gulp.task('watch', ['build'], function () {
     gulp.watch('css/**/*.css', ['css']);
-    gulp.watch('posts/**/*.md', ['generate']);
+    gulp.watch(['posts/**/*.md', 'templates/**/*.html'], ['generate']);
 
      gulp.src('dist')
         .pipe(webserver({
