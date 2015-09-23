@@ -99,7 +99,7 @@ gulp.task('update', function () {
 });
 
 // Deploy to master
-gulp.task('deploy', ['minify'], function () {
+gulp.task('deploy', ['build'], function () {
     return gulp.src('dist/**/*')
         .pipe(deploy({ branch: 'master' }));
 });
