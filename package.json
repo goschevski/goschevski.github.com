@@ -5,26 +5,40 @@
     "type": "git",
     "url": "git@github.com:goschevski/fronty.git"
   },
+  "scripts": {
+    "build": "./node_modules/.bin/metalsmith"
+  },
   "author": "Aleksandar Goševski <gosevskibg@gmail.com>",
   "dependencies": {
-    "gulp-gh-pages": "^0.5.0",
     "cssnext": "^1.8.3",
     "gulp": "^3.8.11",
     "gulp-david": "^0.2.3",
+    "gulp-gh-pages": "^0.5.0",
     "gulp-imagemin": "^2.2.0",
+    "gulp-metalsmith": "0.0.3",
     "gulp-minify-css": "^1.0.0",
+    "gulp-minify-html": "^1.0.4",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.0",
     "gulp-postcss": "^6.0.0",
+    "gulp-smoosher": "0.0.8",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-webserver": "^0.9.1",
+    "metalsmith": "^2.0.1",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-templates": "^0.7.0",
+    "nunjucks": "^2.1.0",
     "postcss-assets": "^3.0.0",
     "postcss-bem-linter": "^1.0.0",
-    "postcss-extend": "^0.4.3",
+    "postcss-extend": "^1.0.0",
     "postcss-import": "^7.0.0",
     "postcss-mixins": "^1.0.0",
     "postcss-nested": "^1.0.0",
     "postcss-normalize": "^0.1.1",
     "postcss-pxtorem": "^3.0.0",
-    "postcss-reporter": "^1.0.0"
+    "postcss-reporter": "^1.0.0",
+    "swig": "^1.4.2"
   }
 }

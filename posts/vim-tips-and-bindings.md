@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.html
 title: "Vim Tips and Bindings"
 date: 2015-01-13
 ---

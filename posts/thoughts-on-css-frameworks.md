@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.html
 title: "Thoughts on CSS Frameworks"
 date: 2014-09-23
 ---

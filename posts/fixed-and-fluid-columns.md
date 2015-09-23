@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.html
 title: "Fixed and Fluid Columns"
 date: 2014-05-02
 ---

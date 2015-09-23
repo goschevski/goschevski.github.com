@@ -1,0 +1,9 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1>My blog</h1>
+
+    {% for post in posts %}
+        <h2><a href="{{baseUrl}}/{{ post.path }}">{{ post.title }}</a></h2>
+    {% endfor %}
+{% endblock %}

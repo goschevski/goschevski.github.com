@@ -1,16 +1,21 @@
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ page.date | date: "%B %Y" }}</time>
+{% extends 'layouts/base.html' %}
 
-    <div class="post-content" itemprop="articleBody">
-        {{ content }}
-    </div>
+{% block content %}
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 itemprop="name headline">{{ title }}</h1>
+        <time datetime="{{ date }}" itemprop="datePublished">{{ date }}</time>
 
-    <footer class="post-footer">
-        <a href="/" class="back">All posts</a>
+        <div itemprop="articleBody">
+            {{ contents | safe }}
+        </div>
 
-        <a href="http://www.twitter.com/share?text={{page.title}}&via=goschevski&url={{page.url | prepend: site.url}}" target="_blank" class="tweet">
-            Share on Twitter
-        </a>
-    </footer>
-</article>
+        <footer>
+            <a href="{{ baseUrl }}">All posts</a>
+
+            <a href="http://www.twitter.com/share?text={{ title }}&via=goschevski&url={{ path }}" target="_blank">
+                Share on Twitter
+            </a>
+        </footer>
+    </article>
+{% endblock %}
+

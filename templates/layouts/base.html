@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ title }}</title>
+        <meta name="description" content="{% if description %}{{ description }}{% elif contents %}{{ contents | truncate(100) | safe }}{% endif %}">
+
+        <!-- smoosh -->
+        <link rel="stylesheet" href="style.css">
+        <!-- endsmoosh -->
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
