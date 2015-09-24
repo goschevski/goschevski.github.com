@@ -16,6 +16,7 @@
 
  /* 4. Components */
 @import "components/container";
+@import "components/main";
 @import "components/line";
 @import "components/header";
 @import "components/footer";
