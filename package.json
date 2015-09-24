@@ -10,6 +10,7 @@
   },
   "author": "Aleksandar Goševski <gosevskibg@gmail.com>",
   "dependencies": {
+    "browser-sync": "^2.9.6",
     "cssnext": "^1.8.3",
     "del": "^2.0.2",
     "gulp": "^3.8.11",
@@ -25,8 +26,8 @@
     "gulp-postcss": "^6.0.0",
     "gulp-smoosher": "0.0.8",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-webserver": "^0.9.1",
     "metalsmith": "^2.0.1",
+    "metalsmith-code-highlight": "0.0.3",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-date-formatter": "^1.0.2",
     "metalsmith-excerpts": "^1.0.0",

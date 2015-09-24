@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var david = require('gulp-david');
 var del = require('del');
 var plumber = require('gulp-plumber');
-var webserver = require('gulp-webserver');
+var browserSync = require('browser-sync');
 var notify = require('gulp-notify');
 
 // build and deploy
@@ -18,6 +18,7 @@ var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var collections = require('metalsmith-collections');
+var codeHighlight = require('metalsmith-code-highlight');
 var dateFormatter = require('metalsmith-date-formatter');
 var excerpts = require('metalsmith-excerpts');
 
@@ -44,7 +45,10 @@ var collectionsSettings = {
 };
 
 // configure nunjucks
-nunjucks.configure('./templates', { watch: false });
+var env = nunjucks.configure('./templates', { watch: false });
+env.addFilter('stripTags', function (data) {
+    return data.replace(/(<([^>]+)>)/ig, '');
+});
 
 gulp.task('generate', ['css'], function () {
     return gulp.src(['content/**/*'])
@@ -54,6 +58,7 @@ gulp.task('generate', ['css'], function () {
             use: [
                 collections(collectionsSettings),
                 markdown(),
+                codeHighlight(),
 				excerpts(),
                 dateFormatter({ dates: [{ key: 'formattedDate', format: 'MMMM YYYY' }] }),
                 permalinks({ pattern: ':title', relative: false }),
@@ -117,16 +122,16 @@ gulp.task('deploy', ['build'], function () {
         .pipe(deploy({ branch: 'master' }));
 });
 
-gulp.task('watch', ['build'], function () {
-    gulp.watch('css/**/*.css', ['css']);
-    gulp.watch(['posts/**/*.md', 'templates/**/*.html'], ['generate']);
+gulp.task('all-watch', ['build'], browserSync.reload);
 
-     gulp.src('dist')
-        .pipe(webserver({
-            livereload: true,
-            directoryListing: false,
-            open: true
-        }));
+gulp.task('watch', ['build'], function () {
+    browserSync({
+        server: {
+            baseDir: './dist'
+        }
+    });
+
+    gulp.watch(['css/**/*', 'content/**/*', 'templates/**/*'], ['all-watch']);
 });
 
-gulp.task('default', ['generate']);
+gulp.task('default', ['build']);

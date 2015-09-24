@@ -7,11 +7,20 @@
 @import "base/variables";
 @import "base/mixins";
 
-/* 2. Base styles */
+/* 2. Vendor */
+@import "vendor/highlight";
+
+/* 3. Base styles */
 @import "base/elements";
+@import "base/typography";
 
- /* 3. Components */
+ /* 4. Components */
 @import "components/container";
+@import "components/line";
+@import "components/header";
+@import "components/footer";
+@import "components/post";
+@import "components/note";
 
- /* 4. Helpers */
+ /* 5. Helpers */
 @import "base/utilities";

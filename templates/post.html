@@ -1,17 +1,13 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-    <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 itemprop="name headline">{{ title }}</h1>
-        <time datetime="{{ date }}" itemprop="datePublished">{{ formattedDate }}</time>
+    <article class="Post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="Post-title" itemprop="name headline">{{ title }}</h1>
+        <time class="Post-time" datetime="{{ date }}" itemprop="datePublished">{{ formattedDate }}</time>
 
-        <div itemprop="articleBody">
+        <div class="Post-content" itemprop="articleBody">
             {{ contents | safe }}
         </div>
-
-        <footer>
-            <a href="/">All posts</a>
-        </footer>
     </article>
 {% endblock %}
 

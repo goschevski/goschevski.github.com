@@ -1,0 +1,16 @@
+/** @define Post */
+
+.Post {
+    margin-bottom: 2em;
+}
+
+.Post-title {
+    margin: 0;
+    font-weight: normal;
+}
+
+.Post-time {
+    font-size: 14px;
+    font-style: italic;
+    color: #999;
+}

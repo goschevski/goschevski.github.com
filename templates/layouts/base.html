@@ -5,24 +5,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ title }}</title>
-        <meta name="description" content="{% if description %}{{ description }}{% elif excerpt %}{{ excerpt }}{% endif %}">
+        <meta name="description" content="{% if description %}{{ description }}{% elif excerpt %}{{ excerpt | stripTags }}{% endif %}">
 
         <!-- smoosh -->
         <link rel="stylesheet" href="style.css">
         <!-- endsmoosh -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" media="none" onload="if(media!='all')media='all'">
     </head>
     <body>
-        {% block header %}
-            {% include 'partials/header.html' %}
-        {% endblock %}
-
         <div class="Container">
-            {% block content %}
+            {% block header %}
+                {% include 'partials/header.html' %}
+            {% endblock %}
+
+            <div class="Line"></div>
+
+            <main>
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            <div class="Line"></div>
+
+            {% block footer %}
+                {% include 'partials/footer.html' %}
             {% endblock %}
         </div>
-
-        {% block footer %}
-            {% include 'partials/footer.html' %}
-        {% endblock %}
     </body>
 </html>

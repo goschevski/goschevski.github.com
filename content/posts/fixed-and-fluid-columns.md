@@ -11,7 +11,7 @@ A few days ago we had a discussion on this topic in our office and we tried to f
 
 ### Solution
 
-{% highlight html %}
+```html
 <main>
     <aside>
         This is the fixed sidebar.
@@ -21,13 +21,15 @@ A few days ago we had a discussion on this topic in our office and we tried to f
         This is fluid main section.
     </section>
 </main>
-{% endhighlight %}
+```
 
-And the css (scss):
+And the css:
 
-{% highlight sass %}
-main {
-    @extend %clearfix;
+```css
+main:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 aside {
@@ -38,7 +40,7 @@ aside {
 section {
     overflow: hidden;
 }
-{% endhighlight %}
+```
 
 This solution works in IE6+ browsers and it has only one flaw, and that is evident when you need to use overflow in a different way in the fluid section. There is no need for magic numbers or fixed values. Of course this is maybe the best solution only until flexbox is supported in all browsers.
 

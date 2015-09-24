@@ -1,0 +1,10 @@
+.Note {
+    background: #eee;
+    padding: 0.5em;
+    font-style: italic;
+
+    &:before {
+        content: "Note: ";
+        font-weight: bold;
+    }
+}

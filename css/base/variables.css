@@ -1,5 +1,10 @@
 :root {
     /**
+     * Colors
+     */
+    --mainColor: #D5504B;
+
+    /**
      * Z-indexes
      */
     --zLoader: 14;
@@ -13,19 +18,18 @@
     /**
      * Fonts
      */
-    --fontPrimary: Helvetica, Arial, sans-serif;
+    --fontPrimary: 'Open Sans', Helvetica, sans-serif;
 
     /**
      * Grid Settings
      */
     --gridColumnsTotal: 12;
-    --containerWidth: 1220px;
+    --containerWidth: 640px;
 
     /**
      * Typography
      */
     --fontBaseSize: 16px;
-
 }
 
 /**

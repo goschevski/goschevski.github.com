@@ -16,7 +16,7 @@ You can learn from frameworks, since they show, for example, what effective imag
 ### Performance
 These frameworks are big. In fact, they are huge. Bootstrap minified is about 100kb and Foundation is about 115kb. Yes, of course, you don't to have to include the whole framework, but maybe there is no need for the partials either.
 
-People include only the grid module of the framework, and 90% of them are anaware of how that grid works. If they knew, they wouldn't use it, rather they would create their own. Of course, the design you're coding must use a grid, but is that really *always* the case? After all, is it hard to (create a grid)[http://css-tricks.com/dont-overthink-it-grids]?
+People include only the grid module of the framework, and 90% of them are anaware of how that grid works. If they knew, they wouldn't use it, rather they would create their own. Of course, the design you're coding must use a grid, but is that really *always* the case? After all, is it hard to [create a grid](http://css-tricks.com/dont-overthink-it-grids)?
 
 ### When to use them
 There are cases when it's useful to use frameworks with ready-made components, such as when creating wireframes, presentations or admin panels. They're also helpful tools for developers who are not sufficiently familiar with CSS, in that they allow them to create a layout quickly.
