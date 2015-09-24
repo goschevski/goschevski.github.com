@@ -3,6 +3,7 @@ template: post.html
 collection: posts
 title: "Vim Tips and Bindings"
 date: 2015-01-13
+formattedDate: 2015-01-13
 ---
 I've been using Vim as my main editor for more than a year now, and I would like to share some cool tips and bindings that I've collected or created so far.
 

@@ -12,12 +12,13 @@ var smoosher = require('gulp-smoosher');
 var minifyHTML = require('gulp-minify-html');
 
 // metalsmith
+var nunjucks = require('nunjucks');
 var metalsmith = require('gulp-metalsmith');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
-var nunjucks = require('nunjucks');
 var collections = require('metalsmith-collections');
+var dateFormatter = require('metalsmith-date-formatter');
 
 // css
 var postcss = require('gulp-postcss');
@@ -49,7 +50,13 @@ gulp.task('generate', ['css'], function () {
         .pipe(metalsmith({
             root: __dirname,
             frontmatter: true,
-            use: [collections(collectionsSettings), markdown(), permalinks({ pattern: ':title', relative: false }), templates({ engine: 'nunjucks' })]
+            use: [
+                collections(collectionsSettings),
+                markdown(),
+                dateFormatter({ dates: [{ key: 'formattedDate', format: 'MMMM YYYY' }] }),
+                permalinks({ pattern: ':title', relative: false }),
+                templates({ engine: 'nunjucks' })
+            ]
         }))
         .pipe(gulp.dest('dist'));
 });

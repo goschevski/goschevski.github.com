@@ -3,6 +3,7 @@ template: post.html
 collection: posts
 title: "JSHint Git Hook"
 date: 2014-08-01
+formattedDate: 2014-08-01
 ---
 If you want to write valid code, make sure you use a linter.
 It's good practice to have some 'live' or 'on save' linter to tell you immediately what errors you made.

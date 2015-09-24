@@ -3,6 +3,7 @@ template: post.html
 collection: posts
 title: "Better Collection Iteration in Backbone.js"
 date: 2014-02-03
+formattedDate: 2014-02-03
 ---
 This is a trivial problem, but I've seen this in many beginner tutorials, and I don't like it. People are iterating over collection and creating Item views in the same function.
 

@@ -3,6 +3,7 @@ template: post.html
 collection: posts
 title: "Thoughts on CSS Frameworks"
 date: 2014-09-23
+formattedDate: 2014-09-23
 ---
 Many developers use Foundation or Bootstrap unnecessarily, and they don't know what the output of their CSS code is. I will try to explain my viewpoint regarding these kinds of frameworks, what their flaws are, and when might be a good time to use them.
 

@@ -3,18 +3,14 @@
 {% block content %}
     <article itemscope itemtype="http://schema.org/BlogPosting">
         <h1 itemprop="name headline">{{ title }}</h1>
-        <time datetime="{{ date }}" itemprop="datePublished">{{ date }}</time>
+        <time datetime="{{ date }}" itemprop="datePublished">{{ formattedDate }}</time>
 
         <div itemprop="articleBody">
             {{ contents | safe }}
         </div>
 
         <footer>
-            <a href="{{ baseUrl }}">All posts</a>
-
-            <a href="http://www.twitter.com/share?text={{ title }}&via=goschevski&url={{ path }}" target="_blank">
-                Share on Twitter
-            </a>
+            <a href="/">All posts</a>
         </footer>
     </article>
 {% endblock %}
