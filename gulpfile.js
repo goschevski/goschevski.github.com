@@ -19,6 +19,7 @@ var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var collections = require('metalsmith-collections');
 var dateFormatter = require('metalsmith-date-formatter');
+var excerpts = require('metalsmith-excerpts');
 
 // css
 var postcss = require('gulp-postcss');
@@ -53,6 +54,7 @@ gulp.task('generate', ['css'], function () {
             use: [
                 collections(collectionsSettings),
                 markdown(),
+				excerpts(),
                 dateFormatter({ dates: [{ key: 'formattedDate', format: 'MMMM YYYY' }] }),
                 permalinks({ pattern: ':title', relative: false }),
                 templates({ engine: 'nunjucks' })

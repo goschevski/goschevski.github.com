@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ title }}</title>
-        <meta name="description" content="{% if description %}{{ description }}{% elif contents %}{{ contents | truncate(100) | safe }}{% endif %}">
+        <meta name="description" content="{% if description %}{{ description }}{% elif excerpt %}{{ excerpt }}{% endif %}">
 
         <!-- smoosh -->
         <link rel="stylesheet" href="style.css">
