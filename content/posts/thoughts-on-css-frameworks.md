@@ -8,7 +8,7 @@ formattedDate: 2014-09-23
 Many developers use Foundation or Bootstrap unnecessarily, and they don't know what the output of their CSS code is. I will try to explain my viewpoint regarding these kinds of frameworks, what their flaws are, and when might be a good time to use them.
 
 ### Learning
-Newbies and juniors are coming down with something similar to jQuery syndrome, whereby they first learn how to use Bootstrap and Foundation, and only later familiarize themselves with the core concepts of CSS. As my friend (Vladimir)[https://github.com/vladimirsiljkovic] recently put it:
+Newbies and juniors are coming down with something similar to jQuery syndrome, whereby they first learn how to use Bootstrap and Foundation, and only later familiarize themselves with the core concepts of CSS. As my friend [Vladimir](https://github.com/vladimirsiljkovic) recently put it:
 > "It's like giving a fire hose to a kid and turning on the water".
 
 You can learn from frameworks, since they show, for example, what effective image replacement techniques have been implemented, or how a grid has been created. You can discover other smart concepts and learn how to use them.
