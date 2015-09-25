@@ -14,7 +14,7 @@ var CollectionView = Backbone.View.extend({
 
     render: function () {
         this.collection.each(function (item) {
-            this.$el.append( new ItemView({ model: item}).render().el );
+            this.$el.append(new ItemView({ model: item}).render().el);
         }, this);
     }
 });
@@ -33,12 +33,12 @@ var CollectionView = Backbone.View.extend({
 
     render: function () {
         this.collection.each(function (item) {
-            this.$el.append( new ItemView({ model: item}).render().el );
+            this.$el.append(new ItemView({ model: item}).render().el);
         }, this);
     },
 
     addOne: function (item) {
-        this.$el.append(  new ItemView({ model: item }).render().el );
+        this.$el.append(new ItemView({ model: item }).render().el);
     }
 });
 ```
@@ -55,11 +55,11 @@ var CollectionView = Backbone.View.extend({
     },
 
     render: function () {
-        this.collection.each( this.addOne, this);
+        this.collection.each(this.addOne, this);
     },
 
     addOne: function (item) {
-        this.$el.append( new ItemView({ model: item }).render().el );
+        this.$el.append(new ItemView({ model: item }).render().el);
     }
 });
 ```

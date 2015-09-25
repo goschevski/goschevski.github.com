@@ -5,8 +5,12 @@ title: "JSHint Git Hook"
 date: 2014-08-01
 formattedDate: 2014-08-01
 ---
+### Update
+There is a module, called [pre-commit](https://www.npmjs.com/package/pre-commit), which is working really good, and it's easy to setup.
+
+### Old way
 If you want to write valid code, make sure you use a linter.
-It's good practice to have some 'live' or 'on save' linter to tell you immediately what errors you made.
+It's good practice to have some 'on save' linter to tell you immediately what errors you made.
 But, beside that, it would be nice to have some tool to validate files when you try to commit them.
 Git have so called [hooks](http://git-scm.com/docs/githooks.htm) (actions), which you can trigger at certain points (before you commit, after you commit, before push, etc).
 
