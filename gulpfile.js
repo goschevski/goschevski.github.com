@@ -96,10 +96,15 @@ gulp.task('css', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['generate'], function () {
+gulp.task('build', ['generate', 'moveStatic'], function () {
     return gulp.src('dist/**/*.html')
         .pipe(smoosher())
         .pipe(minifyHTML())
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('moveStatic', function () {
+    return gulp.src(['CNAME', 'favicon.ico', 'favicon.png', 'readme.md', 'robots.txt'])
         .pipe(gulp.dest('dist'));
 });
 
