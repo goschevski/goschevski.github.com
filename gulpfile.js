@@ -97,7 +97,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('build', ['generate'], function () {
-    return gulp.src('dist/**/*')
+    return gulp.src('dist/**/*.html')
         .pipe(smoosher())
         .pipe(minifyHTML())
         .pipe(gulp.dest('dist'));
