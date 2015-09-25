@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
-            <title></title>
+            <title>Aleksandar Goševski</title>
             <description>Thoughts about web development, design, tools, etc.</description>
             <link>http://www.goschevski.com</link>
 
-            <atom:link href="http://www.goschevski.com/feed.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="http://www.goschevski.com/rss.xml" rel="self" type="application/rss+xml" />
 
             
                 <item>
