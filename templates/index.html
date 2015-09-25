@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1 class="u-screenReaders">Articles</h1>
+
+    {% for post in posts %}
+        <article class="Post" itemscope itemtype="http://schema.org/BlogPosting">
+                <h2 class="Post-title" itemprop="name headline"><a href="{% if post.external %}{{ post.external }}{% else %}/{{ post.path }}{% endif %}">{{ post.title }}</a></h2>
+            <time class="Post-time" datetime="{{ post.date }}" itemprop="datePublished">{{ post.formattedDate }}</time>
+        </article>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+---
+template: rss.xml
+permalink: false
+baseUrl: http://www.goschevski.com
+name: Aleksandar Goševski
+title: Aleksandar Goševski
+description: Thoughts about web development, design, tools, etc.
+image: http://www.goschevski.com/favicon.png
+---

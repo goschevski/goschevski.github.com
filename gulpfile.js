@@ -1,71 +1,137 @@
+// project
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var base64 = require('gulp-base64-inline');
-var minifyCSS = require('gulp-minify-css');
-var minifyHTML = require('gulp-minify-html');
-var smoosher = require('gulp-smoosher');
-var sitemap = require('gulp-sitemap');
-var deploy = require('gulp-gh-pages');
-var autoprefixer = require('gulp-autoprefixer');
+var david = require('gulp-david');
+var del = require('del');
+var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
-var cp = require('child_process');
+var notify = require('gulp-notify');
 
-// compile sass
-gulp.task('sass', function () {
-    return gulp.src(['_sass/style.scss', '_sass/font.scss'])
-        .pipe(sass())
-        .pipe(base64('../img'))
-        .pipe(autoprefixer('last 2 version', '> 1%'))
-        .pipe(minifyCSS())
-        .pipe(gulp.dest('css'));
+// build and deploy
+var deploy = require('gulp-gh-pages');
+var smoosher = require('gulp-smoosher');
+var minifyHTML = require('gulp-minify-html');
+
+// metalsmith
+var nunjucks = require('nunjucks');
+var metalsmith = require('gulp-metalsmith');
+var markdown = require('metalsmith-markdown');
+var permalinks = require('metalsmith-permalinks');
+var templates = require('metalsmith-templates');
+var collections = require('metalsmith-collections');
+var codeHighlight = require('metalsmith-code-highlight');
+var dateFormatter = require('metalsmith-date-formatter');
+var excerpts = require('metalsmith-excerpts');
+
+// css
+var postcss = require('gulp-postcss');
+var cssnext = require('cssnext');
+var normalize = require('postcss-normalize');
+var assets  = require('postcss-assets');
+var nested = require('postcss-nested');
+var mixins = require('postcss-mixins');
+var extend = require('postcss-extend');
+var postcssImport = require('postcss-import');
+var minify = require('gulp-minify-css');
+var bemLinter = require('postcss-bem-linter');
+var reporter = require('postcss-reporter');
+var pxtorem = require('postcss-pxtorem');
+
+// configure collections
+var collectionsSettings = {
+    posts: {
+        sortBy: 'date',
+        reverse: true
+    }
+};
+
+// configure nunjucks
+var env = nunjucks.configure('./templates', { watch: false });
+env.addFilter('stripTags', function (data) {
+    return data.replace(/(<([^>]+)>)/ig, '');
 });
 
-// sitemap task
-gulp.task('sitemap', ['jekyll-build'], function () {
-    return gulp.src('_site/**/*.html')
-        .pipe(sitemap({ siteUrl: 'http://www.goschevski.com' }))
-        .pipe(gulp.dest('_site/'));
+gulp.task('generate', ['css'], function () {
+    return gulp.src(['content/**/*'])
+        .pipe(metalsmith({
+            root: __dirname,
+            frontmatter: true,
+            use: [
+                collections(collectionsSettings),
+                markdown(),
+                codeHighlight(),
+				excerpts(),
+                dateFormatter({ dates: [{ key: 'formattedDate', format: 'MMMM YYYY' }] }),
+                permalinks({ pattern: ':title', relative: false }),
+                templates({ engine: 'nunjucks' })
+            ]
+        }))
+        .pipe(gulp.dest('dist'));
 });
 
-// jekyll build
-gulp.task('jekyll-build', ['sass'], function (done) {
-    browserSync.notify('<span style="color: grey">Running:</span> $ jekyll build');
-    return cp.spawn('jekyll', ['build'], { stdio: 'ignore' }).on('close', done);
+gulp.task('clean', function () {
+    return del(['dist']);
 });
 
-// jekyll rebuild & browser sync reload
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browserSync.reload();
+gulp.task('css', function () {
+    var processors = [
+        normalize,
+        postcssImport({
+            plugins: [
+                mixins(),
+                nested(),
+                bemLinter(),
+                reporter({ throwError: true })
+            ]
+        }),
+        cssnext({ browsers: 'last 2 version, > 1%, ie > 8', url: false }),
+        assets({ basePath: 'client/', relativeTo: 'client/css', loadPaths: ['img'], cachebuster: true }),
+        extend(),
+        pxtorem()
+    ];
+
+    return gulp.src('css/style.css')
+        .pipe(plumber({ errorHandler: notify.onError('CSS error: <%= error.message %>') }))
+        .pipe(postcss(processors))
+        .pipe(minify())
+        .pipe(gulp.dest('dist'));
 });
 
-// Wait for jekyll-build, then launch the Server
-gulp.task('browser-sync', ['jekyll-build'], function () {
-    browserSync({
-        server: {
-            baseDir: '_site'
-        }
-    });
-});
-
-// minify html and inline css
-gulp.task('minify', ['sitemap'], function () {
-    return gulp.src('_site/**/*.html')
+gulp.task('build', ['generate'], function () {
+    return gulp.src('dist/**/*.html')
         .pipe(smoosher())
         .pipe(minifyHTML())
-        .pipe(gulp.dest('_site/'));
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('david', function () {
+    return gulp.src('./package.json')
+        .pipe(david({ error404: true, errorDepType: true }))
+        .pipe(david.reporter);
+});
+
+gulp.task('update', function () {
+    return gulp.src('./package.json')
+        .pipe(david({ update: true }))
+        .pipe(david.reporter)
+        .pipe(gulp.dest('./'));
 });
 
 // Deploy to master
 gulp.task('deploy', ['build'], function () {
-    return gulp.src('./_site/**/*')
+    return gulp.src('dist/**/*')
         .pipe(deploy({ branch: 'master' }));
 });
 
-// Watch scss files for changes & recompile, watch html/md files, run jekyll & reload BrowserSync
-gulp.task('watch', function () {
-    gulp.watch(['_sass/**/*.scss', 'index.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+gulp.task('all-watch', ['build'], browserSync.reload);
+
+gulp.task('watch', ['build'], function () {
+    browserSync({
+        server: {
+            baseDir: './dist'
+        }
+    });
+
+    gulp.watch(['css/**/*', 'content/**/*', 'templates/**/*'], ['all-watch']);
 });
 
-// Compile the sass, compile the jekyll site, launch BrowserSync & watch files.
-gulp.task('default', ['browser-sync', 'watch']);
-gulp.task('build', ['minify']);
+gulp.task('default', ['build']);

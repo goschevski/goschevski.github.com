@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <article class="Post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="Post-title" itemprop="name headline">{{ title }}</h1>
+        <time class="Post-time" datetime="{{ date }}" itemprop="datePublished">{{ formattedDate }}</time>
+
+        <div class="Post-content" itemprop="articleBody">
+            {{ contents | safe }}
+        </div>
+    </article>
+{% endblock %}
+

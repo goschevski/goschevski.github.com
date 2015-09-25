@@ -1,0 +1,40 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fontPrimary);
+    line-height: 1.5;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition: all .4s ease;
+    color: var(--mainColor);
+
+    &:hover {
+        color: color(var(--mainColor) lightness(15%));
+    }
+}
+
+ul, ol, li, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+pre {
+    background: #26292C;
+    color: #ccc;
+    padding: 1em;
+    margin: 1em 0;
+}

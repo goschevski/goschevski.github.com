@@ -1,0 +1,15 @@
+/** @define Header */
+
+.Header {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.Header-title {
+    margin: 0;
+}
+
+.Header-description {
+    color: #000;
+    margin-top: 5px;
+}
