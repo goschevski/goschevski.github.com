@@ -1,5 +1,5 @@
 ---
-layout: post.html
+layout: pages/post.html
 collection: posts
 title: "Spriting with Sass and Compass"
 external: http://thesassway.com/intermediate/spriting-with-sass-and-compass

@@ -1,5 +1,5 @@
 ---
-layout: post.html
+layout: pages/post.html
 collection: posts
 title: "JSHint Git Hook"
 date: 2014-08-01

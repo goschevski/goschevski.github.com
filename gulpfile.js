@@ -62,7 +62,7 @@ gulp.task('generate', ['css'], function () {
                 tags({
                     handle: 'tags',
                     path: 'tags/:tag.html',
-                    layout: 'tag.html',
+                    layout: 'pages/tag.html',
                     sortBy: 'date',
                     reverse: true
                 }),

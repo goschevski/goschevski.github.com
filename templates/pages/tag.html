@@ -1,0 +1,9 @@
+{% extends 'layouts/base.html' %}
+
+{% import "macros.html" as macros %}
+
+{% block content %}
+    <h1>Tag: {{ tag }}</h1>
+
+    {{ macros.postsList(pagination.files) }}
+{% endblock %}

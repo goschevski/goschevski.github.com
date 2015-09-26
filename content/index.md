@@ -1,3 +1,3 @@
 ---
-layout: index.html
+layout: pages/index.html
 ---
