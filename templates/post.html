@@ -5,6 +5,12 @@
         <h1 class="Post-title" itemprop="name headline">{{ title }}</h1>
         <time class="Post-time" datetime="{{ date }}" itemprop="datePublished">{{ formattedDate }}</time>
 
+        <ul class="Post-tags">
+            {% for tag in tags %}
+                <li class="Post-tag"><a href="/tags/{{ tag }}">{{ tag }}</a></li>
+            {% endfor %}
+        </ul>
+
         <div class="Post-content" itemprop="articleBody">
             {{ contents | safe }}
         </div>

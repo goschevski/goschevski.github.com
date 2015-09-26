@@ -16,7 +16,8 @@ var nunjucks = require('nunjucks');
 var metalsmith = require('gulp-metalsmith');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
-var templates = require('metalsmith-templates');
+var tags = require('metalsmith-tags');
+var layouts = require('metalsmith-layouts');
 var collections = require('metalsmith-collections');
 var codeHighlight = require('metalsmith-code-highlight');
 var dateFormatter = require('metalsmith-date-formatter');
@@ -58,11 +59,18 @@ gulp.task('generate', ['css'], function () {
             use: [
                 collections(collectionsSettings),
                 markdown(),
+                tags({
+                    handle: 'tags',
+                    path: 'tags/:tag.html',
+                    layout: 'tag.html',
+                    sortBy: 'date',
+                    reverse: true
+                }),
                 codeHighlight(),
 				excerpts(),
                 dateFormatter({ dates: [{ key: 'formattedDate', format: 'MMMM YYYY' }] }),
                 permalinks({ pattern: ':title', relative: false }),
-                templates({ engine: 'nunjucks' })
+                layouts({ directory: 'templates', engine: 'nunjucks' })
             ]
         }))
         .pipe(gulp.dest('dist'));
@@ -72,7 +80,7 @@ gulp.task('clean', function () {
     return del(['dist']);
 });
 
-gulp.task('css', function () {
+gulp.task('css', ['clean'], function () {
     var processors = [
         normalize,
         postcssImport({
@@ -96,14 +104,14 @@ gulp.task('css', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['generate', 'moveStatic'], function () {
+gulp.task('build', ['moveStatic'], function () {
     return gulp.src('dist/**/*.html')
         .pipe(smoosher())
         .pipe(minifyHTML())
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('moveStatic', function () {
+gulp.task('moveStatic', ['generate'], function () {
     return gulp.src(['CNAME', 'favicon.ico', 'favicon.png', 'readme.md', 'robots.txt'])
         .pipe(gulp.dest('dist'));
 });

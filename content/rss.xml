@@ -1,5 +1,5 @@
 ---
-template: rss.xml
+layout: rss.xml
 permalink: false
 baseUrl: http://www.goschevski.com
 name: "Aleksandar Goševski"

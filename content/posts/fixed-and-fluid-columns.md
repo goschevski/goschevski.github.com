@@ -1,9 +1,10 @@
 ---
-template: post.html
+layout: post.html
 collection: posts
 title: "Fixed and Fluid Columns"
 date: 2014-05-02
 formattedDate: 2014-05-02
+tags: css
 ---
 There are few ways to make one column fixed and one column fluid, but all of these solutions are kind of hacky and have some flaws (magic numbers, hardcoded values, etc.).
 

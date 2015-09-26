@@ -1,9 +1,10 @@
 ---
-template: post.html
+layout: post.html
 collection: posts
 title: "JSHint Git Hook"
 date: 2014-08-01
 formattedDate: 2014-08-01
+tags: javascript, tools
 ---
 ### Update
 There is a module, called [pre-commit](https://www.npmjs.com/package/pre-commit), which is working really good, and it's easy to setup.
