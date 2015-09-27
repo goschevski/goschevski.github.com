@@ -13,13 +13,12 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" media="none" onload="if(media!='all')media='all'">
     </head>
     <body>
+
+        {% block header %}
+            {% include 'partials/header.html' %}
+        {% endblock %}
+
         <div class="Container">
-            {% block header %}
-                {% include 'partials/header.html' %}
-            {% endblock %}
-
-            <div class="Line"></div>
-
             <main class="Main">
                 {% block content %}
                 {% endblock %}

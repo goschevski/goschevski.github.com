@@ -7,4 +7,8 @@
 
 .Main {
     animation: fadein 0.2s;
+
+    @media (--medium) {
+        padding-top: 200px;
+    }
 }

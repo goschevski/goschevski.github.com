@@ -1,15 +1,23 @@
 h1 {
-    font-size: 32px;
+    font-size: 22px;
     line-height: 48px;
     margin-top: 48px;
     margin-bottom: 24px;
+
+    @media (--medium) {
+        font-size: 32px;
+    }
 }
 
 h2 {
-    font-size: 25px;
-    line-height: 48px;
+    font-size: 18px;
     margin-top: 48px;
     margin-bottom: 24px;
+
+    @media (--medium) {
+        font-size: 25px;
+        line-height: 48px;
+    }
 }
 
 h3 {
