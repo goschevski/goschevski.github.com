@@ -9,6 +9,14 @@
 
             
                 <item>
+                    <title>Simple grid mixins</title>
+                    <description></description>
+                    <pubDate>Sat Nov 07 2015 01:00:00 GMT+0100 (CET)</pubDate>
+                    <link>http://www.goschevski.com/simple-grid-mixins</link>
+                    <guid isPermaLink="true">http://www.goschevski.com/simple-grid-mixins</guid>
+                </item>
+            
+                <item>
                     <title>Vim Tips and Bindings</title>
                     <description>&lt;p&gt;I&#39;ve been using Vim as my main editor for more than a year now, and I would like to share some cool tips and bindings that I&#39;ve collected or created so far.&lt;/p&gt;
 &lt;h3 id=&quot;space-as-leader&quot;&gt;Space as Leader&lt;/h3&gt;
