@@ -25,7 +25,7 @@ var excerpts = require('metalsmith-excerpts');
 
 // css
 var postcss = require('gulp-postcss');
-var cssnext = require('cssnext');
+var cssnext = require('postcss-cssnext');
 var normalize = require('postcss-normalize');
 var assets  = require('postcss-assets');
 var nested = require('postcss-nested');
