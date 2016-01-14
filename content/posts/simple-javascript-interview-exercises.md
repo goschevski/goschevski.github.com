@@ -1,7 +1,7 @@
 ---
 layout: pages/post.html
 collection: posts
-title: "Simple javascript interview exercises"
+title: "Simple JavaScript Interview Exercises"
 date: 2016-01-14
 formattedDate: 2015-01-14
 tags: javascript, interview

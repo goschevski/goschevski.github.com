@@ -1,7 +1,7 @@
 ---
 layout: pages/post.html
 collection: posts
-title: "Simple grid mixins"
+title: "Simple Grid Mixins"
 external: http://thesassway.com/intermediate/simple-grid-mixins
 date: 2015-11-07
 formattedDate: 2015-11-07
