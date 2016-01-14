@@ -9,6 +9,95 @@
 
             
                 <item>
+                    <title>Simple javascript interview exercises</title>
+                    <description>&lt;p&gt;When you are interviewing someone you can learn more about them by reviewing how they did some exercises then just talking with them about specific technology. Anyone can learn theory from the blog posts, but many people never understood it. So to be sure that candidate really knows about topic (s)he is talking about, it&#39;s a good thing to test their knowledge with exercises. Exercises shouldn&#39;t take to long and they can immidiatelly tell you proficiency level of candidate.&lt;/p&gt;
+&lt;h3 id=&quot;context-call-apply-&quot;&gt;Context (call, apply)&lt;/h3&gt;
+&lt;p&gt;This is how we want to use &lt;code&gt;someFn&lt;/code&gt;. Candidate should define it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; result = someFn({ someProperty: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }, &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;This pointing to&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+});
+
+&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Result is&#39;&lt;/span&gt;, result);
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// expected output&lt;/span&gt;
+This pointing to { someProperty: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }
+Result is &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; someFn = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;obj, cb&lt;/span&gt;) &lt;/span&gt;{
+    cb.call(obj);
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;additional&quot;&gt;Additional&lt;/h4&gt;
+&lt;p&gt;You can modify function to check if candidate knows how to use &lt;code class=&quot;lang-tcl&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;apply&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; result = someFn({ someProperty: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }, &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;param1, param2&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;This pointing to&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Param 1 is&#39;&lt;/span&gt;, param1);
+    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Param 2 is&#39;&lt;/span&gt;, param2);
+}, [&lt;span class=&quot;hljs-string&quot;&gt;&#39;cool&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt;]);
+
+&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Result is&#39;&lt;/span&gt;, result);
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// expected output&lt;/span&gt;
+This pointing to { someProperty: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }
+Param &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt; is &lt;span class=&quot;hljs-string&quot;&gt;&quot;cool&quot;&lt;/span&gt;
+Param &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt; is &lt;span class=&quot;hljs-string&quot;&gt;&quot;interview&quot;&lt;/span&gt;
+Result is &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; someFn = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;obj, cb, params&lt;/span&gt;) &lt;/span&gt;{
+    cb.apply(obj, params);
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;prototype-and-iteration&quot;&gt;Prototype and Iteration&lt;/h3&gt;
+&lt;p&gt;Define native method called &lt;code class=&quot;lang-actionscript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;each&lt;/span&gt;&lt;/code&gt; for iterating over the array with an option to pass the context as a second argument.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;];
+arr.each(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;arrayItem, counter&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;index&#39;&lt;/span&gt;, counter);
+    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;item&#39;&lt;/span&gt;, arrayItem);
+
+    arr[counter] = arrayItem + &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+}, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;Array&lt;/span&gt;.prototype.each = &lt;span class=&quot;hljs-built_in&quot;&gt;Array&lt;/span&gt;.prototype.each || &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;cb, context&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.length; i++) {
+        cb.call(context || &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;[i], i);
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;scope&quot;&gt;Scope&lt;/h3&gt;
+&lt;p&gt;Define &lt;code&gt;someFn&lt;/code&gt; which can work like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; counter = someFn(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;);
+&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;First call&#39;&lt;/span&gt;, counter(&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;));
+&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Second call&#39;&lt;/span&gt;, counter(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;));
+&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Third call&#39;&lt;/span&gt;, counter(&lt;span class=&quot;hljs-number&quot;&gt;5&lt;/span&gt;));
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// expected output&lt;/span&gt;
+First call &lt;span class=&quot;hljs-number&quot;&gt;4&lt;/span&gt;
+Second call &lt;span class=&quot;hljs-number&quot;&gt;5&lt;/span&gt;
+Third call &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; someFn = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;start&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; private = start;
+
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;increment&lt;/span&gt;) &lt;/span&gt;{
+        private += increment;
+
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; private;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+                    <pubDate>Thu Jan 14 2016 01:00:00 GMT+0100 (CET)</pubDate>
+                    <link>http://www.goschevski.com/simple-javascript-interview-exercises</link>
+                    <guid isPermaLink="true">http://www.goschevski.com/simple-javascript-interview-exercises</guid>
+                </item>
+            
+                <item>
                     <title>Simple grid mixins</title>
                     <description></description>
                     <pubDate>Sat Nov 07 2015 01:00:00 GMT+0100 (CET)</pubDate>
@@ -128,11 +217,11 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
 &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;main&lt;/span&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And the css:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;&lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;main&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt;after {
-    content: &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;
+&lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-pseudo&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;hljs-rules&quot;&gt;{
+    &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;content&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;
     &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;display&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; table&lt;/span&gt;&lt;/span&gt;;
     &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;clear&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; both&lt;/span&gt;&lt;/span&gt;;
-}
+}&lt;/span&gt;
 
 &lt;span class=&quot;hljs-tag&quot;&gt;aside&lt;/span&gt; &lt;span class=&quot;hljs-rules&quot;&gt;{
     &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;float&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; left&lt;/span&gt;&lt;/span&gt;;
