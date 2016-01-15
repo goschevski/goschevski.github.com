@@ -6,7 +6,7 @@ date: 2016-01-14
 formattedDate: 2015-01-14
 tags: javascript, interview
 ---
-When you are interviewing someone you can learn more about them by reviewing how they did some exercises then just talking with them about specific technology. Anyone can learn theory from the blog posts, but many people never understood it. So to be sure that candidate really knows about topic (s)he is talking about, it's a good thing to test their knowledge with exercises. Exercises shouldn't take to long and they can immidiatelly tell you proficiency level of candidate.
+When you are interviewing someone you can learn more about them by reviewing how they did some exercises then just talking with them about specific technology. Anyone can learn theory from the blog posts, but many people never understood it. So to be sure that candidate really knows about topic (s)he is talking about, it's a good thing to test their knowledge with exercises. Exercises shouldn't take too long and they can immidiatelly show you proficiency level of candidate.
 
 ### Context (call, apply)
 This is how we want to use `someFn`. Candidate should define it.
