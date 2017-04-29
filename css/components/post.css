@@ -9,6 +9,14 @@
     font-weight: normal;
 }
 
+.Post-titleUrl {
+    color: color(var(--mainColor) lightness(15%));
+
+    &:hover {
+        color: var(--mainColor);
+    }
+}
+
 .Post-time {
     display: inline-block;
     font-size: 14px;

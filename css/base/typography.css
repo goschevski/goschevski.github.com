@@ -39,6 +39,10 @@ p, ul, ol, pre, table, blockquote {
     margin-bottom: 24px;
 }
 
+pre {
+    overflow: scroll;
+}
+
 b, strong, em, small, code {
     line-height: 1;
 }

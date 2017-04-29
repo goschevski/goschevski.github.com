@@ -1,40 +1,19 @@
 :root {
-    /**
-     * Colors
-     */
-    --mainColor: #D5504B;
+    /* Colors */
+    --mainColor: #999;
 
-    /**
-     * Z-indexes
-     */
-    --zLoader: 14;
-    --zHeader: 13;
-    --zDealerListing: 12;
-    --zSubHeader: 11;
-    --zPopup: 10;
-    --zPopover: 9;
-    --zModalControl: 1;
+    /* Fonts */
+    --fontPrimary: 'Arvo', Helvetica, sans-serif;
 
-    /**
-     * Fonts
-     */
-    --fontPrimary: 'Open Sans', Helvetica, sans-serif;
-
-    /**
-     * Grid Settings
-     */
+    /* Grid Settings */
     --gridColumnsTotal: 12;
     --containerWidth: 640px;
 
-    /**
-     * Typography
-     */
+    /* Typography */
     --fontBaseSize: 16px;
 }
 
-/**
- * Media Queries
- */
+/* Media Queries */
 @custom-media --small (width >= 480px);
 @custom-media --medium (width >= 600px);
 @custom-media --large (width >= 900px);
