@@ -250,48 +250,7 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
             
                 <item>
                     <title>Better Collection Iteration in Backbone.js</title>
-                    <description>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-
-        &lt;title&gt;Aleksandar Goševski | Better Collection Iteration in Backbone.js&lt;/title&gt;
-        &lt;meta name=&quot;description&quot; content=&quot;This is a trivial problem, but I&amp;#39;ve seen this in many beginner tutorials, and I don&amp;#39;t like it. People are iterating over collection and creating Item views in the same function.&quot;&gt;
-
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/style.css&quot;&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:400,600&quot; media=&quot;none&quot; onload=&quot;if(media!=&#39;all&#39;)media=&#39;all&#39;&quot;&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-
-        
-            &lt;header class=&quot;Header&quot; role=&quot;banner&quot; itemscope itemtype=&quot;http://schema.org/WPHeader&quot;&gt;
-    &lt;div class=&quot;Header-content&quot;&gt;
-        &lt;h1 class=&quot;Header-title&quot; itemprop=&quot;headline&quot;&gt;&lt;a href=&quot;https://www.goschevski.com&quot;&gt;Aleksandar Goševski&lt;/a&gt;&lt;/h1&gt;
-        &lt;p class=&quot;Header-description&quot; itemprop=&quot;description&quot;&gt;Front-End Developer based in Belgrade, Serbia.&lt;/p&gt;
-        &lt;div class=&quot;Line&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/header&gt;
-
-        
-
-        &lt;div class=&quot;Container&quot;&gt;
-            &lt;main class=&quot;Main&quot;&gt;
-                
-    &lt;article class=&quot;Post&quot; itemscope itemtype=&quot;http://schema.org/BlogPosting&quot;&gt;
-        &lt;h1 class=&quot;Post-title&quot; itemprop=&quot;name headline&quot;&gt;Better Collection Iteration in Backbone.js&lt;/h1&gt;
-        &lt;time class=&quot;Post-time&quot; datetime=&quot;Mon Feb 03 2014 01:00:00 GMT+0100 (CET)&quot; itemprop=&quot;datePublished&quot;&gt;February 2014&lt;/time&gt;
-
-        &lt;ul class=&quot;Post-tags&quot;&gt;
-            
-                &lt;li class=&quot;Post-tag&quot;&gt;&lt;a href=&quot;/tags/javascript&quot;&gt;javascript&lt;/a&gt;&lt;/li&gt;
-            
-                &lt;li class=&quot;Post-tag&quot;&gt;&lt;a href=&quot;/tags/backbone.js&quot;&gt;backbone.js&lt;/a&gt;&lt;/li&gt;
-            
-        &lt;/ul&gt;
-
-        &lt;div class=&quot;Post-content&quot; itemprop=&quot;articleBody&quot;&gt;
-            &lt;p&gt;This is a trivial problem, but I&#39;ve seen this in many beginner tutorials, and I don&#39;t like it. People are iterating over collection and creating Item views in the same function.&lt;/p&gt;
+                    <description>&lt;p&gt;This is a trivial problem, but I&#39;ve seen this in many beginner tutorials, and I don&#39;t like it. People are iterating over collection and creating Item views in the same function.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; CollectionView = Backbone.View.extend({
     tagName: &lt;span class=&quot;hljs-string&quot;&gt;&#39;ul&#39;&lt;/span&gt;,
     className: &lt;span class=&quot;hljs-string&quot;&gt;&#39;list&#39;&lt;/span&gt;,
@@ -342,35 +301,6 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In this way, we are more flexible and we haven&#39;t duplicated code.&lt;/p&gt;
-
-        &lt;/div&gt;
-    &lt;/article&gt;
-
-            &lt;/main&gt;
-
-            &lt;div class=&quot;Line&quot;&gt;&lt;/div&gt;
-
-            
-                &lt;footer class=&quot;Footer&quot;&gt;
-    &lt;p class=&quot;Footer-copyright&quot;&gt;Copyright &amp;copy; Aleksandar Goševski&lt;/p&gt;
-
-    &lt;nav itemscope itemtype=&quot;http://schema.org/SiteNavigationElement&quot;&gt;
-        &lt;h2 class=&quot;u-screenReaders&quot;&gt;Navigation&lt;/h2&gt;
-        &lt;ul class=&quot;Footer-navigation&quot;&gt;
-            &lt;li class=&quot;Footer-navigationItem&quot;&gt;
-                &lt;a href=&quot;https://github.com/goschevski&quot; itemprop=&quot;url&quot;&gt;Github&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;Footer-navigationItem&quot;&gt;
-                &lt;a href=&quot;/rss.xml&quot; itemprop=&quot;url&quot;&gt;RSS&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-&lt;/footer&gt;
-
-            
-        &lt;/div&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
 </description>
                     <pubDate>Mon Feb 03 2014 01:00:00 GMT+0100 (CET)</pubDate>
                     <link>http://www.goschevski.com/better-collection-iteration-in-backbone-js</link>
