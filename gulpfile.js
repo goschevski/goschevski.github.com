@@ -1,6 +1,5 @@
 // project
 var gulp = require('gulp');
-var david = require('gulp-david');
 var del = require('del');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
@@ -8,7 +7,6 @@ var notify = require('gulp-notify');
 
 // build and deploy
 var deploy = require('gulp-gh-pages');
-var smoosher = require('gulp-smoosher');
 var minifyHTML = require('gulp-minify-html');
 
 // metalsmith
@@ -37,19 +35,12 @@ var bemLinter = require('postcss-bem-linter');
 var reporter = require('postcss-reporter');
 var pxtorem = require('postcss-pxtorem');
 
-// configure collections
-var collectionsSettings = {
-    posts: {
-        sortBy: 'date',
-        reverse: true
-    }
-};
-
 // configure nunjucks
 var env = nunjucks.configure('./templates', { watch: false });
 env.addFilter('stripTags', function (data) {
     return data.replace(/(<([^>]+)>)/ig, '');
 });
+env.addFilter('json', data => JSON.stringify(data));
 
 gulp.task('generate', ['css'], function () {
     return gulp.src(['content/**/*'])
@@ -57,7 +48,7 @@ gulp.task('generate', ['css'], function () {
             root: __dirname,
             frontmatter: true,
             use: [
-                collections(collectionsSettings),
+                collections({ posts: { sortBy: 'date', reverse: true }}),
                 markdown(),
                 tags({
                     handle: 'tags',
@@ -82,7 +73,6 @@ gulp.task('clean', function () {
 
 gulp.task('css', ['clean'], function () {
     var processors = [
-        normalize,
         postcssImport({
             plugins: [
                 mixins(),
@@ -91,6 +81,7 @@ gulp.task('css', ['clean'], function () {
                 reporter({ throwError: true })
             ]
         }),
+        normalize,
         cssnext({ browsers: 'last 2 version, > 1%, ie > 8', url: false }),
         assets({ basePath: 'client/', relativeTo: 'client/css', loadPaths: ['img'], cachebuster: true }),
         extend(),
@@ -106,7 +97,6 @@ gulp.task('css', ['clean'], function () {
 
 gulp.task('build', ['moveStatic'], function () {
     return gulp.src('dist/**/*.html')
-        .pipe(smoosher())
         .pipe(minifyHTML())
         .pipe(gulp.dest('dist'));
 });
@@ -114,19 +104,6 @@ gulp.task('build', ['moveStatic'], function () {
 gulp.task('moveStatic', ['generate'], function () {
     return gulp.src(['CNAME', 'favicon.ico', 'favicon.png', 'readme.md', 'robots.txt'])
         .pipe(gulp.dest('dist'));
-});
-
-gulp.task('david', function () {
-    return gulp.src('./package.json')
-        .pipe(david({ error404: true, errorDepType: true }))
-        .pipe(david.reporter);
-});
-
-gulp.task('update', function () {
-    return gulp.src('./package.json')
-        .pipe(david({ update: true }))
-        .pipe(david.reporter)
-        .pipe(gulp.dest('./'));
 });
 
 // Deploy to master
