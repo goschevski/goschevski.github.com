@@ -2,8 +2,8 @@
 layout: pages/post.html
 collection: posts
 title: "The Mighty Ansible"
-date: 2017-05-05
-formattedDate: 2017-05-05
+date: 2017-05-02
+formattedDate: 2017-05-02
 tags: ansible, devops
 ---
 I was always interested in automation tools, but they all seemed complicated. When a [friend](https://www.hcg.ninja/) explained me in 5 minutes how [Ansible](https://www.ansible.com/) works and how easy is to setup new project, I was amazed.
