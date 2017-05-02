@@ -12,7 +12,7 @@ I was always interested in automation tools, but they all seemed complicated. Wh
 Automation tools are used to automate machine or cluster of machines (infrastructure) setup. Imagine yourself SSHing to 100 servers and executing same or similar commands to each one of them. Those tools like Ansible could help you setup multiple servers at once in parallel.
 
 ### How does Ansible works?
-Ansible connects to your machines over SSH and executes tasks that you defined. After executing it, it removes these tasks, so your machine stays clean and looks like you manually executed commands. It's using Python in the background, which most (if not all) systems have installed by default, so it does not requires any pre-installation on the machines and that's what makes Ansible so great.
+Ansible connects to your machines over SSH and executes tasks that you defined. After executing it, it removes these tasks, so your machine stays clean and looks like you manually executed commands. It's using Python in the background, which most (if not all) systems have installed by default, so it does not require any pre-installation on the machines and that's what makes Ansible so great.
 
 Tasks that you write are just text files (YAML), which means that you can store them on git. This is so cool because then you have a history of changes you made on your machines.
 
