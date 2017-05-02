@@ -37,10 +37,9 @@ var pxtorem = require('postcss-pxtorem');
 
 // configure nunjucks
 var env = nunjucks.configure('./templates', { watch: false });
-env.addFilter('stripTags', function (data) {
-    return data.replace(/(<([^>]+)>)/ig, '');
-});
+env.addFilter('stripTags', data => data.replace(/(<([^>]+)>)/ig, ''));
 env.addFilter('json', data => JSON.stringify(data));
+env.addGlobal('currentYear', new Date().getFullYear());
 
 gulp.task('generate', ['css'], function () {
     return gulp.src(['content/**/*'])

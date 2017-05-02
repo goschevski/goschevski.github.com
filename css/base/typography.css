@@ -47,6 +47,11 @@ b, strong, em, small, code {
     line-height: 1;
 }
 
+p code {
+    background: #efefef;
+    padding: 0 5px;
+}
+
 blockquote {
     border-left: 3px solid #ccc;
     font-style: italic;
