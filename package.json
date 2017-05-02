@@ -6,10 +6,10 @@
     "url": "git@github.com:goschevski/fronty.git"
   },
   "scripts": {
-    "build": "./node_modules/.bin/metalsmith"
+    "dev": "gulp watch"
   },
   "author": "Aleksandar Goševski <gosevskibg@gmail.com>",
-  "dependencies": {
+  "devDependencies": {
     "browser-sync": "2.18.8",
     "postcss-cssnext": "2.4.0",
     "del": "2.0.2",

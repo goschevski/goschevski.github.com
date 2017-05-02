@@ -101,7 +101,7 @@ gulp.task('build', ['moveStatic'], function () {
 });
 
 gulp.task('moveStatic', ['generate'], function () {
-    return gulp.src(['CNAME', 'favicon.ico', 'favicon.png', 'readme.md', 'robots.txt'])
+    return gulp.src('static/**/*')
         .pipe(gulp.dest('dist'));
 });
 
