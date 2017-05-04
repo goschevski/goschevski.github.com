@@ -1,4 +1,4 @@
-    ---
+---
 layout: pages/post.html
 collection: posts
 title: "The Mighty Ansible"
