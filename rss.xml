@@ -9,30 +9,6 @@
 
             
                 <item>
-                    <title>The Mighty Ansible</title>
-                    <description>&lt;p&gt;I was always interested in automation tools, but they all seemed complicated. When a &lt;a href=&quot;https://www.hcg.ninja/&quot;&gt;friend&lt;/a&gt; explained me in 5 minutes how &lt;a href=&quot;https://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt; works and how easy is to setup new project, I was amazed.&lt;/p&gt;
-&lt;h3 id=&quot;what-are-the-automation-tools-&quot;&gt;What are the automation tools?&lt;/h3&gt;
-&lt;p&gt;Automation tools are used to automate machine or cluster of machines (infrastructure) setup. Imagine yourself SSHing to 100 servers and executing same or similar commands to each one of them. Those tools like Ansible could help you setup multiple servers at once in parallel.&lt;/p&gt;
-&lt;h3 id=&quot;how-does-ansible-works-&quot;&gt;How does Ansible works?&lt;/h3&gt;
-&lt;p&gt;Ansible connects to your machines over SSH and executes tasks that you defined. After executing it, it removes these tasks, so your machine stays clean and looks like you manually executed commands. It&#39;s using Python in the background, which most (if not all) systems have installed by default, so it does not require any pre-installation on the machines and that&#39;s what makes Ansible so great.&lt;/p&gt;
-&lt;p&gt;Tasks that you write are just text files (YAML), which means that you can store them on git. This is so cool because then you have a history of changes you made on your machines.&lt;/p&gt;
-&lt;h3 id=&quot;how-should-i-try-it-&quot;&gt;How should I try it?&lt;/h3&gt;
-&lt;p&gt;You can install ansible on your machine and setup few VMs using Vagrant. That&#39;s all you need to start. The good thing about this approach is that you can &#39;develop&#39; your infrastructure locally and then when you&#39;re ready, just replace IPs of VMs to production machines inside config file.&lt;/p&gt;
-&lt;h3 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h3&gt;
-&lt;p&gt;I&#39;m pretty sure you can find a bunch of tutorials so I won&#39;t write one. I will just share some useful links:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://docs.ansible.com/ansible/intro.html&quot;&gt;Ansible Docs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://galaxy.ansible.com/explore#/&quot;&gt;Ansible roles (tasks created by others)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ansible/ansible-examples&quot;&gt;Simple ansible examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tNCDsnQvbHI&quot;&gt;Cool youtube tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                    <pubDate>Tue May 02 2017 02:00:00 GMT+0200 (CEST)</pubDate>
-                    <link>http://www.goschevski.com/the-mighty-ansible</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/the-mighty-ansible</guid>
-                </item>
-            
-                <item>
                     <title>Simple JavaScript Interview Exercises</title>
                     <description>&lt;p&gt;When you are interviewing someone you can learn more about them by reviewing how they did some exercises then just talking with them about specific technology. Anyone can learn theory from the blog posts, but many people never understood it. So to be sure that candidate really knows about topic (s)he is talking about, it&#39;s a good thing to test their knowledge with exercises. Exercises shouldn&#39;t take too long and they can immidiatelly show you proficiency level of candidate.&lt;/p&gt;
 &lt;h3 id=&quot;context-call-apply-&quot;&gt;Context (call, apply)&lt;/h3&gt;
