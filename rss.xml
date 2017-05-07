@@ -12,18 +12,18 @@
                     <title>The Mighty Ansible</title>
                     <description>&lt;p&gt;I was always interested in automation tools, but they all seemed complicated. When a &lt;a href=&quot;https://www.hcg.ninja/&quot;&gt;friend&lt;/a&gt; explained me in 5 minutes how &lt;a href=&quot;https://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt; works and how easy is to setup new project, I was amazed.&lt;/p&gt;
 &lt;h3 id=&quot;what-are-the-automation-tools-&quot;&gt;What are the automation tools?&lt;/h3&gt;
-&lt;p&gt;Automation tools are used to automate machine or cluster of machines (infrastructure) setup. Imagine yourself SSHing to 100 servers and executing same or similar commands to each one of them. These tools like Ansible could help you setup multiple servers at once in parallel.&lt;/p&gt;
+&lt;p&gt;We use automation tools to automate machine or cluster of machines (infrastructure) setup. Imagine yourself SSHing to 100 servers and running same or similar commands to each one of them. Tools like Ansible could help you set up servers in parallel.&lt;/p&gt;
 &lt;h3 id=&quot;how-does-ansible-works-&quot;&gt;How does Ansible works?&lt;/h3&gt;
-&lt;p&gt;Ansible connects to your machines over SSH and executes tasks that you defined. After executing it, it removes these tasks, so your machine stays clean and looks like you manually executed commands. It&#39;s using Python in the background, which most (if not all) systems have installed by default, so it does not require any pre-installation on the machines and that&#39;s what makes Ansible so great.&lt;/p&gt;
-&lt;p&gt;Tasks that you write are just text files (YAML), which means that you can store them on git. This is cool because you can have a history of changes you&#39;ve made on your machines.&lt;/p&gt;
+&lt;p&gt;Ansible connects to your machines over SSH and runs tasks that you defined. After it finishes, it removes these tasks, so your machine stays clean and looks like you manually executed commands. It&#39;s using Python in the background, which most (if not all) systems have installed by default, so it does not require any pre-installation on the machines, and that&#39;s what makes Ansible so great.&lt;/p&gt;
+&lt;p&gt;Tasks that you write are text files (YAML), which means that you can store them on git. Because of this cool feature, you can have a history of changes you&#39;ve made on your machines.&lt;/p&gt;
 &lt;h3 id=&quot;how-should-i-try-it-&quot;&gt;How should I try it?&lt;/h3&gt;
-&lt;p&gt;You can install Ansible on your machine and setup few VMs using Vagrant. That&#39;s all you need to start. The good thing about this approach is that you can &quot;develop&quot; your infrastructure locally and then when you&#39;re ready, just replace IPs of VMs to production machines inside config file.&lt;/p&gt;
+&lt;p&gt;You can install Ansible on your machine and setup VMs using Vagrant. That&#39;s all you need to start. The good thing about this approach is that you can &quot;develop&quot; your infrastructure locally and then when you&#39;re ready, replace IPs of VMs to production machines inside config file.&lt;/p&gt;
 &lt;h3 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h3&gt;
-&lt;p&gt;I&#39;m pretty sure you can find a bunch of tutorials so I won&#39;t write one. I will just share some useful links:&lt;/p&gt;
+&lt;p&gt;I&#39;m pretty sure you can find a bunch of tutorials, so I won&#39;t write one, but I will share some useful links:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://docs.ansible.com/ansible/intro.html&quot;&gt;Ansible Docs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://galaxy.ansible.com/explore#/&quot;&gt;Ansible roles (tasks created by others)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ansible/ansible-examples&quot;&gt;Simple ansible examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://galaxy.ansible.com/explore#/&quot;&gt;Ansible Galaxy (tasks created by others)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ansible/ansible-examples&quot;&gt;Simple Ansible examples&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tNCDsnQvbHI&quot;&gt;Cool youtube tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -34,7 +34,7 @@
             
                 <item>
                     <title>Simple JavaScript Interview Exercises</title>
-                    <description>&lt;p&gt;When you are interviewing someone you can learn more about them by reviewing how they did some exercises then just talking with them about specific technology. Anyone can learn theory from the blog posts, but many people never understood it. So to be sure that candidate really knows about topic (s)he is talking about, it&#39;s a good thing to test their knowledge with exercises. Exercises shouldn&#39;t take too long and they can immidiatelly show you proficiency level of candidate.&lt;/p&gt;
+                    <description>&lt;p&gt;When you are interviewing someone, you can learn more about them by reviewing how they did some exercises then talking with them about specific technology. Anyone can learn theory from the blog posts, but people rarely understood it. To be sure that candidate knows about the topic they are talking about, it&#39;s a good thing to test their knowledge with exercises. Exercises shouldn&#39;t take too long, and they can instantly show you a skill level of the candidate.&lt;/p&gt;
 &lt;h3 id=&quot;context-call-apply-&quot;&gt;Context (call, apply)&lt;/h3&gt;
 &lt;p&gt;This is how we want to use &lt;code&gt;someFn&lt;/code&gt;. Candidate should define it.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; result = someFn({ someProperty: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }, &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
@@ -53,8 +53,8 @@ Result is &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&quot;additional&quot;&gt;Additional&lt;/h4&gt;
-&lt;p&gt;You can modify function to check if candidate knows how to use &lt;code class=&quot;lang-tcl&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;apply&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;bonus&quot;&gt;Bonus&lt;/h4&gt;
+&lt;p&gt;You can change function to check if candidate knows how to use &lt;code class=&quot;lang-tcl&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;apply&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; result = someFn({ someProperty: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }, &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;param1, param2&lt;/span&gt;) &lt;/span&gt;{
     &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;This pointing to&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
     &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Param 1 is&#39;&lt;/span&gt;, param1);
@@ -76,7 +76,7 @@ Result is &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;prototype-and-iteration&quot;&gt;Prototype and Iteration&lt;/h3&gt;
-&lt;p&gt;Define native method called &lt;code class=&quot;lang-actionscript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;each&lt;/span&gt;&lt;/code&gt; for iterating over the array with an option to pass the context as a second argument.&lt;/p&gt;
+&lt;p&gt;Define a native method called &lt;code class=&quot;lang-actionscript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;each&lt;/span&gt;&lt;/code&gt; for iterating over the array with an option to pass the context as a second argument.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;];
 arr.each(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;arrayItem, counter&lt;/span&gt;) &lt;/span&gt;{
     &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;index&#39;&lt;/span&gt;, counter);
@@ -131,15 +131,15 @@ Third call &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;
             
                 <item>
                     <title>Vim Tips and Bindings</title>
-                    <description>&lt;p&gt;I&#39;ve been using Vim as my main editor for more than a year now, and I would like to share some cool tips and bindings that I&#39;ve collected or created so far.&lt;/p&gt;
+                    <description>&lt;p&gt;I&#39;ve been using Vim as my editor for more than a year now, and I would like to share some cool tips and bindings that I&#39;ve collected or created so far.&lt;/p&gt;
 &lt;h3 id=&quot;space-as-leader&quot;&gt;Space as Leader&lt;/h3&gt;
 &lt;p&gt;The idea behind the &quot;Leader key&quot; is brilliant.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The &quot;Leader key&quot; is a way of extending the power of Vim&#39;s shortcuts by using sequences of keys to perform a command.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;The default leader key is backslash. Therefore, if you have a map of &lt;code class=&quot;lang-apache&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;Leader&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;q&lt;/span&gt;&lt;/code&gt;, you can perform that action by typing \q. Like many developers I remaped leader to a comma. I didn&#39;t know if that was the best thing to do, I&#39;d just seen it in every other vimrc. I read somewhere about Space as Leader. I tried it and results were awesome. Now I&#39;m able to hit Leader with both of my thumbs. It is the biggest key on the keyboard so it&#39;s hard to miss. This makes things easier and faster.&lt;/p&gt;
+&lt;p&gt;The default leader key is the backslash. Thus, if you have a map of &lt;code class=&quot;lang-apache&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;Leader&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;q&lt;/span&gt;&lt;/code&gt;, you can perform that action by typing \q. Like other developers, I remapped leader to a comma. I didn&#39;t know if that was the best thing to do, I&#39;d just seen it in every other vimrc. I read somewhere about Space as Leader. I tried it and results were awesome. Now I&#39;m able to hit Leader with both of my thumbs. Space is the biggest key on the keyboard, so it&#39;s hard to miss. This makes things easier and faster.&lt;/p&gt;
 &lt;h3 id=&quot;ctrl-z&quot;&gt;Ctrl + Z&lt;/h3&gt;
-&lt;p&gt;This is not feature from Vim, but since I&#39;m using Vim from terminal, I will explain how this is useful. So, while you&#39;re in Vim, try hitting &lt;code&gt;Ctrl+z&lt;/code&gt;. Vim will be &#39;paused&#39;. You will be able to execute commands normally inside the terminal, and than type &lt;code class=&quot;lang-xml&quot;&gt;fg&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;Enter&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt; to return to Vim. I use it every day, mostly for git commands, but you can execute all the commands you need.&lt;/p&gt;
+&lt;p&gt;This is not feature of Vim, but since I&#39;m using Vim from the terminal, I will explain how this is useful. While you&#39;re in Vim, try hitting &lt;code&gt;Ctrl+z&lt;/code&gt;. Shell will pause the Vim. You will be able to run commands inside the terminal, and then type &lt;code class=&quot;lang-xml&quot;&gt;fg&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;Enter&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt; to return to Vim. I use it for git commands, but you can run all the commands you need.&lt;/p&gt;
 &lt;h3 id=&quot;remove-trailing-spaces-on-save&quot;&gt;Remove trailing spaces on save&lt;/h3&gt;
 &lt;p&gt;If you&#39;re like me and you don&#39;t like trailing spaces, this function will help you. When you hit save, it will delete all trailing spaces in the file.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-vim&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;! &lt;span class=&quot;hljs-title&quot;&gt;StripTrailingWhitespaces&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;
@@ -151,10 +151,10 @@ Third call &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;
 
 &lt;span class=&quot;hljs-keyword&quot;&gt;autocmd&lt;/span&gt; BufWritePre * :&lt;span class=&quot;hljs-built_in&quot;&gt;call&lt;/span&gt; StripTrailingWhitespaces()&lt;span class=&quot;hljs-string&quot;&gt;&quot;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p class=&quot;Note&quot;&gt;This might hurt your git history. For that reason it might be better to create 2 commits, the first for clearing whitespaces and the second with code changes.&lt;/p&gt;
+&lt;p class=&quot;Note&quot;&gt;This might hurt your git history. For that reason, it might be better to create two commits, the first for clearing whitespaces and the second with code changes.&lt;/p&gt;
 
 &lt;h3 id=&quot;extract-variable-javascript-&quot;&gt;Extract variable (javascript)&lt;/h3&gt;
-&lt;p&gt;I was inspired by WebStorm refactoring options, so I tried to create something similar in Vim. This function extracts variables in javascript. Select the word you want to extract as variable (with visual mode). Hit &lt;code class=&quot;lang-actionscript&quot;&gt;&amp;lt;Leader&amp;gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt;&lt;/code&gt; and Vim will prompt for variable name. When you enter the name, variable will be extracted in the row above. With my limited knowledge of vim script, this is best I can do.&lt;/p&gt;
+&lt;p&gt;WebStorm refactoring options inspired me, so I tried to create something similar in Vim. This function extracts variables in javascript. Select the word you want to extract as a variable (with visual mode). Hit &lt;code class=&quot;lang-actionscript&quot;&gt;&amp;lt;Leader&amp;gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt;&lt;/code&gt; and Vim will prompt for the variable name. When you enter the name, a variable will be extracted in the row above. With my limited knowledge of vim script, this is best I can do.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-vim&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;! &lt;span class=&quot;hljs-title&quot;&gt;ExtractLocalVariable&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;
     &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; name = &lt;span class=&quot;hljs-built_in&quot;&gt;input&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Variable name: &quot;&lt;/span&gt;)
 
@@ -172,7 +172,7 @@ Third call &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;vnoremap&lt;/span&gt; &amp;lt;Leader&amp;gt;var :&lt;span class=&quot;hljs-built_in&quot;&gt;call&lt;/span&gt; ExtractLocalVariable()&amp;lt;CR&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;my-vimrc&quot;&gt;My vimrc&lt;/h3&gt;
-&lt;p&gt;Here is my &lt;a href=&quot;https://github.com/goschevski/dotfiles/blob/master/homefiles/vimrc&quot;&gt;vimrc&lt;/a&gt;. Feel free to copy and modify anything from it. Check out the plugins I&#39;m using and you might find something to fit.&lt;/p&gt;
+&lt;p&gt;Here is my &lt;a href=&quot;https://github.com/goschevski/dotfiles/blob/master/homefiles/vimrc&quot;&gt;vimrc&lt;/a&gt;. Feel free to copy and change anything from it. Check out the plugins I&#39;m using, and you might find something to fit.&lt;/p&gt;
 </description>
                     <pubDate>Tue Jan 13 2015 01:00:00 GMT+0100 (CET)</pubDate>
                     <link>http://www.goschevski.com/vim-tips-and-bindings</link>
@@ -181,22 +181,22 @@ Third call &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;
             
                 <item>
                     <title>Thoughts on CSS Frameworks</title>
-                    <description>&lt;p&gt;Many developers use Foundation or Bootstrap unnecessarily, and they don&#39;t know what the output of their CSS code is. I will try to explain my viewpoint regarding these kinds of frameworks, what their flaws are, and when might be a good time to use them.&lt;/p&gt;
+                    <description>&lt;p&gt;Developers use Foundation or Bootstrap unnecessarily, and they don&#39;t know what the output of their CSS code is. I will try to explain my viewpoint about these kinds of frameworks, what their flaws are, and when might be a good time to use them.&lt;/p&gt;
 &lt;h3 id=&quot;learning&quot;&gt;Learning&lt;/h3&gt;
-&lt;p&gt;Newbies and juniors are coming down with something similar to jQuery syndrome, whereby they first learn how to use Bootstrap and Foundation, and only later familiarize themselves with the core concepts of CSS. As my friend &lt;a href=&quot;https://github.com/vladimirsiljkovic&quot;&gt;Vladimir&lt;/a&gt; recently put it:&lt;/p&gt;
+&lt;p&gt;Newbies and juniors are coming down with something like jQuery syndrome, whereby they first learn how to use Bootstrap and Foundation, and later familiarize themselves with the core concepts of CSS. As my friend &lt;a href=&quot;https://github.com/vladimirsiljkovic&quot;&gt;Vladimir&lt;/a&gt; put it:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&quot;It&#39;s like giving a fire hose to a kid and turning on the water&quot;.&lt;/p&gt;
+&lt;p&gt;&quot;It&#39;s like giving a fire hose to a kid and turning on the water.&quot;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;You can learn from frameworks, since they show, for example, what effective image replacement techniques have been implemented, or how a grid has been created. You can discover other smart concepts and learn how to use them.&lt;/p&gt;
+&lt;p&gt;You can learn from frameworks, since they show, for example, useful image replacement techniques, grid setup. You can discover other smart concepts and learn how to use them.&lt;/p&gt;
 &lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
-&lt;p&gt;These frameworks are big. In fact, they are huge. Bootstrap minified is about 100kb and Foundation is about 115kb. Yes, of course, you don&#39;t to have to include the whole framework, but maybe there is no need for the partials either.&lt;/p&gt;
-&lt;p&gt;People include only the grid module of the framework, and 90% of them are anaware of how that grid works. If they knew, they wouldn&#39;t use it, rather they would create their own. Of course, the design you&#39;re coding must use a grid, but is that really &lt;em&gt;always&lt;/em&gt; the case? After all, is it hard to &lt;a href=&quot;http://css-tricks.com/dont-overthink-it-grids&quot;&gt;create a grid&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;These frameworks are big. In fact, they are huge. Bootstrap minified is about 100kb, and Foundation is about 115kb. Yes, of course, you don&#39;t to have to include the whole framework, but probably there is no need for the partials either.&lt;/p&gt;
+&lt;p&gt;People include the grid module of the framework, and 90% of them are unaware of how that grid works. If they knew, they wouldn&#39;t use it. Rather they would create their own. Of course, the design you&#39;re coding must use a grid, but is that &lt;em&gt;always&lt;/em&gt; the case? After all, is it hard to &lt;a href=&quot;http://css-tricks.com/dont-overthink-it-grids&quot;&gt;create a grid&lt;/a&gt;?&lt;/p&gt;
 &lt;h3 id=&quot;when-to-use-them&quot;&gt;When to use them&lt;/h3&gt;
-&lt;p&gt;There are cases when it&#39;s useful to use frameworks with ready-made components, such as when creating wireframes, presentations or admin panels. They&#39;re also helpful tools for developers who are not sufficiently familiar with CSS, in that they allow them to create a layout quickly.&lt;/p&gt;
+&lt;p&gt;In some cases, it&#39;s useful to use frameworks with ready-made components, such as when creating wireframes, presentations or admin panels. They&#39;re also helpful tools for developers who are not sufficiently familiar with CSS, in that they allow them to create a layout quickly.&lt;/p&gt;
 &lt;h3 id=&quot;what-s-the-alternative-&quot;&gt;What&#39;s the alternative?&lt;/h3&gt;
-&lt;p&gt;In a nutshell, use boilerplates. Create your own starter folder or boilerplate, call it what you will. Create your own set of mixins or styles that you use often. When you use frameworks you start CSS with hundreds of lines of pre-written code. Ok, thousands. And when you start with your boilerplate, you only have what&#39;s necessary for your projects.&lt;/p&gt;
+&lt;p&gt;In a nutshell, use boilerplates. Create your starter folder or boilerplate, call it what you will. Create your set of mixins or styles that you use often. When you use frameworks, you start CSS with hundreds of lines of pre-written code. Ok, thousands. And when you initiate with your boilerplate, you only have what&#39;s necessary for your projects.&lt;/p&gt;
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Don&#39;t get me wrong, Bootstrap and Foundation are great, and you can learn a lot from looking at their code, but don&#39;t use them for every single project because 90% of the time, you just don&#39;t need them.&lt;/p&gt;
+&lt;p&gt;Don&#39;t get me wrong, Bootstrap and Foundation are great, and you can learn a lot from looking at their code, but don&#39;t use them for every single project because 90% of the time, you don&#39;t need them.&lt;/p&gt;
 </description>
                     <pubDate>Tue Sep 23 2014 02:00:00 GMT+0200 (CEST)</pubDate>
                     <link>http://www.goschevski.com/thoughts-on-css-frameworks</link>
@@ -206,17 +206,16 @@ Third call &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;
                 <item>
                     <title>JSHint Git Hook</title>
                     <description>&lt;h3 id=&quot;update&quot;&gt;Update&lt;/h3&gt;
-&lt;p&gt;There is a module, called &lt;a href=&quot;https://www.npmjs.com/package/pre-commit&quot;&gt;pre-commit&lt;/a&gt;, which is working really good, and it&#39;s easy to setup.&lt;/p&gt;
+&lt;p&gt;There is a module, called &lt;a href=&quot;https://www.npmjs.com/package/pre-commit&quot;&gt;pre-commit&lt;/a&gt;, which is working well, and it&#39;s easy to set up.&lt;/p&gt;
 &lt;h3 id=&quot;old-way&quot;&gt;Old way&lt;/h3&gt;
 &lt;p&gt;If you want to write valid code, make sure you use a linter.
-It&#39;s good practice to have some &#39;on save&#39; linter to tell you immediately what errors you made.
-But, beside that, it would be nice to have some tool to validate files when you try to commit them.
-Git have so called &lt;a href=&quot;http://git-scm.com/docs/githooks.htm&quot;&gt;hooks&lt;/a&gt; (actions), which you can trigger at certain points (before you commit, after you commit, before push, etc).&lt;/p&gt;
-&lt;p&gt;My fellow &lt;a href=&quot;http://simplifiedstudio.com/&quot;&gt;Ivan Tatic&lt;/a&gt; created script that install hook for linting javascript files using &lt;a href=&quot;http://www.jshint.com/&quot;&gt;jshint&lt;/a&gt;.
-If you try to commit some javascript files, jshint run check on those files.
-If there is file with errors, it prints where you can find those errors.&lt;/p&gt;
-&lt;p&gt;I created little demo, to show you how it works.
-You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b17db816c8a34a3f&quot;&gt;here&lt;/a&gt;, just make sure you have jshint installed globally.&lt;/p&gt;
+It&#39;s good practice to have some &#39;on save&#39; linter to tell you what errors you made in the real time.
+But, besides that, it would be nice to have some tool to lint files when you try to commit them.
+Git has so-called &lt;a href=&quot;http://git-scm.com/docs/githooks.htm&quot;&gt;hooks&lt;/a&gt; (actions), which you can trigger at certain points (before you commit, after the commit, before the push, etc.).&lt;/p&gt;
+&lt;p&gt;My pal &lt;a href=&quot;http://simplifiedstudio.com/&quot;&gt;Ivan Tatic&lt;/a&gt; created &lt;a href=&quot;https://github.com/goschevski/fronty/blob/937539dfebee434b710d0b31d55765973318a567/hooks.sh&quot;&gt;script&lt;/a&gt; that install git-hook for linting javascript files using &lt;a href=&quot;http://www.jshint.com/&quot;&gt;jshint&lt;/a&gt;.
+If you try to commit some javascript files, jshint run a check on those files.
+If there is a file with errors, it prints where you can find those errors.&lt;/p&gt;
+&lt;p&gt;I created a demo, to show you how it works.&lt;/p&gt;
 &lt;p&gt;&lt;iframe name=&quot;quickcast&quot; src=&quot;http://quick.as/embed/y1jibwx&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;script src=&quot;http://quick.as/embed/script/1.60&quot;&gt;&lt;/script&gt;
 </description>
@@ -227,8 +226,8 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
             
                 <item>
                     <title>Fixed and Fluid Columns</title>
-                    <description>&lt;p&gt;There are few ways to make one column fixed and one column fluid, but all of these solutions are kind of hacky and have some flaws (magic numbers, hardcoded values, etc.).&lt;/p&gt;
-&lt;p&gt;A few days ago we had a discussion on this topic in our office and we tried to find the best solution. We googled it and tried various ways, but our colleague &lt;a href=&quot;https://github.com/vladimirsiljkovic&quot;&gt;Šilja&lt;/a&gt; came out with the best one.&lt;/p&gt;
+                    <description>&lt;p&gt;We can create &quot;one column fixed and one column fluid&quot; layout using different techniques, but most of these solutions are kind of hacky and have some flaws like magic numbers, hard coded values, etc.&lt;/p&gt;
+&lt;p&gt;We had a discussion on this topic in our office, and we tried to find the best solution. We googled it and tried different ways, but our colleague &lt;a href=&quot;https://github.com/vladimirsiljkovic&quot;&gt;Šilja&lt;/a&gt; came out with the best one.&lt;/p&gt;
 &lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;main&lt;/span&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;aside&lt;/span&gt;&amp;gt;&lt;/span&gt;
@@ -240,7 +239,7 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
     &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;section&lt;/span&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;main&lt;/span&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And the css:&lt;/p&gt;
+&lt;p&gt;And the CSS:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-pseudo&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;hljs-rules&quot;&gt;{
     &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;content&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;
     &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;display&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; table&lt;/span&gt;&lt;/span&gt;;
@@ -256,7 +255,7 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
     &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;overflow&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; hidden&lt;/span&gt;&lt;/span&gt;;
 }&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This solution works in IE6+ browsers and it has only one flaw, and that is evident when you need to use overflow in a different way in the fluid section. There is no need for magic numbers or fixed values. Of course this is maybe the best solution only until flexbox is supported in all browsers.&lt;/p&gt;
+&lt;p&gt;This solution works in IE6+ browsers, and it has one flaw, and that is evident when you need to use overflow in a different way in the fluid section. No need for magic numbers or fixed values. Of course, this is the best solution until browsers start supporting flexbox.&lt;/p&gt;
 &lt;p&gt;You can check out the demo on &lt;a href=&quot;http://codepen.io/goschevski/pen/zDGvh&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 </description>
                     <pubDate>Fri May 02 2014 02:00:00 GMT+0200 (CEST)</pubDate>
@@ -274,7 +273,7 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
             
                 <item>
                     <title>Better Collection Iteration in Backbone.js</title>
-                    <description>&lt;p&gt;This is a trivial problem, but I&#39;ve seen this in many beginner tutorials, and I don&#39;t like it. People are iterating over collection and creating Item views in the same function.&lt;/p&gt;
+                    <description>&lt;p&gt;It&#39;s a trivial problem, but I&#39;ve seen this in beginner tutorials, and I don&#39;t like it. People are iterating over collections and creating Item views in the same function.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; CollectionView = Backbone.View.extend({
     tagName: &lt;span class=&quot;hljs-string&quot;&gt;&#39;ul&#39;&lt;/span&gt;,
     className: &lt;span class=&quot;hljs-string&quot;&gt;&#39;list&#39;&lt;/span&gt;,
@@ -286,7 +285,7 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
     }
 });
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I consider this bad, because you can&#39;t reuse adding ItemView code.&lt;/p&gt;
+&lt;p&gt;I consider this wrong because you can&#39;t reuse adding ItemView code.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; CollectionView = Backbone.View.extend({
     tagName: &lt;span class=&quot;hljs-string&quot;&gt;&#39;ul&#39;&lt;/span&gt;,
     className: &lt;span class=&quot;hljs-string&quot;&gt;&#39;list&#39;&lt;/span&gt;,
@@ -324,7 +323,7 @@ You can download hook &lt;a href=&quot;https://gist.github.com/goschevski/3e72b1
     }
 });
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In this way, we are more flexible and we haven&#39;t duplicated code.&lt;/p&gt;
+&lt;p&gt;In this way, we are more flexible, and we haven&#39;t duplicated code.&lt;/p&gt;
 </description>
                     <pubDate>Mon Feb 03 2014 01:00:00 GMT+0100 (CET)</pubDate>
                     <link>http://www.goschevski.com/better-collection-iteration-in-backbone-js</link>
