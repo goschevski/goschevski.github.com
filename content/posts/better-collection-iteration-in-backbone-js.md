@@ -6,7 +6,7 @@ date: 2014-02-03
 formattedDate: 2014-02-03
 tags: javascript, backbone.js
 ---
-This is a trivial problem, but I've seen this in many beginner tutorials, and I don't like it. People are iterating over collection and creating Item views in the same function.
+It's a trivial problem, but I've seen this in beginner tutorials, and I don't like it. People are iterating over collections and creating Item views in the same function.
 
 ```javascript
 var CollectionView = Backbone.View.extend({
@@ -21,7 +21,7 @@ var CollectionView = Backbone.View.extend({
 });
 ```
 
-I consider this bad, because you can't reuse adding ItemView code.
+I consider this wrong because you can't reuse adding ItemView code.
 
 ```javascript
 var CollectionView = Backbone.View.extend({
@@ -65,4 +65,4 @@ var CollectionView = Backbone.View.extend({
 });
 ```
 
-In this way, we are more flexible and we haven't duplicated code.
+In this way, we are more flexible, and we haven't duplicated code.

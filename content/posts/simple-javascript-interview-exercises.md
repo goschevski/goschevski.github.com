@@ -6,7 +6,7 @@ date: 2016-01-14
 formattedDate: 2016-01-14
 tags: javascript, interview
 ---
-When you are interviewing someone you can learn more about them by reviewing how they did some exercises then just talking with them about specific technology. Anyone can learn theory from the blog posts, but many people never understood it. So to be sure that candidate really knows about topic (s)he is talking about, it's a good thing to test their knowledge with exercises. Exercises shouldn't take too long and they can immidiatelly show you proficiency level of candidate.
+When you are interviewing someone, you can learn more about them by reviewing how they did some exercises then talking with them about specific technology. Anyone can learn theory from the blog posts, but people rarely understood it. To be sure that candidate knows about the topic they are talking about, it's a good thing to test their knowledge with exercises. Exercises shouldn't take too long, and they can instantly show you a skill level of the candidate.
 
 ### Context (call, apply)
 This is how we want to use `someFn`. Candidate should define it.
@@ -30,8 +30,8 @@ var someFn = function (obj, cb) {
 }
 ```
 
-#### Additional
-You can modify function to check if candidate knows how to use `apply`.
+#### Bonus
+You can change function to check if candidate knows how to use `apply`.
 ```javascript
 var result = someFn({ someProperty: 'interview' }, function (param1, param2) {
     console.log('This pointing to', this);
@@ -57,7 +57,7 @@ var someFn = function (obj, cb, params) {
 ```
 
 ### Prototype and Iteration
-Define native method called `each` for iterating over the array with an option to pass the context as a second argument.
+Define a native method called `each` for iterating over the array with an option to pass the context as a second argument.
 
 ```javascript
 var arr = [1, 2, 3];

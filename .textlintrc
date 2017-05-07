@@ -1,0 +1,20 @@
+{
+    "rules": {
+        "rousseau": {
+            "severity": "warning",
+            "showLevels": ["suggestion", "warning", "error"],
+            "ignoreTypes": ["passive", "readibility", "weasel", "adverbs"]
+        },
+        "alex": {
+            "allow": [],
+            "severity": "warning",
+        },
+        "write-good": {
+            "severity": "warning",
+            "passive": false
+        },
+        "common-misspellings": {
+            "ignore": []
+        }
+    }
+}
