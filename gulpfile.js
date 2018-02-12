@@ -99,22 +99,17 @@ gulp.task('css', ['clean'], function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['optimizeImages'], function () {
+gulp.task('build', ['moveStatic'], function () {
     return gulp.src('dist/**/*.html')
         .pipe(minifyHTML())
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('optimizeImages', ['generate', 'moveStatic'], function () {
-    gulp.src('static/**/*')
+gulp.task('moveStatic', ['generate'], function () {
+    return gulp.src('static/**/*')
         .pipe(changed('build/img'))
         .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
         .pipe(gulp.dest('dist'))
-});
-
-gulp.task('moveStatic', function () {
-    return gulp.src('static/**/*')
-        .pipe(gulp.dest('dist'));
 });
 
 // Deploy to master
