@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    {% block header %}
+        {% include 'partials/header.html' %}
+    {% endblock %}
+
+    <main class="Main">
+        {% block page %}
+        {% endblock %}
+    </main>
+{% endblock %}

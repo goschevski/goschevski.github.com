@@ -8,25 +8,10 @@
         <meta name="description" content="{% if excerpt %}{{ excerpt | stripTags }}{% else %}Thoughts about web development, design, tools, etc.{% endif %}">
 
         <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo:400,600" media="none" onload="if(media!='all')media='all'">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
     </head>
     <body>
-
-        {% block header %}
-            {% include 'partials/header.html' %}
+        {% block content %}
         {% endblock %}
-
-        <div class="Container">
-            <main class="Main">
-                {% block content %}
-                {% endblock %}
-            </main>
-
-            <div class="Line"></div>
-
-            {% block footer %}
-                {% include 'partials/footer.html' %}
-            {% endblock %}
-        </div>
     </body>
 </html>

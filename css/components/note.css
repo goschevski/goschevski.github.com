@@ -1,8 +1,8 @@
 /** @define Note */
 
 .Note {
-    background: #eee;
-    padding: 0.5em;
+    background: #f4f4f4;
+    padding: 1em;
     font-style: italic;
 
     &:before {

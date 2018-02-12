@@ -1,22 +1,19 @@
 /* 1. Core */
 @import "base/variables";
-@import "base/mixins";
 
 /* 2. Vendor */
 @import "vendor/highlight";
 
 /* 3. Base styles */
 @import "base/elements";
-@import "base/typography";
 
  /* 4. Components */
-@import "components/container";
-@import "components/main";
-@import "components/line";
 @import "components/header";
-@import "components/footer";
-@import "components/post";
+@import "components/hero";
+@import "components/main";
 @import "components/note";
+@import "components/post";
+@import "components/social";
 
  /* 5. Helpers */
 @import "base/utilities";

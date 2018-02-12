@@ -1,16 +1,10 @@
 :root {
     /* Colors */
-    --mainColor: #999;
+    --mainColor: #6699ff;
 
     /* Fonts */
-    --fontPrimary: 'Arvo', Helvetica, sans-serif;
-
-    /* Grid Settings */
-    --gridColumnsTotal: 12;
-    --containerWidth: 640px;
-
-    /* Typography */
-    --fontBaseSize: 16px;
+    --fontPrimary: 'Open Sans', sans-serif;
+    --fontLight: 'Open Sans Light', sans-serif;
 }
 
 /* Media Queries */

@@ -9,6 +9,8 @@ html {
 body {
     font-family: var(--fontPrimary);
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
     color: #333;
 }
 
@@ -22,19 +24,27 @@ a {
     color: var(--mainColor);
 
     &:hover {
-        color: color(var(--mainColor) lightness(15%));
+        text-decoration: underline;
     }
 }
 
-ul, ol, li, dl, dt, dd {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+p {
+    line-height: 1.5;
+}
+
+p > code.hljs {
+    display: inline;
+    background: transparent;
+}
+
+blockquote {
+    border-left: 3px solid #ccc;
+    font-style: italic;
+    color: #999;
+    margin-left: 0;
+    padding: 0.1em 0.1em 0.1em 2em;
 }
 
 pre {
-    background: #26292C;
-    color: #ccc;
-    padding: 1em;
-    margin: 1em 0;
+    font-size: 16px;
 }

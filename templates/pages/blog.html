@@ -3,7 +3,7 @@
 {% import "macros.html" as macros %}
 
 {% block page %}
-    <h1>Tag: {{ tag }}</h1>
+    <h1 class="u-screenReaders">Articles</h1>
 
-    {{ macros.postsList(pagination.files) }}
+    {{ macros.postsList(posts) }}
 {% endblock %}

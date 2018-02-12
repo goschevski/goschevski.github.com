@@ -17,16 +17,21 @@
     }
 }
 
+.Post-header {
+    display: flex;
+}
+
 .Post-time {
-    display: inline-block;
-    font-size: 14px;
     font-style: italic;
     color: #999;
 }
 
 .Post-tags {
-    display: inline-block;
+    display: flex;
     font-style: italic;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
     &:before {
         color: #999;
@@ -37,8 +42,6 @@
 }
 
 .Post-tag {
-    display: inline-block;
-
     &:after {
         content: ",";
         margin-right: 5px;
@@ -47,4 +50,11 @@
     &:last-child:after {
         content: "";
     }
+}
+
+.Post-content {
+    font-size: 21px;
+    line-height: 1.6;
+    max-width: 700px;
+    color: rgba(0, 0, 0, 0.84);
 }

@@ -1,7 +1,0 @@
-/** @define Line */
-
-.Line {
-    height: 1px;
-    margin: 3em 0;
-    background: linear-gradient(to right, #ccc, rgba(255, 255, 255, 0));
-}
