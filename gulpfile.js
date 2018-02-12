@@ -40,6 +40,7 @@ var env = nunjucks.configure('./templates', { watch: false });
 env.addFilter('stripTags', data => data.replace(/(<([^>]+)>)/ig, ''));
 env.addFilter('json', data => JSON.stringify(data));
 env.addGlobal('currentYear', new Date().getFullYear());
+env.addGlobal('timestamp', Date.now());
 
 gulp.task('generate', ['css'], function () {
     return gulp.src(['content/**/*'])

@@ -7,7 +7,7 @@
         <title>Aleksandar Goševski{% if title %} | {{ title }}{% endif %}</title>
         <meta name="description" content="{% if excerpt %}{{ excerpt | stripTags }}{% else %}Thoughts about web development, design, tools, etc.{% endif %}">
 
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/style.css?{{ timestamp }}">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
     </head>
     <body>
