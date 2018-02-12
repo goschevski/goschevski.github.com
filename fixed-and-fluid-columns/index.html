@@ -1,24 +1,24 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1"><title>Aleksandar Goševski | Fixed and Fluid Columns</title><meta name=description content="We can create &quot;one column fixed and one column fluid&quot; layout using different techniques, but most of these solutions are kind of hacky and have some flaws like magic numbers, hard coded values, etc."><link rel=stylesheet href=/style.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Arvo:400,600" media=none onload="if(media!='all')media='all'"></head><body><header class=Header role=banner itemscope itemtype=http://schema.org/WPHeader><div class=Header-content><h1 class=Header-title itemprop=headline><a href=https://www.goschevski.com>Aleksandar Goševski</a></h1><p class=Header-description itemprop=description>Front-End Developer based in Belgrade, Serbia.</p><div class=Line></div></div></header><div class=Container><main class=Main><article class=Post itemscope itemtype=http://schema.org/BlogPosting><h1 class=Post-title itemprop="name headline">Fixed and Fluid Columns</h1><time class=Post-time datetime="Fri May 02 2014 02:00:00 GMT+0200 (CEST)" itemprop=datePublished>May 2014</time><ul class=Post-tags><li class=Post-tag><a href=/tags/css>css</a></li></ul><div class=Post-content itemprop=articleBody><p>We can create "one column fixed and one column fluid" layout using different techniques, but most of these solutions are kind of hacky and have some flaws like magic numbers, hard coded values, etc.</p><p>We had a discussion on this topic in our office, and we tried to find the best solution. We googled it and tried different ways, but our colleague <a href=https://github.com/vladimirsiljkovic>Šilja</a> came out with the best one.</p><h3 id=solution>Solution</h3><pre><code class=lang-html><span class=hljs-tag>&lt;<span class=hljs-title>main</span>&gt;</span>
-    <span class=hljs-tag>&lt;<span class=hljs-title>aside</span>&gt;</span>
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1"><title>Aleksandar Goševski | Fixed and Fluid Columns</title><meta name=description content="We can create &quot;one column fixed and one column fluid&quot; layout using different techniques, but most of these solutions are kind of hacky and have some flaws like magic numbers, hard coded values, etc."><link rel=stylesheet href=/style.css><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel=stylesheet></head><body><header class=Header role=banner itemscope itemtype=http://schema.org/WPHeader><div class=Header-content><img class=Header-image src=/aleksandar.png alt="Aleksandar Goševski" width=155 height=155><h1 class=Header-title itemprop=headline><a class=Header-link href=https://www.goschevski.com>Aleksandar Goševski</a></h1><p class=Header-description itemprop=description>Software Developer</p><ul class="Social is-centered is-visible-medium"><li class="Social-item is-icon"><a class=Social-github href="https://www.github.com/goschevski/">Github</a></li><li class="Social-item is-icon"><a class=Social-linkedin href="https://www.linkedin.com/in/goschevski/">Linkedin</a></li><li class="Social-item is-icon"><a class=Social-rss href=/rss.xml>RSS</a></li></ul></div><div class=Header-copy>2018 &copy; Aleksandar Goševski</div></header><main class=Main><article class=Post itemscope itemtype=http://schema.org/BlogPosting><h1 class=Post-title itemprop="name headline">Fixed and Fluid Columns</h1><div class=Post-header><time class=Post-time datetime="Fri May 02 2014 02:00:00 GMT+0200 (CEST)" itemprop=datePublished>May 2014</time><ul class=Post-tags><li class=Post-tag><a href=/tags/css>css</a></li></ul></div><div class=Post-content itemprop=articleBody><p>We can create "one column fixed and one column fluid" layout using different techniques, but most of these solutions are kind of hacky and have some flaws like magic numbers, hard coded values, etc.</p><p>We had a discussion on this topic in our office, and we tried to find the best solution. We googled it and tried different ways, but our colleague <a href=https://github.com/vladimirsiljkovic>Šilja</a> came out with the best one.</p><h3 id=solution>Solution</h3><pre class=lang-highlight><code class="lang-html hljs xml"><span class=hljs-tag>&lt;<span class=hljs-name>main</span>&gt;</span>
+    <span class=hljs-tag>&lt;<span class=hljs-name>aside</span>&gt;</span>
         This is the fixed sidebar.
-    <span class=hljs-tag>&lt;/<span class=hljs-title>aside</span>&gt;</span>
+    <span class=hljs-tag>&lt;/<span class=hljs-name>aside</span>&gt;</span>
 
-    <span class=hljs-tag>&lt;<span class=hljs-title>section</span>&gt;</span>
+    <span class=hljs-tag>&lt;<span class=hljs-name>section</span>&gt;</span>
         This is fluid main section.
-    <span class=hljs-tag>&lt;/<span class=hljs-title>section</span>&gt;</span>
-<span class=hljs-tag>&lt;/<span class=hljs-title>main</span>&gt;</span>
-</code></pre><p>And the CSS:</p><pre><code class=lang-css><span class=hljs-tag>main</span><span class=hljs-pseudo>:after</span> <span class=hljs-rules>{
-    <span class=hljs-rule><span class=hljs-attribute>content</span>:<span class=hljs-value> <span class=hljs-string>""</span></span></span>;
-    <span class=hljs-rule><span class=hljs-attribute>display</span>:<span class=hljs-value> table</span></span>;
-    <span class=hljs-rule><span class=hljs-attribute>clear</span>:<span class=hljs-value> both</span></span>;
-}</span>
+    <span class=hljs-tag>&lt;/<span class=hljs-name>section</span>&gt;</span>
+<span class=hljs-tag>&lt;/<span class=hljs-name>main</span>&gt;</span>
+</code></pre><p>And the CSS:</p><pre class=lang-highlight><code class="lang-css hljs"><span class=hljs-selector-tag>main</span><span class=hljs-selector-pseudo>:after</span> {
+    <span class=hljs-attribute>content</span>: <span class=hljs-string>""</span>;
+    <span class=hljs-attribute>display</span>: table;
+    <span class=hljs-attribute>clear</span>: both;
+}
 
-<span class=hljs-tag>aside</span> <span class=hljs-rules>{
-    <span class=hljs-rule><span class=hljs-attribute>float</span>:<span class=hljs-value> left</span></span>;
-    <span class=hljs-rule><span class=hljs-attribute>max-width</span>:<span class=hljs-value> <span class=hljs-number>200px</span></span></span>;
-}</span>
+<span class=hljs-selector-tag>aside</span> {
+    <span class=hljs-attribute>float</span>: left;
+    <span class=hljs-attribute>max-width</span>: <span class=hljs-number>200px</span>;
+}
 
-<span class=hljs-tag>section</span> <span class=hljs-rules>{
-    <span class=hljs-rule><span class=hljs-attribute>overflow</span>:<span class=hljs-value> hidden</span></span>;
-}</span>
-</code></pre><p>This solution works in IE6+ browsers, and it has one flaw, and that is evident when you need to use overflow in a different way in the fluid section. No need for magic numbers or fixed values. Of course, this is the best solution until browsers start supporting flexbox.</p><p>You can check out the demo on <a href=http://codepen.io/goschevski/pen/zDGvh>CodePen</a>.</p></div></article></main><div class=Line></div><footer class=Footer><p class=Footer-copyright>Aleksandar Goševski &copy; 2017</p><nav itemscope itemtype=http://schema.org/SiteNavigationElement><h2 class=u-screenReaders>Navigation</h2><ul class=Footer-navigation><li class=Footer-navigationItem><a href=https://github.com/goschevski itemprop=url>Github</a></li><li class=Footer-navigationItem><a href=/rss.xml itemprop=url>RSS</a></li></ul></nav></footer></div></body></html>
+<span class=hljs-selector-tag>section</span> {
+    <span class=hljs-attribute>overflow</span>: hidden;
+}
+</code></pre><p>This solution works in IE6+ browsers, and it has one flaw, and that is evident when you need to use overflow in a different way in the fluid section. No need for magic numbers or fixed values. Of course, this is the best solution until browsers start supporting flexbox.</p><p>You can check out the demo on <a href=http://codepen.io/goschevski/pen/zDGvh>CodePen</a>.</p></div></article></main></body></html>
