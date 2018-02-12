@@ -21,6 +21,10 @@ var codeHighlight = require('metalsmith-code-highlight');
 var dateFormatter = require('metalsmith-date-formatter');
 var excerpts = require('metalsmith-excerpts');
 
+// images
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+
 // css
 var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
@@ -83,7 +87,7 @@ gulp.task('css', ['clean'], function () {
         }),
         normalize,
         cssnext({ browsers: 'last 2 version, > 1%, ie > 8', url: false }),
-        assets({ basePath: 'client/', relativeTo: 'client/css', loadPaths: ['img'], cachebuster: true }),
+        assets({ basePath: 'static', loadPaths: ['static'], cachebuster: true }),
         extend(),
         pxtorem()
     ];
@@ -95,13 +99,20 @@ gulp.task('css', ['clean'], function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['moveStatic'], function () {
+gulp.task('build', ['optimizeImages'], function () {
     return gulp.src('dist/**/*.html')
         .pipe(minifyHTML())
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('moveStatic', ['generate'], function () {
+gulp.task('optimizeImages', ['generate', 'moveStatic'], function () {
+    gulp.src('static/**/*')
+        .pipe(changed('build/img'))
+        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+        .pipe(gulp.dest('dist'))
+});
+
+gulp.task('moveStatic', function () {
     return gulp.src('static/**/*')
         .pipe(gulp.dest('dist'));
 });

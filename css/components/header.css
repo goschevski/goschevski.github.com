@@ -14,7 +14,7 @@
         position: fixed;
         margin: 0;
         color: white;
-        background: url(background.jpg) right center/cover no-repeat;
+        background: resolve('background.jpg') right center/cover no-repeat;
     }
 }
 

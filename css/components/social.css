@@ -51,7 +51,7 @@
     text-indent: -9999px;
     overflow: hidden;
     opacity: 0.8;
-    background: url('github.svg') no-repeat;
+    background: resolve('github.svg') no-repeat;
 
     &:hover {
         opacity: 1;
@@ -62,7 +62,7 @@
     display: block;
     text-indent: -9999px;
     overflow: hidden;
-    background: url('linkedin.svg') no-repeat;
+    background: resolve('linkedin.svg') no-repeat;
     opacity: 0.8;
 
     &:hover {
@@ -74,7 +74,7 @@
     display: block;
     text-indent: -9999px;
     overflow: hidden;
-    background: url('rss.svg') no-repeat;
+    background: resolve('rss.svg') no-repeat;
     opacity: 0.8;
 
     &:hover {

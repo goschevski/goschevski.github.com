@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     color: white;
-    background: url(background.jpg) center center/cover no-repeat;
+    background: resolve('background.jpg') center center/cover no-repeat;
 
     display: flex;
     flex-direction: column-reverse;
