@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "deploy": "npm run clean && npm run build && gh-pages -d dist",
+    "deploy": "npm run clean && npm run build && gh-pages -d dist -b master",
     "build": "npm run clean && npm run css && npm run images && npm run images && npm run static && npm run html:generate && npm run html:minify",
     "clean": "rm -rf dist",
     "css": "postcss src/css/style.css -o dist/style.css",
