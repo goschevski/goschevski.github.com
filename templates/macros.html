@@ -1,8 +1,0 @@
-{% macro postsList(collection) %}
-    {% for post in collection %}
-        <article class="Post" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2 class="Post-title" itemprop="name headline"><a class="Post-titleUrl" href="{% if post.external %}{{ post.external }}{% else %}/{{ post.path }}{% endif %}">{{ post.title }}</a></h2>
-            <time class="Post-time" datetime="{{ post.date }}" itemprop="datePublished">{{ post.formattedDate }}</time>
-        </article>
-    {% endfor %}
-{% endmacro %}

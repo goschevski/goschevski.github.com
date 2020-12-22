@@ -1,0 +1,12 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+    {% block header %}
+        {% include 'partials/header.njk' %}
+    {% endblock %}
+
+    <main class="Main">
+        {% block page %}
+        {% endblock %}
+    </main>
+{% endblock %}

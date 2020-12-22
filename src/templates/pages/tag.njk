@@ -1,0 +1,9 @@
+{% extends 'layouts/blog.njk' %}
+
+{% set postslist = collections[ tag ] %}
+
+{% block page %}
+    <h1>Tag: {{ tag }}</h1>
+
+    {% include 'partials/posts.njk' %}
+{% endblock %}

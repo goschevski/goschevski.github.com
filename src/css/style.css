@@ -1,0 +1,16 @@
+/* Core */
+@import "base/variables";
+
+/* Base styles */
+@import "base/elements";
+
+ /* Components */
+@import "components/header";
+@import "components/hero";
+@import "components/main";
+@import "components/note";
+@import "components/post";
+@import "components/social";
+
+ /* Helpers */
+@import "base/utilities";

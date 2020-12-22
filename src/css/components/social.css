@@ -1,0 +1,83 @@
+.Social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (--medium) {
+        flex-wrap: nowrap;
+    }
+
+    @media (--medium) {
+        justify-content: unset;
+    }
+
+    &.is-centered {
+        justify-content: center;
+    }
+
+    &.is-visible-medium {
+        display: none;
+
+        @media (--medium) {
+            display: flex;
+        }
+    }
+}
+
+.Social-item {
+    margin-right: 1em;
+
+    &.is-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &:first-child {
+        flex-basis: 100%;
+        margin-bottom: 2em;
+
+        @media (--medium) {
+            flex-basis: auto;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.Social-github {
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    opacity: 0.8;
+    background: url('github.svg') no-repeat;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.Social-linkedin {
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url('linkedin.svg') no-repeat;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.Social-rss {
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url('rss.svg') no-repeat;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+}

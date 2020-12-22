@@ -1,0 +1,9 @@
+{% extends 'layouts/blog.njk' %}
+
+{% set postslist = collections.posts %}
+
+{% block page %}
+    <h1 class="u-screenReaders">Articles</h1>
+
+    {% include 'partials/posts.njk' %}
+{% endblock %}

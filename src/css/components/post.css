@@ -1,0 +1,60 @@
+/** @define Post */
+
+.Post {
+    margin-bottom: 2em;
+}
+
+.Post-title {
+    margin: 0;
+    font-weight: normal;
+}
+
+.Post-titleUrl {
+    color: #00194d;
+
+    &:hover {
+        color: var(--mainColor);
+    }
+}
+
+.Post-header {
+    display: flex;
+}
+
+.Post-time {
+    font-style: italic;
+    color: #999;
+}
+
+.Post-tags {
+    display: flex;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &:before {
+        color: #999;
+        content: "\2022";
+        display: inline-block;
+        margin: 0 10px;
+    }
+}
+
+.Post-tag {
+    &:after {
+        content: ",";
+        margin-right: 5px;
+    }
+
+    &:last-child:after {
+        content: "";
+    }
+}
+
+.Post-content {
+    font-size: 21px;
+    line-height: 1.6;
+    max-width: 700px;
+    color: rgba(0, 0, 0, 0.84);
+}

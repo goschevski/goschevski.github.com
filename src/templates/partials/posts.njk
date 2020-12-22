@@ -1,0 +1,9 @@
+{% for post in postslist %}
+  <article class="Post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h2 class="Post-title" itemprop="name headline">
+      <a class="Post-titleUrl" href="{% if post.data.external %}{{ post.data.external }}{% else %}{{ post.url }}{% endif %}">{{ post.data.title }}</a>
+    </h2>
+
+    <time class="Post-time" datetime="{{ post.data.date }}" itemprop="datePublished">{{ post.data.date | readableDate }}</time>
+  </article>
+{% endfor %}
