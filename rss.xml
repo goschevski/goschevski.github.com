@@ -3,331 +3,472 @@
         <channel>
             <title>Aleksandar Goševski</title>
             <description>Thoughts about web development, design, tools, etc.</description>
-            <link>http://www.goschevski.com</link>
+            <link>https://www.goschevski.com</link>
 
-            <atom:link href="http://www.goschevski.com/rss.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://www.goschevski.com/rss.xml" rel="self" type="application/rss+xml" />
 
             
                 <item>
                     <title>The Mighty Ansible</title>
                     <description>&lt;p&gt;I was always interested in automation tools, but they all seemed complicated. When a &lt;a href=&quot;https://www.hcg.ninja/&quot;&gt;friend&lt;/a&gt; explained me in 5 minutes how &lt;a href=&quot;https://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt; works and how easy is to setup new project, I was amazed.&lt;/p&gt;
-&lt;h3 id=&quot;what-are-the-automation-tools-&quot;&gt;What are the automation tools?&lt;/h3&gt;
+&lt;h3&gt;What are the automation tools?&lt;/h3&gt;
 &lt;p&gt;We use automation tools to automate machine or cluster of machines (infrastructure) setup. Imagine yourself SSHing to 100 servers and running same or similar commands to each one of them. Tools like Ansible could help you set up servers in parallel.&lt;/p&gt;
-&lt;h3 id=&quot;how-does-ansible-works-&quot;&gt;How does Ansible works?&lt;/h3&gt;
-&lt;p&gt;Ansible connects to your machines over SSH and runs tasks that you defined. After it finishes, it removes these tasks, so your machine stays clean and looks like you manually executed commands. It&amp;#39;s using Python in the background, which most (if not all) systems have installed by default, so it does not require any pre-installation on the machines, and that&amp;#39;s what makes Ansible so great.&lt;/p&gt;
-&lt;p&gt;Tasks that you write are text files (YAML), which means that you can store them on git. Because of this cool feature, you can have a history of changes you&amp;#39;ve made on your machines.&lt;/p&gt;
-&lt;h3 id=&quot;how-should-i-try-it-&quot;&gt;How should I try it?&lt;/h3&gt;
-&lt;p&gt;You can install Ansible on your machine and setup VMs using Vagrant. That&amp;#39;s all you need to start. The good thing about this approach is that you can &amp;quot;develop&amp;quot; your infrastructure locally and then when you&amp;#39;re ready, replace IPs of VMs to production machines inside config file.&lt;/p&gt;
-&lt;h3 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h3&gt;
-&lt;p&gt;I&amp;#39;m pretty sure you can find a bunch of tutorials, so I won&amp;#39;t write one, but I will share some useful links:&lt;/p&gt;
+&lt;h3&gt;How does Ansible works?&lt;/h3&gt;
+&lt;p&gt;Ansible connects to your machines over SSH and runs tasks that you defined. After it finishes, it removes these tasks, so your machine stays clean and looks like you manually executed commands. It&#39;s using Python in the background, which most (if not all) systems have installed by default, so it does not require any pre-installation on the machines, and that&#39;s what makes Ansible so great.&lt;/p&gt;
+&lt;p&gt;Tasks that you write are text files (YAML), which means that you can store them on git. Because of this cool feature, you can have a history of changes you&#39;ve made on your machines.&lt;/p&gt;
+&lt;h3&gt;How should I try it?&lt;/h3&gt;
+&lt;p&gt;You can install Ansible on your machine and setup VMs using Vagrant. That&#39;s all you need to start. The good thing about this approach is that you can &amp;quot;develop&amp;quot; your infrastructure locally and then when you&#39;re ready, replace IPs of VMs to production machines inside config file.&lt;/p&gt;
+&lt;h3&gt;Tutorial&lt;/h3&gt;
+&lt;p&gt;I&#39;m pretty sure you can find a bunch of tutorials, so I won&#39;t write one, but I will share some useful links:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://docs.ansible.com/ansible/intro.html&quot;&gt;Ansible Docs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://galaxy.ansible.com/explore#/&quot;&gt;Ansible Galaxy (tasks created by others)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://galaxy.ansible.com&quot;&gt;Ansible Galaxy (tasks created by others)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/ansible/ansible-examples&quot;&gt;Simple Ansible examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tNCDsnQvbHI&quot;&gt;Cool youtube tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-                    <pubDate>Tue May 02 2017 02:00:00 GMT+0200 (CEST)</pubDate>
-                    <link>http://www.goschevski.com/the-mighty-ansible</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/the-mighty-ansible</guid>
+                    <pubDate>Tue, 02 May 2017 00:00:00 GMT</pubDate>
+                    <link>https://www.goschevski.com//the-mighty-ansible/</link>
+                    <guid isPermaLink="true">https://www.goschevski.com//the-mighty-ansible/</guid>
                 </item>
             
                 <item>
                     <title>Simple JavaScript Interview Exercises</title>
                     <description>&lt;p&gt;When you are interviewing someone, you can learn more about them by reviewing how they did some exercises then talking with them about specific technology. Anyone can learn theory from the blog posts, but people rarely understood it. To be sure that candidate knows about the topic they are talking about, it&#39;s a good thing to test their knowledge with exercises. Exercises shouldn&#39;t take too long, and they can instantly show you a skill level of the candidate.&lt;/p&gt;
-&lt;h3 id=&quot;context-call-apply-&quot;&gt;Context (call, apply)&lt;/h3&gt;
-&lt;p class=&quot;lang-highlight&quot;&gt;This is how we want to use &lt;code class=&quot;hljs ebnf&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;someFn&lt;/span&gt;&lt;/code&gt;. Candidate should define it.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; result = someFn({ &lt;span class=&quot;hljs-attr&quot;&gt;someProperty&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }, &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;This pointing to&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+&lt;h3&gt;Context (call, apply)&lt;/h3&gt;
+&lt;p&gt;This is how we want to use &lt;code&gt;someFn&lt;/code&gt;. Candidate should define it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var result = someFn({ someProperty: &#39;interview&#39; }, function () {
+    console.log(&#39;This pointing to&#39;, this);
 });
 
-&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Result is&#39;&lt;/span&gt;, result);
+console.log(&#39;Result is&#39;, result);
 
-&lt;span class=&quot;hljs-comment&quot;&gt;// expected output&lt;/span&gt;
-This pointing to { &lt;span class=&quot;hljs-attr&quot;&gt;someProperty&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }
-Result is &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
+// expected output
+This pointing to { someProperty: &#39;interview&#39; }
+Result is 1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Solution:&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; someFn = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;obj, cb&lt;/span&gt;) &lt;/span&gt;{
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var someFn = function (obj, cb) {
     cb.call(obj);
-    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+    return 1;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&quot;bonus&quot;&gt;Bonus&lt;/h4&gt;
-&lt;p class=&quot;lang-highlight&quot;&gt;You can change function to check if candidate knows how to use &lt;code class=&quot;hljs coq&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;apply&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; result = someFn({ &lt;span class=&quot;hljs-attr&quot;&gt;someProperty&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }, &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;param1, param2&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;This pointing to&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
-    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Param 1 is&#39;&lt;/span&gt;, param1);
-    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Param 2 is&#39;&lt;/span&gt;, param2);
-}, [&lt;span class=&quot;hljs-string&quot;&gt;&#39;cool&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt;]);
+&lt;h4&gt;Bonus&lt;/h4&gt;
+&lt;p&gt;You can change function to check if candidate knows how to use &lt;code&gt;apply&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var result = someFn({ someProperty: &#39;interview&#39; }, function (param1, param2) {
+    console.log(&#39;This pointing to&#39;, this);
+    console.log(&#39;Param 1 is&#39;, param1);
+    console.log(&#39;Param 2 is&#39;, param2);
+}, [&#39;cool&#39;, &#39;interview&#39;]);
 
-&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Result is&#39;&lt;/span&gt;, result);
+console.log(&#39;Result is&#39;, result);
 
-&lt;span class=&quot;hljs-comment&quot;&gt;// expected output&lt;/span&gt;
-This pointing to { &lt;span class=&quot;hljs-attr&quot;&gt;someProperty&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;interview&#39;&lt;/span&gt; }
-Param &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt; is &lt;span class=&quot;hljs-string&quot;&gt;&quot;cool&quot;&lt;/span&gt;
-Param &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt; is &lt;span class=&quot;hljs-string&quot;&gt;&quot;interview&quot;&lt;/span&gt;
-Result is &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
+// expected output
+This pointing to { someProperty: &#39;interview&#39; }
+Param 1 is &amp;quot;cool&amp;quot;
+Param 2 is &amp;quot;interview&amp;quot;
+Result is 1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Solution:&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; someFn = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;obj, cb, params&lt;/span&gt;) &lt;/span&gt;{
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var someFn = function (obj, cb, params) {
     cb.apply(obj, params);
-    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+    return 1;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;prototype-and-iteration&quot;&gt;Prototype and Iteration&lt;/h3&gt;
-&lt;p class=&quot;lang-highlight&quot;&gt;Define a native method called &lt;code class=&quot;hljs actionscript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;each&lt;/span&gt;&lt;/code&gt; for iterating over the array with an option to pass the context as a second argument.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;];
-arr.each(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;arrayItem, counter&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;index&#39;&lt;/span&gt;, counter);
-    &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;item&#39;&lt;/span&gt;, arrayItem);
+&lt;h3&gt;Prototype and Iteration&lt;/h3&gt;
+&lt;p&gt;Define a native method called &lt;code&gt;each&lt;/code&gt; for iterating over the array with an option to pass the context as a second argument.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var arr = [1, 2, 3];
+arr.each(function (arrayItem, counter) {
+    console.log(&#39;index&#39;, counter);
+    console.log(&#39;item&#39;, arrayItem);
 
-    arr[counter] = arrayItem + &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
-}, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+    arr[counter] = arrayItem + 1;
+}, this);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Solution:&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;Array&lt;/span&gt;.prototype.each = &lt;span class=&quot;hljs-built_in&quot;&gt;Array&lt;/span&gt;.prototype.each || &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;cb, context&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.length; i++) {
-        cb.call(context || &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;[i], i);
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Array.prototype.each = Array.prototype.each || function (cb, context) {
+    for (var i = 0; i &amp;lt; this.length; i++) {
+        cb.call(context || this, this[i], i);
     }
 };
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;scope&quot;&gt;Scope&lt;/h3&gt;
-&lt;p class=&quot;lang-highlight&quot;&gt;Define &lt;code class=&quot;hljs ebnf&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;someFn&lt;/span&gt;&lt;/code&gt; which can work like this.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; counter = someFn(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;);
-&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;First call&#39;&lt;/span&gt;, counter(&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;));
-&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Second call&#39;&lt;/span&gt;, counter(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;));
-&lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&#39;Third call&#39;&lt;/span&gt;, counter(&lt;span class=&quot;hljs-number&quot;&gt;5&lt;/span&gt;));
+&lt;h3&gt;Scope&lt;/h3&gt;
+&lt;p&gt;Define &lt;code&gt;someFn&lt;/code&gt; which can work like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var counter = someFn(1);
+console.log(&#39;First call&#39;, counter(3));
+console.log(&#39;Second call&#39;, counter(1));
+console.log(&#39;Third call&#39;, counter(5));
 
-&lt;span class=&quot;hljs-comment&quot;&gt;// expected output&lt;/span&gt;
-First call &lt;span class=&quot;hljs-number&quot;&gt;4&lt;/span&gt;
-Second call &lt;span class=&quot;hljs-number&quot;&gt;5&lt;/span&gt;
-Third call &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;
+// expected output
+First call 4
+Second call 5
+Third call 10
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Solution:&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; someFn = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;start&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; private = start;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var someFn = function (start) {
+    var private = start;
 
-    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;increment&lt;/span&gt;) &lt;/span&gt;{
+    return function (increment) {
         private += increment;
 
-        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; private;
+        return private;
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                    <pubDate>Thu Jan 14 2016 01:00:00 GMT+0100 (CET)</pubDate>
-                    <link>http://www.goschevski.com/simple-javascript-interview-exercises</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/simple-javascript-interview-exercises</guid>
+                    <pubDate>Thu, 14 Jan 2016 00:00:00 GMT</pubDate>
+                    <link>https://www.goschevski.com//simple-javascript-interview-exercises/</link>
+                    <guid isPermaLink="true">https://www.goschevski.com//simple-javascript-interview-exercises/</guid>
                 </item>
             
                 <item>
                     <title>Simple Grid Mixins</title>
-                    <description></description>
-                    <pubDate>Sat Nov 07 2015 01:00:00 GMT+0100 (CET)</pubDate>
-                    <link>http://www.goschevski.com/simple-grid-mixins</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/simple-grid-mixins</guid>
-                </item>
-            
-                <item>
-                    <title>Vim Tips and Bindings</title>
-                    <description>&lt;p&gt;I&#39;ve been using Vim as my editor for more than a year now, and I would like to share some cool tips and bindings that I&#39;ve collected or created so far.&lt;/p&gt;
-&lt;h3 id=&quot;space-as-leader&quot;&gt;Space as Leader&lt;/h3&gt;
-&lt;p&gt;The idea behind the &quot;Leader key&quot; is brilliant.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The &quot;Leader key&quot; is a way of extending the power of Vim&#39;s shortcuts by using sequences of keys to perform a command.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p class=&quot;lang-highlight&quot;&gt;The default leader key is the backslash. Thus, if you have a map of &lt;code class=&quot;hljs apache&quot;&gt;&lt;span class=&quot;hljs-section&quot;&gt;&amp;lt;Leader&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;q&lt;/span&gt;&lt;/code&gt;, you can perform that action by typing \q. Like other developers, I remapped leader to a comma. I didn&#39;t know if that was the best thing to do, I&#39;d just seen it in every other vimrc. I read somewhere about Space as Leader. I tried it and results were awesome. Now I&#39;m able to hit Leader with both of my thumbs. Space is the biggest key on the keyboard, so it&#39;s hard to miss. This makes things easier and faster.&lt;/p&gt;
-&lt;h3 id=&quot;ctrl-z&quot;&gt;Ctrl + Z&lt;/h3&gt;
-&lt;p class=&quot;lang-highlight&quot;&gt;This is not feature of Vim, but since I&#39;m using Vim from the terminal, I will explain how this is useful. While you&#39;re in Vim, try hitting &lt;code class=&quot;hljs&quot;&gt;Ctrl+z&lt;/code&gt;. Shell will pause the Vim. You will be able to run commands inside the terminal, and then type &lt;code&gt;fg&amp;lt;Enter&amp;gt;&lt;/code&gt; to return to Vim. I use it for git commands, but you can run all the commands you need.&lt;/p&gt;
-&lt;h3 id=&quot;remove-trailing-spaces-on-save&quot;&gt;Remove trailing spaces on save&lt;/h3&gt;
-&lt;p&gt;If you&#39;re like me and you don&#39;t like trailing spaces, this function will help you. When you hit save, it will delete all trailing spaces in the file.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-vim hljs&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;! &lt;span class=&quot;hljs-title&quot;&gt;StripTrailingWhitespaces&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;l&lt;/span&gt; = &lt;span class=&quot;hljs-built_in&quot;&gt;line&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;.&quot;&lt;/span&gt;)
-    &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;c&lt;/span&gt; = &lt;span class=&quot;hljs-keyword&quot;&gt;col&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;.&quot;&lt;/span&gt;)
-    %s/\s\+$//&lt;span class=&quot;hljs-keyword&quot;&gt;e&lt;/span&gt;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;cursor&lt;/span&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;l&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;c&lt;/span&gt;)
-&lt;span class=&quot;hljs-keyword&quot;&gt;endfunction&lt;/span&gt;
-
-&lt;span class=&quot;hljs-keyword&quot;&gt;autocmd&lt;/span&gt; BufWritePre * :&lt;span class=&quot;hljs-keyword&quot;&gt;call&lt;/span&gt; StripTrailingWhitespaces()&lt;span class=&quot;hljs-comment&quot;&gt;&quot;&lt;/span&gt;
+                    <description>&lt;h1&gt;Simple grid mixins&lt;/h1&gt;
+&lt;p&gt;Originally posted on &lt;a href=&quot;http://thesassway.com/&quot;&gt;the Sass Way&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Grid systems can be quite complicated. &lt;a href=&quot;http://960.gs/&quot;&gt;960.gs&lt;/a&gt;, the mother of all grid systems, contains over 600 lines of code! And it&#39;s one of the simpler pure-CSS grid systems. I&#39;m not a huge fan of scattering classes throughout your markup. Some people do like this approach, of course, but it&#39;s possible to build a grid system in Sass that doesn&#39;t require gratuitous use of classes. Instead, we can use mixins and style using existing classes and markup.&lt;/p&gt;
+&lt;p&gt;Let&#39;s build a set of mixins that will allow us to do this. For our grid system I don&#39;t want to use floats, because sometimes I need to vertically center columns. Instead, I&#39;ll use the inline-block method which allows for vertical centering. And of course, I want the grid to be responsive.&lt;/p&gt;
+&lt;p&gt;Let&#39;s get started.&lt;/p&gt;
+&lt;h2&gt;The basic mixins&lt;/h2&gt;
+&lt;p&gt;First, we&#39;ll create the row mixin. Our grid will require a container which will include content for the grid. This is called a row. Here&#39;s a simple mixin to turn an element into a row:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@mixin row() {
+  font-size: 0;
+}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p class=&quot;Note&quot;&gt;This might hurt your git history. For that reason, it might be better to create two commits, the first for clearing whitespaces and the second with code changes.&lt;/p&gt;
-
-&lt;h3 id=&quot;extract-variable-javascript-&quot;&gt;Extract variable (javascript)&lt;/h3&gt;
-&lt;p class=&quot;lang-highlight&quot;&gt;WebStorm refactoring options inspired me, so I tried to create something similar in Vim. This function extracts variables in javascript. Select the word you want to extract as a variable (with visual mode). Hit &lt;code class=&quot;hljs actionscript&quot;&gt;&amp;lt;Leader&amp;gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt;&lt;/code&gt; and Vim will prompt for the variable name. When you enter the name, a variable will be extracted in the row above. With my limited knowledge of vim script, this is best I can do.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-vim hljs&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;! &lt;span class=&quot;hljs-title&quot;&gt;ExtractLocalVariable&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; name = &lt;span class=&quot;hljs-built_in&quot;&gt;input&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Variable name: &quot;&lt;/span&gt;)
-
-    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;hljs-built_in&quot;&gt;visualmode&lt;/span&gt;() == &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;)
-        normal! viw
-    &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;
-        normal! &lt;span class=&quot;hljs-keyword&quot;&gt;gv&lt;/span&gt;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;endif&lt;/span&gt;
-
-    exec &lt;span class=&quot;hljs-string&quot;&gt;&quot;normal! c&quot;&lt;/span&gt; . name
-    exec &lt;span class=&quot;hljs-string&quot;&gt;&quot;normal! Ovar &quot;&lt;/span&gt; . name . &lt;span class=&quot;hljs-string&quot;&gt;&quot; = &quot;&lt;/span&gt;
-    exec &lt;span class=&quot;hljs-string&quot;&gt;&quot;normal! pa;&quot;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;endfunction&lt;/span&gt;
-
-&lt;span class=&quot;hljs-keyword&quot;&gt;vnoremap&lt;/span&gt; &lt;span class=&quot;hljs-symbol&quot;&gt;&amp;lt;Leader&amp;gt;&lt;/span&gt;var :&lt;span class=&quot;hljs-keyword&quot;&gt;call&lt;/span&gt; ExtractLocalVariable()&lt;span class=&quot;hljs-symbol&quot;&gt;&amp;lt;CR&amp;gt;&lt;/span&gt;
+&lt;p&gt;Next, we&#39;ll create a simple column mixin for grid cells:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@mixin col($align: top) {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;my-vimrc&quot;&gt;My vimrc&lt;/h3&gt;
-&lt;p&gt;Here is my &lt;a href=&quot;https://github.com/goschevski/dotfiles/blob/master/homefiles/vimrc&quot;&gt;vimrc&lt;/a&gt;. Feel free to copy and change anything from it. Check out the plugins I&#39;m using, and you might find something to fit.&lt;/p&gt;
+&lt;p&gt;You&#39;ll notice that I set the font-size to zero for the row mixin and then back to 16px for the column mixin. This is little hack to kill the default margin of inline-block elements. (Inline-block elements appear in the normal text flow of the document, left-to-right, but unlike block elements that are floated, they still need to deal with the text nodes on either side which create unwanted margin. This hack of setting the font-size to zero makes the space disappear.)&lt;/p&gt;
+&lt;p&gt;The column mixin also contains a handy parameter that will allow you to set the vertical alignment of a cell. This is extremely handy for aligning the cells in a row.&lt;/p&gt;
+&lt;h2&gt;Making the column mixin robust&lt;/h2&gt;
+&lt;p&gt;Let&#39;s extend the column mixin to include a way of setting the width of the column. When it comes to column width, for me it&#39;s easiest to think in terms of fractions. To create three cells that are of equal width they each need to be 1/3 the width of the containing element (the row).&lt;/p&gt;
+&lt;p&gt;We can extend our column mixin to allow us to pass the width as a fraction like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@mixin col($col, $sum, $align: top) {
+  width: percentage($col/$sum);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will allow us to set the width of a cell to 1/3 with &lt;code&gt;@include col(1,3)&lt;/code&gt;. Quite simple, eh?&lt;/p&gt;
+&lt;p&gt;Now let&#39;s extend this further to so that we can specify the gap between cells:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@mixin col($col, $sum, $gap: 1em, $align: top) {
+  width: percentage($col/$sum);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+  box-sizing: border-box;
+  padding: 0 $gap;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is almost what we want. We can now specify the &lt;code&gt;$gap&lt;/code&gt; between cells by passing it as a parameter to the column mixin: &lt;code&gt;@include col(1, 2, $gap: 2em)&lt;/code&gt; (the default &lt;code&gt;$gap&lt;/code&gt; is &lt;code&gt;1em&lt;/code&gt;), however it won&#39;t work well for the first and last columns because they will get &lt;code&gt;$gap&lt;/code&gt; padding applied before and after which isn&#39;t quite what we want.&lt;/p&gt;
+&lt;p&gt;To accommodate the first and last columns we can add two additional parameters:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@mixin col($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+  width: percentage($col/$sum);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+  box-sizing: border-box;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we can call &lt;code&gt;@include col(1, 3, $first: true)&lt;/code&gt; for the first cell, or &lt;code&gt;@include col(1, 3, $last: true)&lt;/code&gt; for the final cell and it will work correctly.&lt;/p&gt;
+&lt;p&gt;Our final step is to make the column mixin responsive:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@mixin col($col, $sum, $gap: 1em, $align: top) {
+  width: 100%;
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+
+  @media only screen and (min-width: 768px) {
+    width: percentage($col/$sum);
+    vertical-align: $align;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, on screens less than 768 pixels wide (mobile devices) elements that use the column mixin will be as wide as their parent element, however on screens greater than 768 pixels wide (like desktop computers) cells will display at their appropriate widths.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Okay, so with just a few lines of Sass we&#39;ve created a grid system that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can accommodate cells of any width&lt;/li&gt;
+&lt;li&gt;Can display optional gaps between cells&lt;/li&gt;
+&lt;li&gt;Handles gaps correctly for first and last columns&lt;/li&gt;
+&lt;li&gt;Has cells snap to the full-width of the container on mobile devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And we achieved all of this in just 16 lines of code! You can see a full demo how these mixins are used, on &lt;a href=&quot;http://codepen.io/goschevski/full/Awuyz&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 </description>
-                    <pubDate>Tue Jan 13 2015 01:00:00 GMT+0100 (CET)</pubDate>
-                    <link>http://www.goschevski.com/vim-tips-and-bindings</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/vim-tips-and-bindings</guid>
+                    <pubDate>Sat, 07 Nov 2015 00:00:00 GMT</pubDate>
+                    <link>https://www.goschevski.com//simple-grid-mixins/</link>
+                    <guid isPermaLink="true">https://www.goschevski.com//simple-grid-mixins/</guid>
                 </item>
             
                 <item>
                     <title>Thoughts on CSS Frameworks</title>
-                    <description>&lt;p&gt;Developers use Foundation or Bootstrap unnecessarily, and they don&amp;#39;t know what the output of their CSS code is. I will try to explain my viewpoint about these kinds of frameworks, what their flaws are, and when might be a good time to use them.&lt;/p&gt;
-&lt;h3 id=&quot;learning&quot;&gt;Learning&lt;/h3&gt;
+                    <description>&lt;p&gt;Developers use Foundation or Bootstrap unnecessarily, and they don&#39;t know what the output of their CSS code is. I will try to explain my viewpoint about these kinds of frameworks, what their flaws are, and when might be a good time to use them.&lt;/p&gt;
+&lt;h3&gt;Learning&lt;/h3&gt;
 &lt;p&gt;Newbies and juniors are coming down with something like jQuery syndrome, whereby they first learn how to use Bootstrap and Foundation, and later familiarize themselves with the core concepts of CSS. As my friend &lt;a href=&quot;https://github.com/vladimirsiljkovic&quot;&gt;Vladimir&lt;/a&gt; put it:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;quot;It&amp;#39;s like giving a fire hose to a kid and turning on the water.&amp;quot;&lt;/p&gt;
+&lt;p&gt;&amp;quot;It&#39;s like giving a fire hose to a kid and turning on the water.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;You can learn from frameworks, since they show, for example, useful image replacement techniques, grid setup. You can discover other smart concepts and learn how to use them.&lt;/p&gt;
-&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
-&lt;p&gt;These frameworks are big. In fact, they are huge. Bootstrap minified is about 100kb, and Foundation is about 115kb. Yes, of course, you don&amp;#39;t to have to include the whole framework, but probably there is no need for the partials either.&lt;/p&gt;
-&lt;p&gt;People include the grid module of the framework, and 90% of them are unaware of how that grid works. If they knew, they wouldn&amp;#39;t use it. Rather they would create their own. Of course, the design you&amp;#39;re coding must use a grid, but is that &lt;em&gt;always&lt;/em&gt; the case? After all, is it hard to &lt;a href=&quot;http://css-tricks.com/dont-overthink-it-grids&quot;&gt;create a grid&lt;/a&gt;?&lt;/p&gt;
-&lt;h3 id=&quot;when-to-use-them&quot;&gt;When to use them&lt;/h3&gt;
-&lt;p&gt;In some cases, it&amp;#39;s useful to use frameworks with ready-made components, such as when creating wireframes, presentations or admin panels. They&amp;#39;re also helpful tools for developers who are not sufficiently familiar with CSS, in that they allow them to create a layout quickly.&lt;/p&gt;
-&lt;h3 id=&quot;what-s-the-alternative-&quot;&gt;What&amp;#39;s the alternative?&lt;/h3&gt;
-&lt;p&gt;In a nutshell, use boilerplates. Create your starter folder or boilerplate, call it what you will. Create your set of mixins or styles that you use often. When you use frameworks, you start CSS with hundreds of lines of pre-written code. Ok, thousands. And when you initiate with your boilerplate, you only have what&amp;#39;s necessary for your projects.&lt;/p&gt;
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Don&amp;#39;t get me wrong, Bootstrap and Foundation are great, and you can learn a lot from looking at their code, but don&amp;#39;t use them for every single project because 90% of the time, you don&amp;#39;t need them.&lt;/p&gt;
+&lt;h3&gt;Performance&lt;/h3&gt;
+&lt;p&gt;These frameworks are big. In fact, they are huge. Bootstrap minified is about 100kb, and Foundation is about 115kb. Yes, of course, you don&#39;t to have to include the whole framework, but probably there is no need for the partials either.&lt;/p&gt;
+&lt;p&gt;People include the grid module of the framework, and 90% of them are unaware of how that grid works. If they knew, they wouldn&#39;t use it. Rather they would create their own. Of course, the design you&#39;re coding must use a grid, but is that &lt;em&gt;always&lt;/em&gt; the case? After all, is it hard to &lt;a href=&quot;http://css-tricks.com/dont-overthink-it-grids&quot;&gt;create a grid&lt;/a&gt;?&lt;/p&gt;
+&lt;h3&gt;When to use them&lt;/h3&gt;
+&lt;p&gt;In some cases, it&#39;s useful to use frameworks with ready-made components, such as when creating wireframes, presentations or admin panels. They&#39;re also helpful tools for developers who are not sufficiently familiar with CSS, in that they allow them to create a layout quickly.&lt;/p&gt;
+&lt;h3&gt;What&#39;s the alternative?&lt;/h3&gt;
+&lt;p&gt;In a nutshell, use boilerplates. Create your starter folder or boilerplate, call it what you will. Create your set of mixins or styles that you use often. When you use frameworks, you start CSS with hundreds of lines of pre-written code. Ok, thousands. And when you initiate with your boilerplate, you only have what&#39;s necessary for your projects.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Don&#39;t get me wrong, Bootstrap and Foundation are great, and you can learn a lot from looking at their code, but don&#39;t use them for every single project because 90% of the time, you don&#39;t need them.&lt;/p&gt;
 </description>
-                    <pubDate>Tue Sep 23 2014 02:00:00 GMT+0200 (CEST)</pubDate>
-                    <link>http://www.goschevski.com/thoughts-on-css-frameworks</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/thoughts-on-css-frameworks</guid>
-                </item>
-            
-                <item>
-                    <title>JSHint Git Hook</title>
-                    <description>&lt;h3 id=&quot;update&quot;&gt;Update&lt;/h3&gt;
-&lt;p&gt;There is a module, called &lt;a href=&quot;https://www.npmjs.com/package/pre-commit&quot;&gt;pre-commit&lt;/a&gt;, which is working well, and it&amp;#39;s easy to set up.&lt;/p&gt;
-&lt;h3 id=&quot;old-way&quot;&gt;Old way&lt;/h3&gt;
-&lt;p&gt;If you want to write valid code, make sure you use a linter.
-It&amp;#39;s good practice to have some &amp;#39;on save&amp;#39; linter to tell you what errors you made in the real time.
-But, besides that, it would be nice to have some tool to lint files when you try to commit them.
-Git has so-called &lt;a href=&quot;http://git-scm.com/docs/githooks.htm&quot;&gt;hooks&lt;/a&gt; (actions), which you can trigger at certain points (before you commit, after the commit, before the push, etc.).&lt;/p&gt;
-&lt;p&gt;My pal &lt;a href=&quot;http://simplifiedstudio.com/&quot;&gt;Ivan Tatic&lt;/a&gt; created &lt;a href=&quot;https://github.com/goschevski/fronty/blob/937539dfebee434b710d0b31d55765973318a567/hooks.sh&quot;&gt;script&lt;/a&gt; that install git-hook for linting javascript files using &lt;a href=&quot;http://www.jshint.com/&quot;&gt;jshint&lt;/a&gt;.
-If you try to commit some javascript files, jshint run a check on those files.
-If there is a file with errors, it prints where you can find those errors.&lt;/p&gt;
-&lt;p&gt;I created a demo, to show you how it works.&lt;/p&gt;
-&lt;p&gt;&lt;iframe name=&#39;quickcast&#39; src=&#39;http://quick.as/embed/y1jibwx&#39; scrolling=&#39;no&#39; frameborder=&#39;0&#39; width=&#39;100%&#39; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;script src=&#39;http://quick.as/embed/script/1.60&#39;&gt;&lt;/script&gt;
-</description>
-                    <pubDate>Fri Aug 01 2014 02:00:00 GMT+0200 (CEST)</pubDate>
-                    <link>http://www.goschevski.com/jshint-git-hook</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/jshint-git-hook</guid>
+                    <pubDate>Tue, 23 Sep 2014 00:00:00 GMT</pubDate>
+                    <link>https://www.goschevski.com//thoughts-on-css-frameworks/</link>
+                    <guid isPermaLink="true">https://www.goschevski.com//thoughts-on-css-frameworks/</guid>
                 </item>
             
                 <item>
                     <title>Fixed and Fluid Columns</title>
-                    <description>&lt;p&gt;We can create &quot;one column fixed and one column fluid&quot; layout using different techniques, but most of these solutions are kind of hacky and have some flaws like magic numbers, hard coded values, etc.&lt;/p&gt;
+                    <description>&lt;p&gt;We can create &amp;quot;one column fixed and one column fluid&amp;quot; layout using different techniques, but most of these solutions are kind of hacky and have some flaws like magic numbers, hard coded values, etc.&lt;/p&gt;
 &lt;p&gt;We had a discussion on this topic in our office, and we tried to find the best solution. We googled it and tried different ways, but our colleague &lt;a href=&quot;https://github.com/vladimirsiljkovic&quot;&gt;Šilja&lt;/a&gt; came out with the best one.&lt;/p&gt;
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-html hljs xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;main&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;aside&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;h3&gt;Solution&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;main&amp;gt;
+    &amp;lt;aside&amp;gt;
         This is the fixed sidebar.
-    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;aside&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &amp;lt;/aside&amp;gt;
 
-    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;section&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &amp;lt;section&amp;gt;
         This is fluid main section.
-    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;section&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;main&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &amp;lt;/section&amp;gt;
+&amp;lt;/main&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And the CSS:&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-css hljs&quot;&gt;&lt;span class=&quot;hljs-selector-tag&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-selector-pseudo&quot;&gt;:after&lt;/span&gt; {
-    &lt;span class=&quot;hljs-attribute&quot;&gt;content&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;;
-    &lt;span class=&quot;hljs-attribute&quot;&gt;display&lt;/span&gt;: table;
-    &lt;span class=&quot;hljs-attribute&quot;&gt;clear&lt;/span&gt;: both;
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;main:after {
+    content: &amp;quot;&amp;quot;;
+    display: table;
+    clear: both;
 }
 
-&lt;span class=&quot;hljs-selector-tag&quot;&gt;aside&lt;/span&gt; {
-    &lt;span class=&quot;hljs-attribute&quot;&gt;float&lt;/span&gt;: left;
-    &lt;span class=&quot;hljs-attribute&quot;&gt;max-width&lt;/span&gt;: &lt;span class=&quot;hljs-number&quot;&gt;200px&lt;/span&gt;;
+aside {
+    float: left;
+    max-width: 200px;
 }
 
-&lt;span class=&quot;hljs-selector-tag&quot;&gt;section&lt;/span&gt; {
-    &lt;span class=&quot;hljs-attribute&quot;&gt;overflow&lt;/span&gt;: hidden;
+section {
+    overflow: hidden;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This solution works in IE6+ browsers, and it has one flaw, and that is evident when you need to use overflow in a different way in the fluid section. No need for magic numbers or fixed values. Of course, this is the best solution until browsers start supporting flexbox.&lt;/p&gt;
 &lt;p&gt;You can check out the demo on &lt;a href=&quot;http://codepen.io/goschevski/pen/zDGvh&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 </description>
-                    <pubDate>Fri May 02 2014 02:00:00 GMT+0200 (CEST)</pubDate>
-                    <link>http://www.goschevski.com/fixed-and-fluid-columns</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/fixed-and-fluid-columns</guid>
+                    <pubDate>Fri, 02 May 2014 00:00:00 GMT</pubDate>
+                    <link>https://www.goschevski.com//fixed-and-fluid-columns/</link>
+                    <guid isPermaLink="true">https://www.goschevski.com//fixed-and-fluid-columns/</guid>
                 </item>
             
                 <item>
                     <title>Spriting with Sass and Compass</title>
-                    <description></description>
-                    <pubDate>Sun Mar 23 2014 01:00:00 GMT+0100 (CET)</pubDate>
-                    <link>http://www.goschevski.com/spriting-with-sass-and-compass</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/spriting-with-sass-and-compass</guid>
+                    <description>&lt;h1&gt;Spriting with Sass and Compass&lt;/h1&gt;
+&lt;p&gt;Originally posted on &lt;a href=&quot;http://thesassway.com/&quot;&gt;the Sass Way&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As web developers have become more concerned about browser performance a technique called “image spriting” has emerged that is designed to reduce the number of requests made to the server. As it turns out, fewer requests made the server (when there is no significant difference in the combined size of the files delivered) can make a big difference in how fast a page appears to download.&lt;/p&gt;
+&lt;p&gt;Image spriting works by combining a bunch of images (called “sprites”) into one large image (or “sprite sheet”) to significantly reduce the number of requests made to the server. Then, with clever use of &lt;code&gt;background-position&lt;/code&gt; only part of the sprite sheet is revealed each time an image is needed.&lt;/p&gt;
+&lt;p&gt;Here’s an example sprite sheet for a set of toolbar of icons:&lt;/p&gt;
+&lt;figure class=&quot;figure&quot;&gt;
+  &lt;img class=&quot;figure-image&quot; src=&quot;/sprite-sheet.svg&quot; alt=&quot;A sprite sheet&quot;&gt;
+  &lt;figcaption class=&quot;figure-caption&quot;&gt;A &amp;#8220;sprite sheet&amp;#8221; with grid lines overlayed to illustrate how it is assembled.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Given the image above, we could write the following styles for the media icon:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$icon-width: 24px;
+$icon-height: 24px;
+$icons: image-url(&#39;toolbar.png&#39;);
+
+.media-icon {
+  background-image: $icons;
+  background-position: -($icon-width * 5) -($icon-height * 1);
+  width: $icon-width;
+  height: $icon-height;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What this does is shift the background image 5 tiles in the X direction and 1 tile in the Y direction so that the media icon is revealed:&lt;/p&gt;
+&lt;figure class=&quot;figure&quot;&gt;
+  &lt;img class=&quot;figure-image&quot; src=&quot;/sprite-sheet-position.svg&quot; alt=&quot;A sprite sheet&quot;&gt;
+  &lt;figcaption class=&quot;figure-caption&quot;&gt;By shifting the &lt;code&gt;background-position&lt;/code&gt; of the containing element the correct sprite can be shown.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;One downside to image spriting is that sprite sheets are notoriously difficult to maintain. Adding a new image requires updating both the image and the related CSS. Matters are made even worse if you decide to remove a sprite. What do you do then? Rejigger the entire sprite sheet?&lt;/p&gt;
+&lt;h2&gt;Compass to the rescue!&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://compass-style.org&quot;&gt;&lt;img class=&quot;float-right&quot; src=&quot;/compass.png&quot; alt=&quot;Compass&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Fortunately for us, Chris Eppstein’s &lt;a href=&quot;http://compass-style.org&quot;&gt;Compass&lt;/a&gt; project includes a robust suite of tools for creating and maintaining sprite sheets automatically. Compass can build your sprite sheet image, give you the coordinates of each sprite, allow you to control the layout and spacing of the sprites, and write the SCSS necessary to display each image. In short, Compass’s sprite tools will save you a ton of effort.&lt;/p&gt;
+&lt;p&gt;I’m not going to go over getting started with Compass here. If you are not familar with Compass please check out some tutorials before continuing.&lt;/p&gt;
+&lt;h2&gt;Folder structure&lt;/h2&gt;
+&lt;p&gt;The basic idea behind spriting in Compass is that you drop your sprite images inside of a folder in your &lt;code&gt;images/&lt;/code&gt; folder and Compass will use your source images to build the much larger sprite sheet image. For our toolbar example the &lt;code&gt;images/&lt;/code&gt; folder would look something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;images/
+|
+`-- toolbar/
+    |-- bold.png
+    |-- italic.png
+    |-- link.png
+    |-- code.png
+    |-- unordered-list.png
+    |-- ordered-list.png
+    ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Keep in mind that you should only put images inside of your sprite sheet folder that you want to be part of the final sprite sheet. Compass will use every image it finds in a sprite sheet folder to assemble the final image.&lt;/p&gt;
+&lt;h2&gt;The easy way&lt;/h2&gt;
+&lt;p&gt;The easiest way to build your sprite sheet is to use the Compass’s magic import directive:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@import &amp;quot;images/toolbar/*.png&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When Compass sees a &amp;quot;*.png&amp;quot; pattern in an import directive it assumes it is a folder of sprites that needs to be converted into a sprite sheet. It will then assemble a sprite sheet image for you and include a number of custom mixins to make it easy to access the sprites in your project.&lt;/p&gt;
+&lt;p&gt;One of those mixins can be used to generate custom classes for all of your sprites automatically. The name of the mixin is based on the name of the folder where the sprite sheet source images are located. In our example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@include all-toolbar-sprites;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Will output the following CSS:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.toolbar-sprite, .toolbar-bold, .toolbar-italic, .toolbar-link {
+  background-image: url(&#39;../images/toolbar-s1f1c6cbfd0.png&#39;);
+  background-repeat: no-repeat;
+}
+
+.toolbar-bold {
+  background-position: 0 0;
+}
+
+.toolbar-italic {
+  background-position: 0 -24px;
+}
+
+.toolbar-link {
+  background-position: 0 -48px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice that Compass has built the “toolbar-s1f1c6cbfd0.png” image for us automatically. This is our sprite sheet. The name of the file is the name of our sprite sheet (in this case “toolbar”) plus a funny series of letters and numbers called a “hash.” The hash will change whenever you update the sprite sheet so that cached CSS will know to use the updated image.&lt;/p&gt;
+&lt;h2&gt;Controlling class names&lt;/h2&gt;
+&lt;p&gt;If you want more control over the generated output, don’t use the &lt;code&gt;all-{FOLDER NAME}-sprites&lt;/code&gt; mixin. Instead, Compass provides a mixin to ouput the CSS needed for one sprite:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@import &amp;quot;images/toolbar/*.png&amp;quot;;
+
+.bold-icon { @include toolbar-sprite(bold); }
+.italic-icon { @include toolbar-sprite(italic); }
+.link-icon { @include toolbar-sprite(link); }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, this mixin is named based on the name of your sprite sheet. In our example the name of the mixin is &lt;code&gt;toolbar-sprite&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Sprite maps&lt;/h2&gt;
+&lt;p&gt;If you really want to get low-level, Compass provides another tool called a sprite map that allows you have control over how your sprite sheets are built.&lt;/p&gt;
+&lt;p&gt;Instead of using the magic import directive, create a sprite map like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$icons: sprite-map(&amp;quot;toolbar/*.png&amp;quot;);
+
+.bold-icon { background: sprite($icons, bold); }
+.italic-icon { background: sprite($icons, italic); }
+.link-icon { background: sprite($icons, link); }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice that instead of using a sprite sheet specific mixin as we did in the class name example above, now need use the generic &lt;code&gt;sprite&lt;/code&gt; mixin with our newly created sprite map.&lt;/p&gt;
+&lt;h2&gt;Controlling spacing&lt;/h2&gt;
+&lt;p&gt;Sometimes it’s useful to specify that sprites should be separated by a certain amount of white space.&lt;/p&gt;
+&lt;p&gt;To set spacing around each icon:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Using import...
+$toolbar-spacing: 5px;
+@import &amp;quot;toolbar/*.png&amp;quot;;
+
+// Or, if you are using a sprite map...
+$icons: sprite-map(&amp;quot;toolbar/*.png&amp;quot;, $spacing: 5px);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Controlling layout&lt;/h2&gt;
+&lt;p&gt;Compass supports a few different ways of laying out your sprite sheet:&lt;/p&gt;
+&lt;figure class=&quot;figure&quot;&gt;
+  &lt;img class=&quot;figure-image&quot; src=&quot;/sprite-sheet-layout.svg&quot; alt=&quot;A sprite sheet&quot;&gt;
+  &lt;figcaption class=&quot;figure-caption&quot;&gt;There are 4 types of layout - vertical, horizontal, diagonal, and smart.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;To set the layout of sprites on the sprite sheet:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Using import...
+$toolbar-spacing: 5px;
+$toolbar-layout: &#39;smart&#39;;
+@import &amp;quot;toolbar/*.png&amp;quot;;
+
+// Or, if you are using a sprite map...
+$icons: sprite-map(&amp;quot;toolbar/*.png&amp;quot;, $spacing: 5px, $layout: diagonal);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; In the current version of Compass, you can’t use spacing and smart layout in the same time. For all layouts check out link in last section of article about sprite layouts.&lt;/p&gt;
+&lt;h2&gt;Additional functions and mixins&lt;/h2&gt;
+&lt;p&gt;Compass also provides a number of helpful mixins and functions for working with sprite maps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sprite-url($icons)&lt;/code&gt; - Returns the URL of a sprite sheet.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sprite-position($icons, bold)&lt;/code&gt; - Returns the X and Y position of a sprite on the sprite sheet.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@include sprite-dimensions($icons, link)&lt;/code&gt; - Set width and height of a sprite based on its original dimensions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Usage:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$icons: sprite-map(&amp;quot;toolbar/*.png&amp;quot;, $spacing: 5px, $layout: diagonal);
+.bold-icon {
+  background-image: sprite-url($icons);
+  background-position: sprite-position($icons, bold);
+  @include sprite-dimensions($icons, bold);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Digging deeper&lt;/h2&gt;
+&lt;p&gt;Believe it or not, there’s actually a lot more that you can do with Compass sprite sheets. More than I can cover in this simple tutorial. If you’re interested in learning more read the &lt;a href=&quot;http://compass-style.org/help/tutorials/spriting/&quot;&gt;official Spriting Tutorial&lt;/a&gt; and checkout &lt;a href=&quot;http://compass-style.org/search/?q=sprites&quot;&gt;some of other docs here&lt;/a&gt;.&lt;/p&gt;
+</description>
+                    <pubDate>Sun, 23 Mar 2014 00:00:00 GMT</pubDate>
+                    <link>https://www.goschevski.com//spriting-with-sass-and-compass/</link>
+                    <guid isPermaLink="true">https://www.goschevski.com//spriting-with-sass-and-compass/</guid>
                 </item>
             
                 <item>
                     <title>Better Collection Iteration in Backbone.js</title>
                     <description>&lt;p&gt;It&#39;s a trivial problem, but I&#39;ve seen this in beginner tutorials, and I don&#39;t like it. People are iterating over collections and creating Item views in the same function.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; CollectionView = Backbone.View.extend({
-    &lt;span class=&quot;hljs-attr&quot;&gt;tagName&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;ul&#39;&lt;/span&gt;,
-    &lt;span class=&quot;hljs-attr&quot;&gt;className&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;list&#39;&lt;/span&gt;,
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var CollectionView = Backbone.View.extend({
+    tagName: &#39;ul&#39;,
+    className: &#39;list&#39;,
 
-    &lt;span class=&quot;hljs-attr&quot;&gt;render&lt;/span&gt;: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.collection.each(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;item&lt;/span&gt;) &lt;/span&gt;{
-            &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.$el.append(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; ItemView({ &lt;span class=&quot;hljs-attr&quot;&gt;model&lt;/span&gt;: item}).render().el);
-        }, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+    render: function () {
+        this.collection.each(function (item) {
+            this.$el.append(new ItemView({ model: item}).render().el);
+        }, this);
     }
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I consider this wrong because you can&#39;t reuse adding ItemView code.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; CollectionView = Backbone.View.extend({
-    &lt;span class=&quot;hljs-attr&quot;&gt;tagName&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;ul&#39;&lt;/span&gt;,
-    &lt;span class=&quot;hljs-attr&quot;&gt;className&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;list&#39;&lt;/span&gt;,
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var CollectionView = Backbone.View.extend({
+    tagName: &#39;ul&#39;,
+    className: &#39;list&#39;,
 
-    &lt;span class=&quot;hljs-attr&quot;&gt;initialize&lt;/span&gt;: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.listenTo(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.collection, &lt;span class=&quot;hljs-string&quot;&gt;&#39;add&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.addOne);
+    initialize: function () {
+        this.listenTo(this.collection, &#39;add&#39;, this.addOne);
     },
 
-    &lt;span class=&quot;hljs-attr&quot;&gt;render&lt;/span&gt;: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.collection.each(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;item&lt;/span&gt;) &lt;/span&gt;{
-            &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.$el.append(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; ItemView({ &lt;span class=&quot;hljs-attr&quot;&gt;model&lt;/span&gt;: item}).render().el);
-        }, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+    render: function () {
+        this.collection.each(function (item) {
+            this.$el.append(new ItemView({ model: item}).render().el);
+        }, this);
     },
 
-    &lt;span class=&quot;hljs-attr&quot;&gt;addOne&lt;/span&gt;: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;item&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.$el.append(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; ItemView({ &lt;span class=&quot;hljs-attr&quot;&gt;model&lt;/span&gt;: item }).render().el);
+    addOne: function (item) {
+        this.$el.append(new ItemView({ model: item }).render().el);
     }
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As you see, we need to duplicate code. A better solution is to use a different method.&lt;/p&gt;
-&lt;pre class=&quot;lang-highlight&quot;&gt;&lt;code class=&quot;lang-javascript hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; CollectionView = Backbone.View.extend({
-    &lt;span class=&quot;hljs-attr&quot;&gt;tagName&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;ul&#39;&lt;/span&gt;,
-    &lt;span class=&quot;hljs-attr&quot;&gt;className&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&#39;list&#39;&lt;/span&gt;,
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var CollectionView = Backbone.View.extend({
+    tagName: &#39;ul&#39;,
+    className: &#39;list&#39;,
 
-    &lt;span class=&quot;hljs-attr&quot;&gt;initialize&lt;/span&gt;: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.listenTo(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.collection, &lt;span class=&quot;hljs-string&quot;&gt;&#39;add&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.addOne);
+    initialize: function () {
+        this.listenTo(this.collection, &#39;add&#39;, this.addOne);
     },
 
-    &lt;span class=&quot;hljs-attr&quot;&gt;render&lt;/span&gt;: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.collection.each(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.addOne, &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
+    render: function () {
+        this.collection.each(this.addOne, this);
     },
 
-    &lt;span class=&quot;hljs-attr&quot;&gt;addOne&lt;/span&gt;: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;item&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.$el.append(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; ItemView({ &lt;span class=&quot;hljs-attr&quot;&gt;model&lt;/span&gt;: item }).render().el);
+    addOne: function (item) {
+        this.$el.append(new ItemView({ model: item }).render().el);
     }
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In this way, we are more flexible, and we haven&#39;t duplicated code.&lt;/p&gt;
 </description>
-                    <pubDate>Mon Feb 03 2014 01:00:00 GMT+0100 (CET)</pubDate>
-                    <link>http://www.goschevski.com/better-collection-iteration-in-backbone-js</link>
-                    <guid isPermaLink="true">http://www.goschevski.com/better-collection-iteration-in-backbone-js</guid>
+                    <pubDate>Mon, 03 Feb 2014 00:00:00 GMT</pubDate>
+                    <link>https://www.goschevski.com//better-collection-iteration-in-backbone.js/</link>
+                    <guid isPermaLink="true">https://www.goschevski.com//better-collection-iteration-in-backbone.js/</guid>
                 </item>
             
     </channel>

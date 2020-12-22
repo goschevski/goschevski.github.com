@@ -1,1 +1,68 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1"><title>Aleksandar Goševski | Spriting with Sass and Compass</title><meta name=description content="Thoughts about web development, design, tools, etc."><link rel=stylesheet href=/style.css?1550450852587></head><body><header class=Header role=banner itemscope itemtype=http://schema.org/WPHeader><div class=Header-content><img class=Header-image src=/aleksandar.png?1550450852587 alt="Aleksandar Goševski" width=155 height=155><h1 class=Header-title itemprop=headline><a class=Header-link href=https://www.goschevski.com>Aleksandar Goševski</a></h1><p class=Header-description itemprop=description>Software Developer</p><ul class="Social is-centered is-visible-medium"><li class="Social-item is-icon"><a class=Social-github href="https://www.github.com/goschevski/">Github</a></li><li class="Social-item is-icon"><a class=Social-linkedin href="https://www.linkedin.com/in/goschevski/">Linkedin</a></li><li class="Social-item is-icon"><a class=Social-rss href=/rss.xml>RSS</a></li></ul></div><div class=Header-copy>2019 &copy; Aleksandar Goševski</div></header><main class=Main><article class=Post itemscope itemtype=http://schema.org/BlogPosting><h1 class=Post-title itemprop="name headline">Spriting with Sass and Compass</h1><div class=Post-header><time class=Post-time datetime="Sun Mar 23 2014 01:00:00 GMT+0100 (CET)" itemprop=datePublished>March 2014</time><ul class=Post-tags><li class=Post-tag><a href=/tags/css>css</a></li><li class=Post-tag><a href=/tags/sass>sass</a></li></ul></div><div class=Post-content itemprop=articleBody></div></article></main><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel=stylesheet></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aleksandar Goševski | Spriting with Sass and Compass</title><meta name="description" content="Thoughts about web development, design, tools, etc."><link rel="stylesheet" href="/style.css?"></head><body><header class="Header" role="banner" itemscope itemtype="https://schema.org/WPHeader"><div class="Header-content"><img class="Header-image" src="/aleksandar.png?" alt="Aleksandar Goševski" width="155" height="155"><h1 class="Header-title" itemprop="headline"><a class="Header-link" href="https://www.goschevski.com">Aleksandar Goševski</a></h1><p class="Header-description" itemprop="description">Software Developer</p><ul class="Social is-centered is-visible-medium"><li class="Social-item is-icon"><a class="Social-github" href="https://www.github.com/goschevski/">Github</a></li><li class="Social-item is-icon"><a class="Social-linkedin" href="https://www.linkedin.com/in/goschevski/">Linkedin</a></li><li class="Social-item is-icon"><a class="Social-rss" href="/rss.xml">RSS</a></li></ul></div><div class="Header-copy">2008 - 2020 &copy; Aleksandar Goševski</div></header><main class="Main"><article class="Post" itemscope itemtype="https://schema.org/BlogPosting"><h1 class="Post-title" itemprop="name headline">Spriting with Sass and Compass</h1><div class="Post-header"><time class="Post-time" datetime="Sun Mar 23 2014 01:00:00 GMT+0100 (Central European Standard Time)" itemprop="datePublished">March 2014</time><ul class="Post-tags"><li class="Post-tag"><a href="/tags/css">css</a></li><li class="Post-tag"><a href="/tags/sass">sass</a></li></ul></div><div class="Post-content" itemprop="articleBody"><h1>Spriting with Sass and Compass</h1><p>Originally posted on <a href="http://thesassway.com/">the Sass Way</a>.</p><p>As web developers have become more concerned about browser performance a technique called “image spriting” has emerged that is designed to reduce the number of requests made to the server. As it turns out, fewer requests made the server (when there is no significant difference in the combined size of the files delivered) can make a big difference in how fast a page appears to download.</p><p>Image spriting works by combining a bunch of images (called “sprites”) into one large image (or “sprite sheet”) to significantly reduce the number of requests made to the server. Then, with clever use of <code>background-position</code> only part of the sprite sheet is revealed each time an image is needed.</p><p>Here’s an example sprite sheet for a set of toolbar of icons:</p><figure class="figure"><img class="figure-image" src="/sprite-sheet.svg" alt="A sprite sheet"><figcaption class="figure-caption">A &#8220;sprite sheet&#8221; with grid lines overlayed to illustrate how it is assembled.</figcaption></figure><p>Given the image above, we could write the following styles for the media icon:</p><pre><code>$icon-width: 24px;
+$icon-height: 24px;
+$icons: image-url('toolbar.png');
+
+.media-icon {
+  background-image: $icons;
+  background-position: -($icon-width * 5) -($icon-height * 1);
+  width: $icon-width;
+  height: $icon-height;
+}
+</code></pre><p>What this does is shift the background image 5 tiles in the X direction and 1 tile in the Y direction so that the media icon is revealed:</p><figure class="figure"><img class="figure-image" src="/sprite-sheet-position.svg" alt="A sprite sheet"><figcaption class="figure-caption">By shifting the <code>background-position</code> of the containing element the correct sprite can be shown.</figcaption></figure><p>One downside to image spriting is that sprite sheets are notoriously difficult to maintain. Adding a new image requires updating both the image and the related CSS. Matters are made even worse if you decide to remove a sprite. What do you do then? Rejigger the entire sprite sheet?</p><h2>Compass to the rescue!</h2><p><a href="http://compass-style.org"><img class="float-right" src="/compass.png" alt="Compass"></a></p><p>Fortunately for us, Chris Eppstein’s <a href="http://compass-style.org">Compass</a> project includes a robust suite of tools for creating and maintaining sprite sheets automatically. Compass can build your sprite sheet image, give you the coordinates of each sprite, allow you to control the layout and spacing of the sprites, and write the SCSS necessary to display each image. In short, Compass’s sprite tools will save you a ton of effort.</p><p>I’m not going to go over getting started with Compass here. If you are not familar with Compass please check out some tutorials before continuing.</p><h2>Folder structure</h2><p>The basic idea behind spriting in Compass is that you drop your sprite images inside of a folder in your <code>images/</code> folder and Compass will use your source images to build the much larger sprite sheet image. For our toolbar example the <code>images/</code> folder would look something like this:</p><pre><code>images/
+|
+`-- toolbar/
+    |-- bold.png
+    |-- italic.png
+    |-- link.png
+    |-- code.png
+    |-- unordered-list.png
+    |-- ordered-list.png
+    ...
+</code></pre><p>Keep in mind that you should only put images inside of your sprite sheet folder that you want to be part of the final sprite sheet. Compass will use every image it finds in a sprite sheet folder to assemble the final image.</p><h2>The easy way</h2><p>The easiest way to build your sprite sheet is to use the Compass’s magic import directive:</p><pre><code>@import &quot;images/toolbar/*.png&quot;;
+</code></pre><p>When Compass sees a &quot;*.png&quot; pattern in an import directive it assumes it is a folder of sprites that needs to be converted into a sprite sheet. It will then assemble a sprite sheet image for you and include a number of custom mixins to make it easy to access the sprites in your project.</p><p>One of those mixins can be used to generate custom classes for all of your sprites automatically. The name of the mixin is based on the name of the folder where the sprite sheet source images are located. In our example:</p><pre><code>@include all-toolbar-sprites;
+</code></pre><p>Will output the following CSS:</p><pre><code>.toolbar-sprite, .toolbar-bold, .toolbar-italic, .toolbar-link {
+  background-image: url('../images/toolbar-s1f1c6cbfd0.png');
+  background-repeat: no-repeat;
+}
+
+.toolbar-bold {
+  background-position: 0 0;
+}
+
+.toolbar-italic {
+  background-position: 0 -24px;
+}
+
+.toolbar-link {
+  background-position: 0 -48px;
+}
+</code></pre><p>Notice that Compass has built the “toolbar-s1f1c6cbfd0.png” image for us automatically. This is our sprite sheet. The name of the file is the name of our sprite sheet (in this case “toolbar”) plus a funny series of letters and numbers called a “hash.” The hash will change whenever you update the sprite sheet so that cached CSS will know to use the updated image.</p><h2>Controlling class names</h2><p>If you want more control over the generated output, don’t use the <code>all-{FOLDER NAME}-sprites</code> mixin. Instead, Compass provides a mixin to ouput the CSS needed for one sprite:</p><pre><code>@import &quot;images/toolbar/*.png&quot;;
+
+.bold-icon { @include toolbar-sprite(bold); }
+.italic-icon { @include toolbar-sprite(italic); }
+.link-icon { @include toolbar-sprite(link); }
+</code></pre><p>Again, this mixin is named based on the name of your sprite sheet. In our example the name of the mixin is <code>toolbar-sprite</code>.</p><h2>Sprite maps</h2><p>If you really want to get low-level, Compass provides another tool called a sprite map that allows you have control over how your sprite sheets are built.</p><p>Instead of using the magic import directive, create a sprite map like this:</p><pre><code>$icons: sprite-map(&quot;toolbar/*.png&quot;);
+
+.bold-icon { background: sprite($icons, bold); }
+.italic-icon { background: sprite($icons, italic); }
+.link-icon { background: sprite($icons, link); }
+</code></pre><p>Notice that instead of using a sprite sheet specific mixin as we did in the class name example above, now need use the generic <code>sprite</code> mixin with our newly created sprite map.</p><h2>Controlling spacing</h2><p>Sometimes it’s useful to specify that sprites should be separated by a certain amount of white space.</p><p>To set spacing around each icon:</p><pre><code>// Using import...
+$toolbar-spacing: 5px;
+@import &quot;toolbar/*.png&quot;;
+
+// Or, if you are using a sprite map...
+$icons: sprite-map(&quot;toolbar/*.png&quot;, $spacing: 5px);
+</code></pre><h2>Controlling layout</h2><p>Compass supports a few different ways of laying out your sprite sheet:</p><figure class="figure"><img class="figure-image" src="/sprite-sheet-layout.svg" alt="A sprite sheet"><figcaption class="figure-caption">There are 4 types of layout - vertical, horizontal, diagonal, and smart.</figcaption></figure><p>To set the layout of sprites on the sprite sheet:</p><pre><code>// Using import...
+$toolbar-spacing: 5px;
+$toolbar-layout: 'smart';
+@import &quot;toolbar/*.png&quot;;
+
+// Or, if you are using a sprite map...
+$icons: sprite-map(&quot;toolbar/*.png&quot;, $spacing: 5px, $layout: diagonal);
+</code></pre><p><strong>Note:</strong> In the current version of Compass, you can’t use spacing and smart layout in the same time. For all layouts check out link in last section of article about sprite layouts.</p><h2>Additional functions and mixins</h2><p>Compass also provides a number of helpful mixins and functions for working with sprite maps:</p><ul><li><code>sprite-url($icons)</code> - Returns the URL of a sprite sheet.</li><li><code>sprite-position($icons, bold)</code> - Returns the X and Y position of a sprite on the sprite sheet.</li><li><code>@include sprite-dimensions($icons, link)</code> - Set width and height of a sprite based on its original dimensions.</li></ul><p>Usage:</p><pre><code>$icons: sprite-map(&quot;toolbar/*.png&quot;, $spacing: 5px, $layout: diagonal);
+.bold-icon {
+  background-image: sprite-url($icons);
+  background-position: sprite-position($icons, bold);
+  @include sprite-dimensions($icons, bold);
+}
+</code></pre><h2>Digging deeper</h2><p>Believe it or not, there’s actually a lot more that you can do with Compass sprite sheets. More than I can cover in this simple tutorial. If you’re interested in learning more read the <a href="http://compass-style.org/help/tutorials/spriting/">official Spriting Tutorial</a> and checkout <a href="http://compass-style.org/search/?q=sprites">some of other docs here</a>.</p></div></article></main><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></body></html>

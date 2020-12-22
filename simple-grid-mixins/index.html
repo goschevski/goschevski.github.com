@@ -1,1 +1,45 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1"><title>Aleksandar Goševski | Simple Grid Mixins</title><meta name=description content="Thoughts about web development, design, tools, etc."><link rel=stylesheet href=/style.css?1550450852587></head><body><header class=Header role=banner itemscope itemtype=http://schema.org/WPHeader><div class=Header-content><img class=Header-image src=/aleksandar.png?1550450852587 alt="Aleksandar Goševski" width=155 height=155><h1 class=Header-title itemprop=headline><a class=Header-link href=https://www.goschevski.com>Aleksandar Goševski</a></h1><p class=Header-description itemprop=description>Software Developer</p><ul class="Social is-centered is-visible-medium"><li class="Social-item is-icon"><a class=Social-github href="https://www.github.com/goschevski/">Github</a></li><li class="Social-item is-icon"><a class=Social-linkedin href="https://www.linkedin.com/in/goschevski/">Linkedin</a></li><li class="Social-item is-icon"><a class=Social-rss href=/rss.xml>RSS</a></li></ul></div><div class=Header-copy>2019 &copy; Aleksandar Goševski</div></header><main class=Main><article class=Post itemscope itemtype=http://schema.org/BlogPosting><h1 class=Post-title itemprop="name headline">Simple Grid Mixins</h1><div class=Post-header><time class=Post-time datetime="Sat Nov 07 2015 01:00:00 GMT+0100 (CET)" itemprop=datePublished>November 2015</time><ul class=Post-tags><li class=Post-tag><a href=/tags/sass>sass</a></li><li class=Post-tag><a href=/tags/grid>grid</a></li><li class=Post-tag><a href=/tags/css>css</a></li></ul></div><div class=Post-content itemprop=articleBody></div></article></main><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel=stylesheet></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aleksandar Goševski | Simple Grid Mixins</title><meta name="description" content="Thoughts about web development, design, tools, etc."><link rel="stylesheet" href="/style.css?"></head><body><header class="Header" role="banner" itemscope itemtype="https://schema.org/WPHeader"><div class="Header-content"><img class="Header-image" src="/aleksandar.png?" alt="Aleksandar Goševski" width="155" height="155"><h1 class="Header-title" itemprop="headline"><a class="Header-link" href="https://www.goschevski.com">Aleksandar Goševski</a></h1><p class="Header-description" itemprop="description">Software Developer</p><ul class="Social is-centered is-visible-medium"><li class="Social-item is-icon"><a class="Social-github" href="https://www.github.com/goschevski/">Github</a></li><li class="Social-item is-icon"><a class="Social-linkedin" href="https://www.linkedin.com/in/goschevski/">Linkedin</a></li><li class="Social-item is-icon"><a class="Social-rss" href="/rss.xml">RSS</a></li></ul></div><div class="Header-copy">2008 - 2020 &copy; Aleksandar Goševski</div></header><main class="Main"><article class="Post" itemscope itemtype="https://schema.org/BlogPosting"><h1 class="Post-title" itemprop="name headline">Simple Grid Mixins</h1><div class="Post-header"><time class="Post-time" datetime="Sat Nov 07 2015 01:00:00 GMT+0100 (Central European Standard Time)" itemprop="datePublished">November 2015</time><ul class="Post-tags"><li class="Post-tag"><a href="/tags/sass">sass</a></li><li class="Post-tag"><a href="/tags/grid">grid</a></li><li class="Post-tag"><a href="/tags/css">css</a></li></ul></div><div class="Post-content" itemprop="articleBody"><h1>Simple grid mixins</h1><p>Originally posted on <a href="http://thesassway.com/">the Sass Way</a>.</p><p>Grid systems can be quite complicated. <a href="http://960.gs/">960.gs</a>, the mother of all grid systems, contains over 600 lines of code! And it's one of the simpler pure-CSS grid systems. I'm not a huge fan of scattering classes throughout your markup. Some people do like this approach, of course, but it's possible to build a grid system in Sass that doesn't require gratuitous use of classes. Instead, we can use mixins and style using existing classes and markup.</p><p>Let's build a set of mixins that will allow us to do this. For our grid system I don't want to use floats, because sometimes I need to vertically center columns. Instead, I'll use the inline-block method which allows for vertical centering. And of course, I want the grid to be responsive.</p><p>Let's get started.</p><h2>The basic mixins</h2><p>First, we'll create the row mixin. Our grid will require a container which will include content for the grid. This is called a row. Here's a simple mixin to turn an element into a row:</p><pre><code>@mixin row() {
+  font-size: 0;
+}
+</code></pre><p>Next, we'll create a simple column mixin for grid cells:</p><pre><code>@mixin col($align: top) {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+}
+</code></pre><p>You'll notice that I set the font-size to zero for the row mixin and then back to 16px for the column mixin. This is little hack to kill the default margin of inline-block elements. (Inline-block elements appear in the normal text flow of the document, left-to-right, but unlike block elements that are floated, they still need to deal with the text nodes on either side which create unwanted margin. This hack of setting the font-size to zero makes the space disappear.)</p><p>The column mixin also contains a handy parameter that will allow you to set the vertical alignment of a cell. This is extremely handy for aligning the cells in a row.</p><h2>Making the column mixin robust</h2><p>Let's extend the column mixin to include a way of setting the width of the column. When it comes to column width, for me it's easiest to think in terms of fractions. To create three cells that are of equal width they each need to be 1/3 the width of the containing element (the row).</p><p>We can extend our column mixin to allow us to pass the width as a fraction like this:</p><pre><code>@mixin col($col, $sum, $align: top) {
+  width: percentage($col/$sum);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+}
+</code></pre><p>This will allow us to set the width of a cell to 1/3 with <code>@include col(1,3)</code>. Quite simple, eh?</p><p>Now let's extend this further to so that we can specify the gap between cells:</p><pre><code>@mixin col($col, $sum, $gap: 1em, $align: top) {
+  width: percentage($col/$sum);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+  box-sizing: border-box;
+  padding: 0 $gap;
+}
+</code></pre><p>This is almost what we want. We can now specify the <code>$gap</code> between cells by passing it as a parameter to the column mixin: <code>@include col(1, 2, $gap: 2em)</code> (the default <code>$gap</code> is <code>1em</code>), however it won't work well for the first and last columns because they will get <code>$gap</code> padding applied before and after which isn't quite what we want.</p><p>To accommodate the first and last columns we can add two additional parameters:</p><pre><code>@mixin col($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+  width: percentage($col/$sum);
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: $align;
+  box-sizing: border-box;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+}
+</code></pre><p>Now we can call <code>@include col(1, 3, $first: true)</code> for the first cell, or <code>@include col(1, 3, $last: true)</code> for the final cell and it will work correctly.</p><p>Our final step is to make the column mixin responsive:</p><pre><code>@mixin col($col, $sum, $gap: 1em, $align: top) {
+  width: 100%;
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+
+  @media only screen and (min-width: 768px) {
+    width: percentage($col/$sum);
+    vertical-align: $align;
+  }
+}
+</code></pre><p>Now, on screens less than 768 pixels wide (mobile devices) elements that use the column mixin will be as wide as their parent element, however on screens greater than 768 pixels wide (like desktop computers) cells will display at their appropriate widths.</p><h2>Conclusion</h2><p>Okay, so with just a few lines of Sass we've created a grid system that:</p><ul><li>Can accommodate cells of any width</li><li>Can display optional gaps between cells</li><li>Handles gaps correctly for first and last columns</li><li>Has cells snap to the full-width of the container on mobile devices</li></ul><p>And we achieved all of this in just 16 lines of code! You can see a full demo how these mixins are used, on <a href="http://codepen.io/goschevski/full/Awuyz">CodePen</a>.</p></div></article></main><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></body></html>

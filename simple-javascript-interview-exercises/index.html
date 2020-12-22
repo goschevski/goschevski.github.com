@@ -1,61 +1,61 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1"><title>Aleksandar Goševski | Simple JavaScript Interview Exercises</title><meta name=description content="When you are interviewing someone, you can learn more about them by reviewing how they did some exercises then talking with them about specific technology. Anyone can learn theory from the blog posts, but people rarely understood it. To be sure that candidate knows about the topic they are talking about, it&#39;s a good thing to test their knowledge with exercises. Exercises shouldn&#39;t take too long, and they can instantly show you a skill level of the candidate."><link rel=stylesheet href=/style.css?1550450852587></head><body><header class=Header role=banner itemscope itemtype=http://schema.org/WPHeader><div class=Header-content><img class=Header-image src=/aleksandar.png?1550450852587 alt="Aleksandar Goševski" width=155 height=155><h1 class=Header-title itemprop=headline><a class=Header-link href=https://www.goschevski.com>Aleksandar Goševski</a></h1><p class=Header-description itemprop=description>Software Developer</p><ul class="Social is-centered is-visible-medium"><li class="Social-item is-icon"><a class=Social-github href="https://www.github.com/goschevski/">Github</a></li><li class="Social-item is-icon"><a class=Social-linkedin href="https://www.linkedin.com/in/goschevski/">Linkedin</a></li><li class="Social-item is-icon"><a class=Social-rss href=/rss.xml>RSS</a></li></ul></div><div class=Header-copy>2019 &copy; Aleksandar Goševski</div></header><main class=Main><article class=Post itemscope itemtype=http://schema.org/BlogPosting><h1 class=Post-title itemprop="name headline">Simple JavaScript Interview Exercises</h1><div class=Post-header><time class=Post-time datetime="Thu Jan 14 2016 01:00:00 GMT+0100 (CET)" itemprop=datePublished>January 2016</time><ul class=Post-tags><li class=Post-tag><a href=/tags/javascript>javascript</a></li><li class=Post-tag><a href=/tags/interview>interview</a></li></ul></div><div class=Post-content itemprop=articleBody><p>When you are interviewing someone, you can learn more about them by reviewing how they did some exercises then talking with them about specific technology. Anyone can learn theory from the blog posts, but people rarely understood it. To be sure that candidate knows about the topic they are talking about, it's a good thing to test their knowledge with exercises. Exercises shouldn't take too long, and they can instantly show you a skill level of the candidate.</p><h3 id=context-call-apply->Context (call, apply)</h3><p class=lang-highlight>This is how we want to use <code class="hljs ebnf"><span class=hljs-attribute>someFn</span></code>. Candidate should define it.</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-keyword>var</span> result = someFn({ <span class=hljs-attr>someProperty</span>: <span class=hljs-string>'interview'</span> }, <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params></span>) </span>{
-    <span class=hljs-built_in>console</span>.log(<span class=hljs-string>'This pointing to'</span>, <span class=hljs-keyword>this</span>);
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aleksandar Goševski | Simple JavaScript Interview Exercises</title><meta name="description" content="Thoughts about web development, design, tools, etc."><link rel="stylesheet" href="/style.css?"></head><body><header class="Header" role="banner" itemscope itemtype="https://schema.org/WPHeader"><div class="Header-content"><img class="Header-image" src="/aleksandar.png?" alt="Aleksandar Goševski" width="155" height="155"><h1 class="Header-title" itemprop="headline"><a class="Header-link" href="https://www.goschevski.com">Aleksandar Goševski</a></h1><p class="Header-description" itemprop="description">Software Developer</p><ul class="Social is-centered is-visible-medium"><li class="Social-item is-icon"><a class="Social-github" href="https://www.github.com/goschevski/">Github</a></li><li class="Social-item is-icon"><a class="Social-linkedin" href="https://www.linkedin.com/in/goschevski/">Linkedin</a></li><li class="Social-item is-icon"><a class="Social-rss" href="/rss.xml">RSS</a></li></ul></div><div class="Header-copy">2008 - 2020 &copy; Aleksandar Goševski</div></header><main class="Main"><article class="Post" itemscope itemtype="https://schema.org/BlogPosting"><h1 class="Post-title" itemprop="name headline">Simple JavaScript Interview Exercises</h1><div class="Post-header"><time class="Post-time" datetime="Thu Jan 14 2016 01:00:00 GMT+0100 (Central European Standard Time)" itemprop="datePublished">January 2016</time><ul class="Post-tags"><li class="Post-tag"><a href="/tags/javascript">javascript</a></li><li class="Post-tag"><a href="/tags/interview">interview</a></li></ul></div><div class="Post-content" itemprop="articleBody"><p>When you are interviewing someone, you can learn more about them by reviewing how they did some exercises then talking with them about specific technology. Anyone can learn theory from the blog posts, but people rarely understood it. To be sure that candidate knows about the topic they are talking about, it's a good thing to test their knowledge with exercises. Exercises shouldn't take too long, and they can instantly show you a skill level of the candidate.</p><h3>Context (call, apply)</h3><p>This is how we want to use <code>someFn</code>. Candidate should define it.</p><pre><code class="language-javascript">var result = someFn({ someProperty: 'interview' }, function () {
+    console.log('This pointing to', this);
 });
 
-<span class=hljs-built_in>console</span>.log(<span class=hljs-string>'Result is'</span>, result);
+console.log('Result is', result);
 
-<span class=hljs-comment>// expected output</span>
-This pointing to { <span class=hljs-attr>someProperty</span>: <span class=hljs-string>'interview'</span> }
-Result is <span class=hljs-number>1</span>
-</code></pre><p>Solution:</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-keyword>var</span> someFn = <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params>obj, cb</span>) </span>{
+// expected output
+This pointing to { someProperty: 'interview' }
+Result is 1
+</code></pre><p>Solution:</p><pre><code class="language-javascript">var someFn = function (obj, cb) {
     cb.call(obj);
-    <span class=hljs-keyword>return</span> <span class=hljs-number>1</span>;
+    return 1;
 }
-</code></pre><h4 id=bonus>Bonus</h4><p class=lang-highlight>You can change function to check if candidate knows how to use <code class="hljs coq"><span class=hljs-built_in>apply</span></code>.</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-keyword>var</span> result = someFn({ <span class=hljs-attr>someProperty</span>: <span class=hljs-string>'interview'</span> }, <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params>param1, param2</span>) </span>{
-    <span class=hljs-built_in>console</span>.log(<span class=hljs-string>'This pointing to'</span>, <span class=hljs-keyword>this</span>);
-    <span class=hljs-built_in>console</span>.log(<span class=hljs-string>'Param 1 is'</span>, param1);
-    <span class=hljs-built_in>console</span>.log(<span class=hljs-string>'Param 2 is'</span>, param2);
-}, [<span class=hljs-string>'cool'</span>, <span class=hljs-string>'interview'</span>]);
+</code></pre><h4>Bonus</h4><p>You can change function to check if candidate knows how to use <code>apply</code>.</p><pre><code class="language-javascript">var result = someFn({ someProperty: 'interview' }, function (param1, param2) {
+    console.log('This pointing to', this);
+    console.log('Param 1 is', param1);
+    console.log('Param 2 is', param2);
+}, ['cool', 'interview']);
 
-<span class=hljs-built_in>console</span>.log(<span class=hljs-string>'Result is'</span>, result);
+console.log('Result is', result);
 
-<span class=hljs-comment>// expected output</span>
-This pointing to { <span class=hljs-attr>someProperty</span>: <span class=hljs-string>'interview'</span> }
-Param <span class=hljs-number>1</span> is <span class=hljs-string>"cool"</span>
-Param <span class=hljs-number>2</span> is <span class=hljs-string>"interview"</span>
-Result is <span class=hljs-number>1</span>
-</code></pre><p>Solution:</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-keyword>var</span> someFn = <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params>obj, cb, params</span>) </span>{
+// expected output
+This pointing to { someProperty: 'interview' }
+Param 1 is &quot;cool&quot;
+Param 2 is &quot;interview&quot;
+Result is 1
+</code></pre><p>Solution:</p><pre><code class="language-javascript">var someFn = function (obj, cb, params) {
     cb.apply(obj, params);
-    <span class=hljs-keyword>return</span> <span class=hljs-number>1</span>;
+    return 1;
 }
-</code></pre><h3 id=prototype-and-iteration>Prototype and Iteration</h3><p class=lang-highlight>Define a native method called <code class="hljs actionscript"><span class=hljs-keyword>each</span></code> for iterating over the array with an option to pass the context as a second argument.</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-keyword>var</span> arr = [<span class=hljs-number>1</span>, <span class=hljs-number>2</span>, <span class=hljs-number>3</span>];
-arr.each(<span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params>arrayItem, counter</span>) </span>{
-    <span class=hljs-built_in>console</span>.log(<span class=hljs-string>'index'</span>, counter);
-    <span class=hljs-built_in>console</span>.log(<span class=hljs-string>'item'</span>, arrayItem);
+</code></pre><h3>Prototype and Iteration</h3><p>Define a native method called <code>each</code> for iterating over the array with an option to pass the context as a second argument.</p><pre><code class="language-javascript">var arr = [1, 2, 3];
+arr.each(function (arrayItem, counter) {
+    console.log('index', counter);
+    console.log('item', arrayItem);
 
-    arr[counter] = arrayItem + <span class=hljs-number>1</span>;
-}, <span class=hljs-keyword>this</span>);
-</code></pre><p>Solution:</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-built_in>Array</span>.prototype.each = <span class=hljs-built_in>Array</span>.prototype.each || <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params>cb, context</span>) </span>{
-    <span class=hljs-keyword>for</span> (<span class=hljs-keyword>var</span> i = <span class=hljs-number>0</span>; i &lt; <span class=hljs-keyword>this</span>.length; i++) {
-        cb.call(context || <span class=hljs-keyword>this</span>, <span class=hljs-keyword>this</span>[i], i);
+    arr[counter] = arrayItem + 1;
+}, this);
+</code></pre><p>Solution:</p><pre><code class="language-javascript">Array.prototype.each = Array.prototype.each || function (cb, context) {
+    for (var i = 0; i &lt; this.length; i++) {
+        cb.call(context || this, this[i], i);
     }
 };
-</code></pre><h3 id=scope>Scope</h3><p class=lang-highlight>Define <code class="hljs ebnf"><span class=hljs-attribute>someFn</span></code> which can work like this.</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-keyword>var</span> counter = someFn(<span class=hljs-number>1</span>);
-<span class=hljs-built_in>console</span>.log(<span class=hljs-string>'First call'</span>, counter(<span class=hljs-number>3</span>));
-<span class=hljs-built_in>console</span>.log(<span class=hljs-string>'Second call'</span>, counter(<span class=hljs-number>1</span>));
-<span class=hljs-built_in>console</span>.log(<span class=hljs-string>'Third call'</span>, counter(<span class=hljs-number>5</span>));
+</code></pre><h3>Scope</h3><p>Define <code>someFn</code> which can work like this.</p><pre><code class="language-javascript">var counter = someFn(1);
+console.log('First call', counter(3));
+console.log('Second call', counter(1));
+console.log('Third call', counter(5));
 
-<span class=hljs-comment>// expected output</span>
-First call <span class=hljs-number>4</span>
-Second call <span class=hljs-number>5</span>
-Third call <span class=hljs-number>10</span>
-</code></pre><p>Solution:</p><pre class=lang-highlight><code class="lang-javascript hljs"><span class=hljs-keyword>var</span> someFn = <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params>start</span>) </span>{
-    <span class=hljs-keyword>var</span> private = start;
+// expected output
+First call 4
+Second call 5
+Third call 10
+</code></pre><p>Solution:</p><pre><code class="language-javascript">var someFn = function (start) {
+    var private = start;
 
-    <span class=hljs-keyword>return</span> <span class=hljs-function><span class=hljs-keyword>function</span> (<span class=hljs-params>increment</span>) </span>{
+    return function (increment) {
         private += increment;
 
-        <span class=hljs-keyword>return</span> private;
+        return private;
     }
 }
-</code></pre></div></article></main><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel=stylesheet></body></html>
+</code></pre></div></article></main><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></body></html>
