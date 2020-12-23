@@ -11,12 +11,20 @@ module.exports = function(eleventyConfig) {
     return `${months[date.getMonth()]} ${date.getFullYear()}`;
   });
 
+  nunjucksEnvironment.addFilter('fullUrl', url => {
+    return new URL(url, 'https://www.goschevski.com').href;
+  });
+
   nunjucksEnvironment.addFilter('currentYear', text => {
     return text + new Date().getFullYear();
   });
 
-  nunjucksEnvironment.addFilter('toUTC', dateObj => {
-    return dateObj.toUTCString();
+  nunjucksEnvironment.addFilter('toISOString', date => {
+    return date.toISOString();
+  });
+
+  nunjucksEnvironment.addFilter('toUTC', date => {
+    return date.toUTCString();
   });
 
   eleventyConfig.setLibrary('njk', nunjucksEnvironment);
