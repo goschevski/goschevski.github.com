@@ -8,9 +8,6 @@
 
     @media (--medium) {
         flex-wrap: nowrap;
-    }
-
-    @media (--medium) {
         justify-content: unset;
     }
 
@@ -28,7 +25,11 @@
 }
 
 .Social-item {
-    margin-right: 1em;
+    margin-right: 2em;
+
+    @media (--medium) {
+      margin-right: 1em;
+    }
 
     &.is-icon {
         width: 24px;
@@ -37,7 +38,7 @@
 
     &:first-child {
         flex-basis: 100%;
-        margin-bottom: 2em;
+        margin-bottom: 3em;
 
         @media (--medium) {
             flex-basis: auto;
