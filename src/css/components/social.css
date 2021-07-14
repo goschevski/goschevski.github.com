@@ -47,38 +47,25 @@
     }
 }
 
-.Social-github {
+.Social-icon {
     display: block;
     text-indent: -9999px;
     overflow: hidden;
-    opacity: 0.8;
+    opacity: 0.6;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.Social-icon__github {
     background: url('github.svg') no-repeat;
-
-    &:hover {
-        opacity: 1;
-    }
 }
 
-.Social-linkedin {
-    display: block;
-    text-indent: -9999px;
-    overflow: hidden;
+.Social-icon__linkedin {
     background: url('linkedin.svg') no-repeat;
-    opacity: 0.8;
-
-    &:hover {
-        opacity: 1;
-    }
 }
 
-.Social-rss {
-    display: block;
-    text-indent: -9999px;
-    overflow: hidden;
+.Social-icon__rss {
     background: url('rss.svg') no-repeat;
-    opacity: 0.8;
-
-    &:hover {
-        opacity: 1;
-    }
 }

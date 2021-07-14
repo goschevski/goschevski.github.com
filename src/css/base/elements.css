@@ -20,7 +20,7 @@ img {
 
 a {
     text-decoration: none;
-    transition: all .4s ease;
+    transition: all .3s ease-out;
     color: var(--mainColor);
 
     &:hover {

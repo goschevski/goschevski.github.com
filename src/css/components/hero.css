@@ -62,15 +62,16 @@
 .Hero-button {
     padding: 1em 1.5em;
     border-radius: 100px;
-    background: white;
+    border: 1px solid white;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #222A1F;
+    color: white;
 
     &:hover {
+        color: #222A1F;
         text-decoration: none;
-        box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.5);
+        background: white;
     }
 }
