@@ -21,4 +21,4 @@ I tried doing all of this things by myself, I even wrote about ansible and how i
 
 ### [Render.com](https://render.com)
 While reasearching solution for this problem, I discovered [render.com](https://render.com/). I like sites where after 3 minutes, you feel like you're using it for years.
-*I deployed static site, node app, and dockerized node app in 15 minutes without any error.* You want auto scale - boom, 2 clicks. I don't care about machines, users, permissions - I just want to run apps. I know that this probably is not the cheapest solution if you know what you're doing, but I saved so many hours and nerves and I'm willing to pay more for it.
+**I deployed static site, node app, and dockerized node app in 15 minutes without any error.** You want auto scale - boom, 2 clicks. I don't care about machines, users, permissions - I just want to run apps. I know that this probably is not the cheapest solution if you know what you're doing, but I saved so many hours and nerves and I'm willing to pay more for it.
